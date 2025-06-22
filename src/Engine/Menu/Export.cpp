@@ -27,6 +27,13 @@ void Menu::ExportPopup(){
         ImGui::Text("y"); ImGui::SameLine();
         ImGui::InputInt("##windowdimy", &engineData->windowDimensions.y);
         ImGui::PopItemWidth();
+        // Update JSON file with window dimensions
+        std::ifstream f("Projects/" + engineData->projectName + "/Unique/settings.json");
+        json jSettings = json::parse(f);
+        jSettings["dimensions"][0] = engineData->windowDimensions.x;
+        jSettings["dimensions"][1] = engineData->windowDimensions.y;
+        std::ofstream("Projects/" + engineData->projectName + "/Unique/settings.json") << std::setw(2) << jSettings;
+        f.close();
 
         ImGui::SeparatorText("");
 

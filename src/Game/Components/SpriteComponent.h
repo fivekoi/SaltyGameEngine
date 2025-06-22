@@ -3,7 +3,8 @@
 
 #include <string>
 
-
+// TODO: could maybe have like a "RenderComponent" with just a z-index
+// And then SpriteComponent and TextComponent inheret from that, allows render component to just require Has<RenderCompoennt>
 struct SpriteComponent {
     std::string filepath;
     int zIndex;

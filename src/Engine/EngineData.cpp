@@ -22,6 +22,13 @@ EngineData::EngineData(){
     json jEngineData = json::parse(g);
     g.close();
 
+    // Get engine data specific to project (that is also needed in game build)
+    std::ifstream g2("Projects/" + projectName + "/Unique/settings.json");
+    json jGameSettings = json::parse(g2);
+    json jWindowDimensions = jGameSettings["dimensions"];
+    windowDimensions = glm::ivec2(jWindowDimensions[0], jWindowDimensions[1]);
+    g2.close();
+
 
     // Get all scenes
     std::ifstream h("Projects/" + projectName + "/Unique/scenes.json");
