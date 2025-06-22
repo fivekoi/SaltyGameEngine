@@ -152,7 +152,12 @@ public:
 
 class System {
 private:
-    Signature componentSignature;
+    // Each system will have two component signatures
+    // This allows for an 'or' between two different components
+    // (e.g. RenderSystem needs to render both SpriteComponent and TextComponent)
+    // NOTE: could even change to a vector of Signature's if an or between more than two is needed...
+    Signature componentSignature1;
+    Signature componentSignature2;
     std::vector<Entity> entities;
 
 public:
@@ -162,17 +167,25 @@ public:
     void AddEntityToSystem(Entity entity);
     void RemoveEntityFromSystem(Entity entity);
     std::vector<Entity> GetSystemEntities() const;
-    const Signature& GetComponentSignature() const;
+    const Signature& GetComponentSignature1() const;
+    const Signature& GetComponentSignature2() const;
+    bool hasComponentSignature2 = false;
 
     // Adds component type to system signature
-    template <typename TComponent> void RequireComponent();
+    template <typename TComponent> void RequireComponent(bool two = false);
 };
 
 template <typename TComponent>
-void System::RequireComponent()
+void System::RequireComponent(bool two)
 {
     const auto componentId = Component<TComponent>::GetId();
-    componentSignature.set(componentId);
+    if(!two)
+    { componentSignature1.set(componentId); }
+    else
+    { 
+        componentSignature2.set(componentId); 
+        hasComponentSignature2 = true;
+    }
 };
 
 

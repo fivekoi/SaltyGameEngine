@@ -83,9 +83,13 @@ std::vector<Entity> System::GetSystemEntities() const
     return entities;
 }
 
-const Signature& System::GetComponentSignature() const
+const Signature& System::GetComponentSignature1() const
 {
-    return componentSignature;
+    return componentSignature1;
+}
+const Signature& System::GetComponentSignature2() const
+{
+    return componentSignature2;
 }
 
 Entity& Registry::CreateEntity(int parentId) // default = -1
@@ -215,10 +219,15 @@ void Registry::AddEntityToSystems(Entity entity)
 
     for(auto& system : systems)
     {
-        const auto curSystemCompSig = system.second->GetComponentSignature();
-
+        const auto curSystemCompSig = system.second->GetComponentSignature1();
         // Checks contains with bitwise and
         bool containsSig = (curEntityCompSig & curSystemCompSig) == curSystemCompSig;
+
+        if(!containsSig && system.second->hasComponentSignature2){
+            const auto curSystemCompSig2 = system.second->GetComponentSignature2();
+            // Checks contains with bitwise and
+            containsSig = (curEntityCompSig & curSystemCompSig2) == curSystemCompSig2;
+        }
 
         if(containsSig)
         { system.second->AddEntityToSystem(entity); }

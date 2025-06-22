@@ -1,11 +1,11 @@
 {
   "camera": {
     "aspectRatio": [
-      1,
-      1
+      10,
+      10
     ],
     "position": [
-      0.0,
+      504.0,
       0.0
     ],
     "scale": 100
@@ -47,10 +47,33 @@
         "zindex": 2
       }
     },
-    null
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "StageDemo/background.png"
+        }
+      },
+      "name": "BG",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          207.0,
+          -16.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": 1
+      }
+    }
   ],
-  "null-count": 1,
+  "null-count": 0,
   "root-ids": [
-    0
+    0,
+    1
   ]
 }

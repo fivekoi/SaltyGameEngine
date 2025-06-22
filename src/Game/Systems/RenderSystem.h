@@ -9,6 +9,7 @@
 #include "Game/ECS/ECS.h"
 #include "Game/Components/TransformComponent.h"
 #include "Game/Components/SpriteComponent.h"
+#include "Game/Components/TextComponent.h"
 #include "Game/AssetManager/AssetManager.h"
 #include "Game/Salty/SaltyCamera.h"
 
@@ -17,7 +18,10 @@ public:
     RenderSystem()
     {
         // RequireComponent<TransformComponent>();
-        RequireComponent<SpriteComponent>();
+
+        // Requires either a SpriteComponent OR a TextComponent
+        RequireComponent<SpriteComponent>(false);
+        RequireComponent<TextComponent>(true);
     }
 
     // TODO: dont like this as a unique_ptr reference, or rather unsure if that is optimal?
