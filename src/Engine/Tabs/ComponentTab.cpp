@@ -65,6 +65,14 @@ void ComponentTab::Transform(){
         if(ImGui::IsItemDeactivatedAfterEdit()) 
         { editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(TRANSFORM, ROTATION, registry, selectedEntity, ComponentValue(prevf), ComponentValue(transform.rotation)))); }
 
+        ImGui::Text("Z-Index");
+        ImGui::Text("z"); ImGui::SameLine();
+        int prev2 = transform.zindex;
+        ImGui::InputInt("##zindex", &transform.zindex);
+        if(ImGui::IsItemActivated()) previ = prev2;
+        if(ImGui::IsItemDeactivatedAfterEdit()) 
+        { editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(TRANSFORM, ZINDEX, registry, selectedEntity, ComponentValue(previ), ComponentValue(transform.zindex)))); }
+
         ImGui::PopItemWidth();
         ImGui::SeparatorText("");
     }
@@ -95,13 +103,6 @@ void ComponentTab::Sprite(){
                 }
             }
 
-            ImGui::Text("zIndex"); // TODO: this should probably be enumerated with a dropdown??? 
-            int prev2 = sprite.zIndex;
-            ImGui::InputInt("##zindex", &sprite.zIndex); // kinda wanna call sorting layer, and then have z index seperately (as the finer setting)
-            if(ImGui::IsItemActivated()) previ = prev2;
-            if(ImGui::IsItemDeactivatedAfterEdit()) 
-            { editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(SPRITE, ZINDEX, registry, selectedEntity, ComponentValue(previ), ComponentValue(sprite.zIndex)))); }
-
             ImGui::PopItemWidth();
             ImGui::SeparatorText("");
         }
@@ -113,7 +114,6 @@ void ComponentTab::Sprite(){
             // Create vector of values and add it to editHistory
             std::vector<ComponentValue> values;
             values.push_back(ComponentValue(sprite.filepath));
-            values.push_back(ComponentValue(sprite.zIndex));
             editHistory->Do(std::move(std::make_unique<HasComponentEdit>(SPRITE, registry, selectedEntity, false, values)));
 
             entity.RemoveComponent<SpriteComponent>();

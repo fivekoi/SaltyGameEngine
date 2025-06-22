@@ -31,7 +31,7 @@ void HasComponentEdit::Apply(bool undo){
         case SPRITE:
             if(addComp) {
                 if(values.empty()) entity.AddComponent<SpriteComponent>(); // default values
-                else entity.AddComponent<SpriteComponent>(std::get<std::string>(values[0]), std::get<int>(values[1]));
+                else entity.AddComponent<SpriteComponent>(std::get<std::string>(values[0]));
             }
             else entity.RemoveComponent<SpriteComponent>();
             break;
@@ -66,15 +66,13 @@ void HasComponentEdit::ApplyJson(bool undo){
             if(addComp) {
                 if(values.empty()) { // default values
                     json jSprite = {
-                        {"filepath", ""},
-                        {"zindex", 0}
+                        {"filepath", ""}
                     };
                     jComponents["sprite"] = jSprite;
                 }
                 else {
                     json jSprite = {
                         {"filepath", std::get<std::string>(values[0])},
-                        {"zindex", std::get<int>(values[1])}
                     };
                     jComponents["sprite"] = jSprite;
                 }

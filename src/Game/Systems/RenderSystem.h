@@ -30,8 +30,8 @@ public:
         // TODO: im worried that if objects have same layer, they will swap whos in front
         // Could add a secondary sort value by entityId, higher is above
         std::sort(entities.begin(), entities.end(), [](const Entity& a, const Entity& b)
-            { return a.GetComponent<SpriteComponent>().zIndex
-            < b.GetComponent<SpriteComponent>().zIndex; });
+            { return a.GetComponent<TransformComponent>().zindex
+            < b.GetComponent<TransformComponent>().zindex; });
 
         // Camera values
         glm::vec2 cameraCenter = Camera::position; // TODO: later position can be actual center, and can alter here

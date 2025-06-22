@@ -1,12 +1,6 @@
 {
   "scenes": [
     {
-      "name": "Dino"
-    },
-    {
-      "name": "demo"
-    },
-    {
       "name": "simple"
     }
   ]

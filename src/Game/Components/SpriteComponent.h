@@ -7,12 +7,10 @@
 // And then SpriteComponent and TextComponent inheret from that, allows render component to just require Has<RenderCompoennt>
 struct SpriteComponent {
     std::string filepath;
-    int zIndex;
 
-    SpriteComponent(std::string filepath = "", int zIndex = 0)
+    SpriteComponent(std::string filepath = "")
     {
         this->filepath = filepath;
-        this->zIndex = zIndex;
     }
 };
 

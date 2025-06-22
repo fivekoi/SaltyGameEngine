@@ -45,13 +45,13 @@ EntityExistsEdit::EntityExistsEdit(std::shared_ptr<Registry> registry, std::shar
         transformValues.push_back(transform.scale.x); 
         transformValues.push_back(transform.scale.y);
         transformValues.push_back(transform.rotation);
+        zindex = transform.zindex;
 
         // Check for the other components
         if(entity.HasComponent<SpriteComponent>()){
             auto& sprite = entity.GetComponent<SpriteComponent>();
             std::vector<ComponentValue> values;
             values.push_back(ComponentValue(sprite.filepath));
-            values.push_back(ComponentValue(sprite.zIndex));
             components.push_back(std::make_unique<HasComponentEdit>(SPRITE, registry, entityId, true, values));
         }
         if(entity.HasComponent<RigidbodyComponent>()){
@@ -118,6 +118,7 @@ void EntityExistsEdit::Apply(bool undo){
         transform.position.x = transformValues[0]; transform.position.y = transformValues[1];
         transform.scale.x = transformValues[2]; transform.scale.y = transformValues[3];
         transform.rotation = transformValues[4];
+        transform.zindex = zindex;
 
         // Cannot call other component edits until entity is added to json
         // Those edits call json edits, so the entity needs to exist in json
@@ -176,7 +177,8 @@ void EntityExistsEdit::ApplyJson(bool undo){
                 {"transform", {
                     {"position", {transformValues[0], transformValues[1]}},
                     {"scale", {transformValues[2], transformValues[3]}},
-                    {"rotation", transformValues[4]}
+                    {"rotation", transformValues[4]},
+                    {"zindex", zindex}
                 }}
             };
             auto it = childrenIds.begin();
@@ -198,7 +200,8 @@ void EntityExistsEdit::ApplyJson(bool undo){
                 {"transform", {
                     {"position", {0.0, 0.0}},
                     {"scale", {1.0, 1.0}},
-                    {"rotation", 0.0}
+                    {"rotation", 0.0},
+                    {"zindex", 0}
                 }}
             };
             

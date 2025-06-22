@@ -108,15 +108,15 @@ void Stage::CreateEntityTree(json jEntities, json jRootIds){
         transform.position = glm::vec2(jTransform["position"][0], jTransform["position"][1]);
         transform.scale = glm::vec2(jTransform["scale"][0], jTransform["scale"][1]);
         transform.rotation = jTransform["rotation"];
+        transform.zindex = jTransform["zindex"];
 
         // Add all components to entity
         json jComponents = jEntity["components"];
         if(jComponents.contains("sprite")){
             json jValues = jComponents["sprite"];
             std::string filepath = jValues["filepath"];
-            int zindex = jValues["zindex"];
             assetManager->AddTexture(filepath); // Duplicate textures are handled in assetManager
-            entity.AddComponent<SpriteComponent>(filepath, zindex);
+            entity.AddComponent<SpriteComponent>(filepath);
         }
         if(jComponents.contains("rigidbody")){
             json jValues = jComponents["rigidbody"];

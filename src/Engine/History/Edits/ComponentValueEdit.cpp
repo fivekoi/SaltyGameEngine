@@ -34,6 +34,7 @@ void ComponentValueEdit::Apply(bool undo){
                 case SCALE_X: transform.scale.x = std::get<float>(val); break;
                 case SCALE_Y: transform.scale.y = std::get<float>(val); break;
                 case ROTATION: transform.rotation = std::get<float>(val); break;
+                case ZINDEX: transform.zindex = std::get<int>(val); break;
                 default:
                     // TODO: log error - transform does not have ...
                     break;
@@ -44,7 +45,6 @@ void ComponentValueEdit::Apply(bool undo){
             auto& sprite = entity.GetComponent<SpriteComponent>();
             switch(compVar){
                 case FILEPATH: sprite.filepath = std::get<std::string>(val); break;
-                case ZINDEX: sprite.zIndex = std::get<int>(val); break;
                 default:
                     // TODO: log error - transform does not have ...
                     break;
@@ -92,6 +92,7 @@ void ComponentValueEdit::ApplyJson(bool undo){
                 case SCALE_X: jEntity["transform"]["scale"][0] = std::get<float>(val); break;
                 case SCALE_Y: jEntity["transform"]["scale"][1] = std::get<float>(val); break;
                 case ROTATION: jEntity["transform"]["rotation"] = std::get<float>(val); break;
+                case ZINDEX: jEntity["transform"]["zindex"] = std::get<int>(val); break;
                 default:
                     // TODO: log error - transform does not have ...
                     break;
@@ -101,7 +102,6 @@ void ComponentValueEdit::ApplyJson(bool undo){
         case SPRITE: {
             switch(compVar){
                 case FILEPATH: jComponents["sprite"]["filepath"] = std::get<std::string>(val); break;
-                case ZINDEX: jComponents["sprite"]["zindex"] = std::get<int>(val); break;
                 break;
             }
         }

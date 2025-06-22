@@ -37,9 +37,9 @@ enum EComponentVars {
     SCALE_X,
     SCALE_Y,
     ROTATION,
+    ZINDEX,
     // SPRITE
     FILEPATH,
-    ZINDEX,
     // RIGIDBODY
     INITVEL_X,
     INITVEL_Y
@@ -188,6 +188,8 @@ private:
     bool add;
     // Needs to store vector of components, to restore them after
     std::vector<float> transformValues;
+    // Moved zindex from SpriteComponent to TransformComponent, so now is on every entity
+    int zindex; 
     std::vector<std::unique_ptr<HasComponentEdit>> components;
     // Needs to store vector of scripts to restore them after
     std::vector<std::unique_ptr<HasScriptEdit>> scripts;

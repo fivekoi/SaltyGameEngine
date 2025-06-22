@@ -21,8 +21,7 @@
           ]
         },
         "sprite": {
-          "filepath": "StageDemo/player.png",
-          "zindex": 1
+          "filepath": "StageDemo/player.png"
         }
       },
       "name": "Player",
@@ -44,7 +43,8 @@
         "scale": [
           -4.0,
           4.0
-        ]
+        ],
+        "zindex": 2
       }
     }
   ],

@@ -162,9 +162,8 @@ void Game::CreateEntityTree(json jEntities, json jRootIds){
         if(jComponents.contains("sprite")){
             json jValues = jComponents["sprite"];
             std::string filepath = jValues["filepath"];
-            int zindex = jValues["zindex"];
             assetManager->AddTexture(renderer, filepath); // Duplicate textures are handled in assetManager
-            entity.AddComponent<SpriteComponent>(filepath, zindex);
+            entity.AddComponent<SpriteComponent>(filepath);
         }
         if(jComponents.contains("rigidbody")){
             json jValues = jComponents["rigidbody"];
