@@ -32,8 +32,7 @@ class Input {
         static bool MouseUp[NUM_M];
         // TODO: i want these to be scaled to world position, need to do some math
         static int MouseX;
-        static int MouseY;
-        
+        static int MouseY; 
 };
 
 #endif // SALTYINPUT_H
