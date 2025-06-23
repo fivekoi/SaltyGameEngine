@@ -17,17 +17,17 @@ void PlayerMovement::Start(){
 // TODO: may add more detail
 // Called every frame before Render() 
 void PlayerMovement::Update(float dt){
-    if(Input::KeyHeld[SDL_SCANCODE_A]){
+    if(Input::KeyHeld[KEY_A]){
         player->position.x -= dt * speed;
     }
-    if(Input::KeyHeld[SDL_SCANCODE_D]){
+    if(Input::KeyHeld[KEY_D]){
         transform->position.x += dt * speed;
     }
-    if(Input::KeyUp[SDL_SCANCODE_0]){
+    if(Input::KeyUp[KEY_0]){
         std::cout << "0\n";
     }
 
-    if(Input::KeyDown[SDL_SCANCODE_S]){
+    if(Input::KeyDown[KEY_S]){
         Audio::Play(sound);
         std::cout << val << '\n';
         val += 3;

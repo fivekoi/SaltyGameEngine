@@ -45,7 +45,7 @@ void DinoMovement::Update(float dt){
     }
 
     prejumpTimer -= dt;
-    if(Input::KeyDown[SDL_SCANCODE_SPACE]){
+    if(Input::KeyDown[KEY_SPACE]){
         prejumpTimer = 0.2;
     }
 
@@ -81,7 +81,7 @@ void DinoMovement::Update(float dt){
     }
     justJumpedTimer -= dt;
     if(jumping){
-        if(!Input::KeyHeld[SDL_SCANCODE_SPACE]){
+        if(!Input::KeyHeld[KEY_SPACE]){
             jumping = false;
         }
         else {
