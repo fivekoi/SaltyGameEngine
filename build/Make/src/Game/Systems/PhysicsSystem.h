@@ -9,10 +9,11 @@
 // TODO: wanted to change the name of this, maybe just rigidbodysystem
 class PhysicsSystem : public System {
     public:
-        PhysicsSystem()
+        PhysicsSystem() {};
+
+        bool CheckEntity(Entity entity) override
         {
-            // RequireComponent<TransformComponent>();
-            RequireComponent<RigidbodyComponent>();
+            return entity.HasComponent<RigidbodyComponent>();
         }
 
         void Update(float deltaTime)

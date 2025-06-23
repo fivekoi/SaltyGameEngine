@@ -12,10 +12,11 @@
 
 class CollisionSystem : public System {
 public:
-    CollisionSystem()
+    CollisionSystem() {};
+
+    bool CheckEntity(Entity entity) override
     {
-        RequireComponent<TransformComponent>();
-        RequireComponent<BoxColliderComponent>();
+        return entity.HasComponent<TransformComponent>() && entity.HasComponent<BoxColliderComponent>();
     }
 
     void Update(std::unique_ptr<EventBus>& eventBus)

@@ -24,7 +24,7 @@
 
 // TODO: this will only be decided at end
 // Number of types of components
-const unsigned int MAX_COMPONENTS = 32;
+const unsigned int MAX_COMPONENTS = 16;
 // Tracks which components each entity has
 typedef std::bitset<MAX_COMPONENTS> Signature;
 
@@ -150,42 +150,24 @@ public:
  *   Performs behavior on entities with matching signature       *
  * ------------------------------------------------------------- */
 
+// NOTE: this may technically be an interface (so should really be ISystem)
+// but for the sake of the clean ECS - Entity Component System class names, will break convention
 class System {
 private:
-    // Each system will have two component signatures
-    // This allows for an 'or' between two different components
-    // (e.g. RenderSystem needs to render both SpriteComponent and TextComponent)
-    // NOTE: could even change to a vector of Signature's if an or between more than two is needed...
-    Signature componentSignature1;
-    Signature componentSignature2;
+    // Entities that the system acts upon 
+    // TODO: should this be pointers to them???
     std::vector<Entity> entities;
 
 public:
     System() = default;
     ~System() = default;
 
+    // Checks if an entity should be acted upon by system
+    virtual bool CheckEntity(Entity entity) = 0;
+    
     void AddEntityToSystem(Entity entity);
     void RemoveEntityFromSystem(Entity entity);
     std::vector<Entity> GetSystemEntities() const;
-    const Signature& GetComponentSignature1() const;
-    const Signature& GetComponentSignature2() const;
-    bool hasComponentSignature2 = false;
-
-    // Adds component type to system signature
-    template <typename TComponent> void RequireComponent(bool two = false);
-};
-
-template <typename TComponent>
-void System::RequireComponent(bool two)
-{
-    const auto componentId = Component<TComponent>::GetId();
-    if(!two)
-    { componentSignature1.set(componentId); }
-    else
-    { 
-        componentSignature2.set(componentId); 
-        hasComponentSignature2 = true;
-    }
 };
 
 
@@ -347,8 +329,6 @@ void Registry::AddComponent(Entity entity, TArgs&& ...args)
 
     curComponentPool->Set(entityId, newComponent);
     entityComponentSignatures[entityId].set(componentId);
-
-    //Logger::Log("Component id = " + std::to_string(componentId) + " was added to entity id " + std::to_string(entityId));
 }
 
 template <typename TComponent>
@@ -358,8 +338,6 @@ void Registry::RemoveComponent(Entity entity)
     const int entityId = entity.GetId();
 
     entityComponentSignatures[entityId].set(componentId, false);
-
-    //Logger::Log("Component id = " + std::to_string(componentId) + " was removed from entity id " + std::to_string(entityId));
 }
 
 template <typename TComponent>
@@ -379,6 +357,7 @@ TComponent& Registry::GetComponent(Entity entity) const
     const int componentId = Component<TComponent>::GetId();
     const int entityId = entity.GetId();
 
+    // TODO: what is this really doing... I want to redo the pool system as well
     auto curCompPool = std::static_pointer_cast<Pool<TComponent>>(componentPools[componentId]);
     return curCompPool->Get(entityId);
 }   

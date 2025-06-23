@@ -15,13 +15,11 @@
 
 class RenderSystem : public System {
 public:
-    RenderSystem()
-    {
-        // RequireComponent<TransformComponent>();
+    RenderSystem() {};
 
-        // Requires either a SpriteComponent OR a TextComponent
-        RequireComponent<SpriteComponent>(false);
-        RequireComponent<TextComponent>(true);
+    bool CheckEntity(Entity entity) override
+    {
+        return entity.HasComponent<SpriteComponent>() || entity.HasComponent<TextComponent>();
     }
 
     // TODO: dont like this as a unique_ptr reference, or rather unsure if that is optimal?

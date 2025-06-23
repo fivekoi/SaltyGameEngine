@@ -11,14 +11,16 @@
 #include "Game/ECS/ECS.h"
 #include "Game/Components/TransformComponent.h"
 #include "Game/Components/SpriteComponent.h"
+#include "Game/Components/TextComponent.h"
 
 
 class StageRenderSystem : public System {
 public:
-    StageRenderSystem()
+    StageRenderSystem() {};
+
+    bool CheckEntity(Entity entity) override
     {
-        // RequireComponent<TransformComponent>();
-        RequireComponent<SpriteComponent>();
+        return entity.HasComponent<SpriteComponent>() || entity.HasComponent<TextComponent>();
     }
 
     // TODO: dont like this as a unique_ptr reference, or rather unsure if that is optimal?
