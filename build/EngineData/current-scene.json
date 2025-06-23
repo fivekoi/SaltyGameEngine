@@ -47,33 +47,10 @@
         "zindex": 2
       }
     },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "StageDemo/background.png"
-        }
-      },
-      "name": "BG",
-      "parent-id": -1,
-      "scripts": {},
-      "transform": {
-        "position": [
-          207.0,
-          -16.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          5.0,
-          5.0
-        ],
-        "zindex": 1
-      }
-    }
+    null
   ],
-  "null-count": 0,
+  "null-count": 1,
   "root-ids": [
-    0,
-    1
+    0
   ]
 }
