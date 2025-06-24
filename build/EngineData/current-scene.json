@@ -21,7 +21,18 @@
           ]
         },
         "sprite": {
-          "filepath": "./big.png"
+          "filepath": "StageDemo/player.png"
+        },
+        "text": {
+          "color": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "filepath": "",
+          "fontSize": 8,
+          "text": ""
         }
       },
       "name": "Player",

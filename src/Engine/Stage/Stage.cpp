@@ -21,6 +21,7 @@ using json = nlohmann::json;
 #include "Game/ECS/ECS.h"
 #include "Game/Components/TransformComponent.h"
 #include "Engine/Altered/EngineSpriteComponent.h"
+#include "Engine/Altered/EngineTextComponent.h"
 #include "Game/Components/RigidbodyComponent.h"
 // #include "../Components/BoxColliderComponent.h" might need for visual
 #include "Game/Salty/SaltyCamera.h"
@@ -117,6 +118,20 @@ void Stage::CreateEntityTree(json jEntities, json jRootIds){
             std::string filepath = jValues["filepath"];
             assetManager->AddTexture(filepath); // Duplicate textures are handled in assetManager
             entity.AddComponent<EngineSpriteComponent>(filepath);
+        }
+        if(jComponents.contains("text")){
+            json jValues = jComponents["text"];
+            std::string filepath = jValues["filepath"];
+            std::string text = jValues["text"];
+            int fontSize = jValues["fontSize"];
+            SDL_Color color;
+            color.r = jValues["color"][0];
+            color.g = jValues["color"][1];
+            color.b = jValues["color"][2];
+            color.a = jValues["color"][3];
+
+            // assetManager->AddTexture(filepath); // Duplicate textures are handled in assetManager
+            entity.AddComponent<EngineTextComponent>(filepath, text, fontSize, color);
         }
         if(jComponents.contains("rigidbody")){
             json jValues = jComponents["rigidbody"];

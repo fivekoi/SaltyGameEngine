@@ -64,6 +64,7 @@ private:
 
     void Transform();
     void Sprite();
+    void Text();
     void Rigidbody();
     void BoxCollider();
 

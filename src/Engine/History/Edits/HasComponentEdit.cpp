@@ -12,6 +12,7 @@ using json = nlohmann::json;
 #include "Game/ECS/ECS.h"
 #include "Game/Components/TransformComponent.h"
 #include "Engine/Altered/EngineSpriteComponent.h"
+#include "Engine/Altered/EngineTextComponent.h"
 #include "Game/Components/RigidbodyComponent.h"
 
 
@@ -35,6 +36,13 @@ void HasComponentEdit::Apply(bool undo){
             }
             else entity.RemoveComponent<EngineSpriteComponent>();
             break;
+        case TEXT:
+            if(addComp){
+                if(values.empty()) entity.AddComponent<EngineTextComponent>(); // default values
+                else entity.AddComponent<EngineTextComponent>(std::get<std::string>(values[0]), std::get<std::string>(values[1]), 
+                                                              std::get<int>(values[2]), std::get<SDL_Color>(values[3]));
+            }
+            else entity.RemoveComponent<EngineTextComponent>();
         case RIGIDBODY:
             if(addComp) {
                 if(values.empty()) entity.AddComponent<RigidbodyComponent>(); // default values
@@ -79,6 +87,30 @@ void HasComponentEdit::ApplyJson(bool undo){
             }
             else jComponents.erase("sprite");
             break;
+        case TEXT:
+            if(addComp) {
+                if(values.empty()) { // default values
+                    json jText = {
+                        {"filepath", ""},
+                        {"text", ""},
+                        {"fontSize", 8},
+                        {"color", {0, 0, 0, 1}}
+                    };
+                    jComponents["text"] = jText;
+                }
+                else {
+                    SDL_Color color = std::get<SDL_Color>(values[3]);
+                    json jText = {
+                        {"filepath", std::get<std::string>(values[0])},
+                        {"text", std::get<std::string>(values[1])},
+                        {"fontSize", std::get<int>(values[2])},
+                        {"color", {color.r, color.g, color.b, color.a}}
+                    };
+                    jComponents["text"] = jText;
+                }
+            }
+            else jComponents.erase("text");
+            break;
         case RIGIDBODY: 
             if(addComp) {
                 if(values.empty()) { // default values
@@ -118,6 +150,9 @@ std::string HasComponentEdit::ToString(bool undo){
     switch(compType) {
         case SPRITE:
             componentName = "Sprite";
+            break;
+        case TEXT:
+            componentName = "Text";
             break;
         case RIGIDBODY:
             componentName = "Rigidbody";

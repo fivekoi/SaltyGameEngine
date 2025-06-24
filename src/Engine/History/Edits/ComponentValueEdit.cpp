@@ -11,6 +11,7 @@ using json = nlohmann::json;
 #include "Game/ECS/ECS.h"
 #include "Game/Components/TransformComponent.h"
 #include "Engine/Altered/EngineSpriteComponent.h"
+#include "Engine/Altered/EngineTextComponent.h"
 #include "Game/Components/RigidbodyComponent.h"
 
 
@@ -47,6 +48,19 @@ void ComponentValueEdit::Apply(bool undo){
                 case FILEPATH: sprite.filepath = std::get<std::string>(val); break;
                 default:
                     // TODO: log error - transform does not have ...
+                    break;
+            }
+            break;
+        }
+        case TEXT: {
+            auto& text = entity.GetComponent<EngineTextComponent>();
+            switch(compVar){
+                case FILEPATH: text.filepath = std::get<std::string>(val); break;
+                case TEXT_TEXT: text.text = std::get<std::string>(val); break;
+                case FONTSIZE: text.fontSize = std::get<int>(val); break;
+                case COLOR: text.color = std::get<SDL_Color>(val); break;
+                default:
+                    // TODO: log error - text does not have...
                     break;
             }
             break;
@@ -104,6 +118,20 @@ void ComponentValueEdit::ApplyJson(bool undo){
                 case FILEPATH: jComponents["sprite"]["filepath"] = std::get<std::string>(val); break;
                 break;
             }
+            break;
+        }
+        case TEXT: {
+            switch(compVar){
+                case FILEPATH: jComponents["text"]["filepath"] = std::get<std::string>(val); break;
+                case TEXT_TEXT: jComponents["text"]["text"] = std::get<std::string>(val); break;
+                case FONTSIZE: jComponents["text"]["fontSize"] = std::get<int>(val); break;
+                case COLOR: {
+                    SDL_Color color = std::get<SDL_Color>(val);
+                    jComponents["text"]["filepath"] = {color.r, color.g, color.b, color.a}; 
+                    break;
+                }
+            }
+            break;
         }
         case RIGIDBODY: {
             switch(compVar){
@@ -146,6 +174,9 @@ std::string ComponentValueEdit::ToString(bool undo){
             break;
         case SPRITE:
             componentName = "Sprite";
+            break;
+        case TEXT:
+            componentName = "Text";
             break;
         case RIGIDBODY:
             componentName = "Rigidbody";

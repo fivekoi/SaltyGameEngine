@@ -4,6 +4,8 @@
 #include <string>
 #include <variant>
 
+#include <SDL.h>
+
 #include "Engine/EngineData.h"
 
 #include "Game/ECS/ECS.h"
@@ -26,6 +28,7 @@ enum EComponentTypes {
     NAME, // Okay, entity.name is not technically a component, but using ComponentValueEdit is convenient for name edits
     TRANSFORM,
     SPRITE,
+    TEXT,
     RIGIDBODY,
     BOXCOL
 };
@@ -40,13 +43,17 @@ enum EComponentVars {
     ZINDEX,
     // SPRITE
     FILEPATH,
+    // TEXT
+    TEXT_TEXT,
+    FONTSIZE,
+    COLOR,
     // RIGIDBODY
     INITVEL_X,
     INITVEL_Y
 };
 
 // Used to store changes made to components
-typedef std::variant<int, float, std::string> ComponentValue;
+typedef std::variant<int, float, std::string, SDL_Color> ComponentValue;
 
 // When the user edits a value in the component, i.e. transform.position.x from 0.0f to 1.0f
 class ComponentValueEdit : public IEdit {

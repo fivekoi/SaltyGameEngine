@@ -14,6 +14,7 @@
 // TODO: could have a grouped header, which contains all of these includes
 #include "Game/Components/TransformComponent.h"
 #include "Engine/Altered/EngineSpriteComponent.h"
+#include "Engine/Altered/EngineTextComponent.h"
 #include "Game/Components/RigidbodyComponent.h"
 #include "Game/Components/BoxColliderComponent.h"
 #include "Game/Salty/SaltyDebug.h"
@@ -77,6 +78,7 @@ void ComponentTab::Transform(){
         ImGui::SeparatorText("");
     }
 }
+
 void ComponentTab::Sprite(){
     Entity& entity = *registry->entityTree[selectedEntity].get();
     if(entity.HasComponent<EngineSpriteComponent>()){
@@ -120,6 +122,51 @@ void ComponentTab::Sprite(){
         }
     }
 }
+
+void ComponentTab::Text(){
+    Entity& entity = *registry->entityTree[selectedEntity].get();
+    if(entity.HasComponent<EngineTextComponent>()){
+        auto& text = entity.GetComponent<EngineTextComponent>();
+        if (ImGui::CollapsingHeader("Text", &notRemoved, ImGuiTreeNodeFlags_DefaultOpen))
+        {
+            ImGui::PushItemWidth(ImGui::GetWindowWidth() * 0.75f);
+
+            // ImGui::Text("Source Image");
+            // // TODO: this should change dimensions based on texture dims
+            // // TODO: need a better way to determine the y-size
+            // ImGui::Image(assetManager->GetTexture(sprite.filepath), ImVec2(64, 64)); 
+            // if (ImGui::BeginDragDropTarget()) {
+            //     if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("FILEPATH_PNG"))
+            //     {
+            //         auto payloadFilepath = static_cast<const char*>(payload->Data);
+            //         std::string filepath(payloadFilepath);
+            //         Debug::Log("Added " + filepath + " as sprite to entity");
+
+            //         editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(SPRITE, FILEPATH, registry, selectedEntity, ComponentValue(sprite.filepath), ComponentValue(filepath))));
+
+            //         assetManager->AddTexture(filepath);
+            //         sprite.filepath = filepath;
+            //     }
+            // }
+
+            ImGui::PopItemWidth();
+            ImGui::SeparatorText("");
+        }
+
+        // User pressed close button on header, remove component
+        if(!notRemoved){
+            notRemoved = true;
+
+            // Create vector of values and add it to editHistory
+            std::vector<ComponentValue> values;
+            values.push_back(ComponentValue(text.filepath));
+            editHistory->Do(std::move(std::make_unique<HasComponentEdit>(SPRITE, registry, selectedEntity, false, values)));
+
+            entity.RemoveComponent<EngineTextComponent>();
+        }
+    }
+}
+
 void ComponentTab::Rigidbody(){
     Entity& entity = *registry->entityTree[selectedEntity].get();
     if(entity.HasComponent<RigidbodyComponent>()){
@@ -161,6 +208,7 @@ void ComponentTab::Rigidbody(){
         }
     }
 }
+
 void ComponentTab::BoxCollider(){
     Entity& entity = *registry->entityTree[selectedEntity].get();
     if(entity.HasComponent<BoxColliderComponent>()){
@@ -210,6 +258,7 @@ void ComponentTab::Begin(){
         // Iterate through all possible components, displaying if HasComponent()
         Transform();
         Sprite();
+        Text();
         Rigidbody();
         BoxCollider();
 
@@ -230,6 +279,13 @@ void ComponentTab::Begin(){
                 
                 // TODO: unify comments for this section
                 editHistory->Do(std::move(std::make_unique<HasComponentEdit>(SPRITE, registry, selectedEntity, true, std::vector<ComponentValue>())));
+
+                addComponentOpen = false;
+            }
+            if (ImGui::Selectable("Text", false, entity.HasComponent<EngineTextComponent>() ? ImGuiSelectableFlags_Disabled : 0)) {
+                entity.AddComponent<EngineTextComponent>();
+                
+                editHistory->Do(std::move(std::make_unique<HasComponentEdit>(TEXT, registry, selectedEntity, true, std::vector<ComponentValue>())));
 
                 addComponentOpen = false;
             }

@@ -25,10 +25,10 @@ struct Sound {
 // TODO: need access to SoLoud engine somehow, could be here or access from main Game
 class Audio {
     private:
+        // Both should only be accessed internally, but have to be static here
         static std::vector<std::unique_ptr<SoLoud::AudioSource>> sounds;
         static std::deque<int> freeIds; // TODO: probably should just use queue or stack, dont have time to think bout rn
     public:
-        // Both should only be accessed internally, but have to be static here
         static SoLoud::Soloud soloud; // TODO: do i like these in caps??
 
         // TODO: definitely need an Audio::ClearLoadedSounds();
