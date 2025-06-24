@@ -32,4 +32,9 @@ void PlayerMovement::Update(float dt){
         std::cout << val << '\n';
         val += 3;
     }
+
+    if(Input::KeyHeld[KEY_W]){
+        Debug::Log("MouseX");
+        std::cout << Input::MouseX << '\n';
+    }
 }

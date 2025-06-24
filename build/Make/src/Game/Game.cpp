@@ -352,7 +352,7 @@ void Game::ProcessInput()
                 break;
             case SDL_MOUSEMOTION:
                 Input::MouseX = event.motion.x;
-                Input::MouseY = event.motion.y; // TODO: should probably be loaded at start of app
+                Input::MouseY = event.motion.y; // TODO: needs to be calculated to be in world space
                 break;
             // case SDL_CONTROLLERBUTTONDOWN:
             //     std::cout << "Controller Button Down: " << static_cast<int>(event.cbutton.button) << std::endl;

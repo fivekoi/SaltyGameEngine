@@ -52,10 +52,11 @@ glm::vec2 EngineAssetManager::GetTextureSize(const std::string& filepath)
 
 
 void EngineAssetManager::AddFont(const std::string& filepath, int fontSize){
-    fonts.emplace(filepath, TTF_OpenFont(("Projects/" + engineData->projectName + + "/Unique/Assets/" + filepath).c_str(), fontSize));
+    fonts.emplace(std::pair<std::string, int>(filepath, fontSize), 
+                  TTF_OpenFont(("Projects/" + engineData->projectName + + "/Unique/Assets/" + filepath).c_str(), fontSize));
 }
 
-TTF_Font* EngineAssetManager::GetFont(const std::string& filepath){
+TTF_Font* EngineAssetManager::GetFont(const std::string& filepath, int fontSize){
     // assert(fonts.count(filepath));
-    return fonts[filepath];
+    return fonts[std::pair<std::string, int>(filepath, fontSize)];
 }
