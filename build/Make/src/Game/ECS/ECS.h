@@ -102,7 +102,7 @@ private:
         }
     };
 
-    void OnParentIdChanged(int prevParentId, int newParentId); // TODO: not sure i like this naming convention
+    void OnParentIdChanged(int prevParentId, int newParentId);
 public:
     Entity(): id(-1) { /* Debug::Log("ERROR: Entity default constructor called", -1); */ }; // default constructor, never used
     Entity(int id) : id(id) {}; // parentId defaults to -1, assumes at root
@@ -134,7 +134,7 @@ public:
     // TODO: might want to add this to initialization
     // TODO: might move parentId and childrenIds to private
     std::string name;
-    PInt parentId = PInt(this, -1); // -1 if parent is root/scene // TODO: should maybe initialize above? can just reassign
+    PInt parentId = PInt(this, -1); // -1 if parent is root/scene
     std::vector<int> childrenIds;
 
     // TODO: these should be hidden from user
