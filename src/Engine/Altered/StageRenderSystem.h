@@ -10,8 +10,8 @@
 
 #include "Game/ECS/ECS.h"
 #include "Game/Components/TransformComponent.h"
-#include "Game/Components/SpriteComponent.h"
-#include "Game/Components/TextComponent.h"
+#include "Engine/Altered/EngineSpriteComponent.h"
+#include "Engine/Altered/EngineTextComponent.h"
 
 
 class StageRenderSystem : public System {
@@ -20,7 +20,7 @@ public:
 
     bool CheckEntity(Entity entity) override
     {
-        return entity.HasComponent<SpriteComponent>() || entity.HasComponent<TextComponent>();
+        return entity.HasComponent<EngineSpriteComponent>() || entity.HasComponent<EngineTextComponent>();
     }
 
     // TODO: dont like this as a unique_ptr reference, or rather unsure if that is optimal?
@@ -42,8 +42,8 @@ public:
             float cos = glm::cos(transform.rotation / 180 * 3.14);
             float sin = glm::sin(transform.rotation / 180 * 3.14);
 
-            if(entity.HasComponent<SpriteComponent>()){
-                const auto sprite = entity.GetComponent<SpriteComponent>();
+            if(entity.HasComponent<EngineSpriteComponent>()){
+                const auto sprite = entity.GetComponent<EngineSpriteComponent>();
                 glm::vec2 textureSize = assetManager->GetTextureSize(sprite.filepath);
                 textureSize = textureSize;
 
@@ -72,7 +72,7 @@ public:
                 );
             }
             
-            if(entity.HasComponent<TextComponent>()){
+            if(entity.HasComponent<EngineTextComponent>()){
                 
             }
         }

@@ -69,35 +69,11 @@
         ],
         "zindex": 1
       }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "./small.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": -1,
-      "scripts": {},
-      "transform": {
-        "position": [
-          0.0,
-          0.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          1.0,
-          1.0
-        ],
-        "zindex": 0
-      }
     }
   ],
   "null-count": 0,
   "root-ids": [
     0,
-    1,
-    2
+    1
   ]
 }

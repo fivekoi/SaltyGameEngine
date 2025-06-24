@@ -13,7 +13,7 @@
 #include "Game/ECS/ECS.h"
 // TODO: could have a grouped header, which contains all of these includes
 #include "Game/Components/TransformComponent.h"
-#include "Game/Components/SpriteComponent.h"
+#include "Engine/Altered/EngineSpriteComponent.h"
 #include "Game/Components/RigidbodyComponent.h"
 #include "Game/Components/BoxColliderComponent.h"
 #include "Game/Salty/SaltyDebug.h"
@@ -79,8 +79,8 @@ void ComponentTab::Transform(){
 }
 void ComponentTab::Sprite(){
     Entity& entity = *registry->entityTree[selectedEntity].get();
-    if(entity.HasComponent<SpriteComponent>()){
-        auto& sprite = entity.GetComponent<SpriteComponent>();
+    if(entity.HasComponent<EngineSpriteComponent>()){
+        auto& sprite = entity.GetComponent<EngineSpriteComponent>();
         if (ImGui::CollapsingHeader("Sprite", &notRemoved, ImGuiTreeNodeFlags_DefaultOpen))
         {
             ImGui::PushItemWidth(ImGui::GetWindowWidth() * 0.75f);
@@ -116,7 +116,7 @@ void ComponentTab::Sprite(){
             values.push_back(ComponentValue(sprite.filepath));
             editHistory->Do(std::move(std::make_unique<HasComponentEdit>(SPRITE, registry, selectedEntity, false, values)));
 
-            entity.RemoveComponent<SpriteComponent>();
+            entity.RemoveComponent<EngineSpriteComponent>();
         }
     }
 }
@@ -225,8 +225,8 @@ void ComponentTab::Begin(){
         if (addComponentOpen) {
             ImGui::BeginChild("Component List", ImVec2(0, 100), true); // TODO: should probably adjust this height a bit
 
-            if (ImGui::Selectable("Sprite", false, entity.HasComponent<SpriteComponent>() ? ImGuiSelectableFlags_Disabled : 0)) {
-                entity.AddComponent<SpriteComponent>();
+            if (ImGui::Selectable("Sprite", false, entity.HasComponent<EngineSpriteComponent>() ? ImGuiSelectableFlags_Disabled : 0)) {
+                entity.AddComponent<EngineSpriteComponent>();
                 
                 // TODO: unify comments for this section
                 editHistory->Do(std::move(std::make_unique<HasComponentEdit>(SPRITE, registry, selectedEntity, true, std::vector<ComponentValue>())));

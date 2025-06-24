@@ -10,7 +10,7 @@ using json = nlohmann::json;
 
 #include "Game/ECS/ECS.h"
 #include "Game/Components/TransformComponent.h"
-#include "Game/Components/SpriteComponent.h"
+#include "Engine/Altered/EngineSpriteComponent.h"
 #include "Game/Components/RigidbodyComponent.h"
 
 
@@ -42,7 +42,7 @@ void ComponentValueEdit::Apply(bool undo){
             break;
         }
         case SPRITE: {
-            auto& sprite = entity.GetComponent<SpriteComponent>();
+            auto& sprite = entity.GetComponent<EngineSpriteComponent>();
             switch(compVar){
                 case FILEPATH: sprite.filepath = std::get<std::string>(val); break;
                 default:

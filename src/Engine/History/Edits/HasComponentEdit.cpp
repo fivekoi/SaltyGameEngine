@@ -11,7 +11,7 @@ using json = nlohmann::json;
 
 #include "Game/ECS/ECS.h"
 #include "Game/Components/TransformComponent.h"
-#include "Game/Components/SpriteComponent.h"
+#include "Engine/Altered/EngineSpriteComponent.h"
 #include "Game/Components/RigidbodyComponent.h"
 
 
@@ -30,10 +30,10 @@ void HasComponentEdit::Apply(bool undo){
     switch(compType) {
         case SPRITE:
             if(addComp) {
-                if(values.empty()) entity.AddComponent<SpriteComponent>(); // default values
-                else entity.AddComponent<SpriteComponent>(std::get<std::string>(values[0]));
+                if(values.empty()) entity.AddComponent<EngineSpriteComponent>(); // default values
+                else entity.AddComponent<EngineSpriteComponent>(std::get<std::string>(values[0]));
             }
-            else entity.RemoveComponent<SpriteComponent>();
+            else entity.RemoveComponent<EngineSpriteComponent>();
             break;
         case RIGIDBODY:
             if(addComp) {

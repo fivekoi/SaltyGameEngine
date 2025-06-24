@@ -15,7 +15,7 @@ using json = nlohmann::json;
 
 #include "Game/ECS/ECS.h"
 #include "Game/Components/TransformComponent.h"
-#include "Game/Components/SpriteComponent.h"
+#include "Engine/Altered/EngineSpriteComponent.h"
 #include "Game/Components/RigidbodyComponent.h"
 #include "Game/Components/BoxColliderComponent.h"
 
@@ -48,8 +48,8 @@ EntityExistsEdit::EntityExistsEdit(std::shared_ptr<Registry> registry, std::shar
         zindex = transform.zindex;
 
         // Check for the other components
-        if(entity.HasComponent<SpriteComponent>()){
-            auto& sprite = entity.GetComponent<SpriteComponent>();
+        if(entity.HasComponent<EngineSpriteComponent>()){
+            auto& sprite = entity.GetComponent<EngineSpriteComponent>();
             std::vector<ComponentValue> values;
             values.push_back(ComponentValue(sprite.filepath));
             components.push_back(std::make_unique<HasComponentEdit>(SPRITE, registry, entityId, true, values));
