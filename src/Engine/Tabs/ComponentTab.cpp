@@ -131,10 +131,8 @@ void ComponentTab::Text(){
         {
             ImGui::PushItemWidth(ImGui::GetWindowWidth() * 0.75f);
 
-            // ImGui::Text("Source Image");
-            // // TODO: this should change dimensions based on texture dims
-            // // TODO: need a better way to determine the y-size
-            // ImGui::Image(assetManager->GetTexture(sprite.filepath), ImVec2(64, 64)); 
+            ImGui::Text("Source Font");
+            ImGui::Text(text.filepath.c_str()); 
             // if (ImGui::BeginDragDropTarget()) {
             //     if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("FILEPATH_PNG"))
             //     {
@@ -148,6 +146,24 @@ void ComponentTab::Text(){
             //         sprite.filepath = filepath;
             //     }
             // }
+
+            ImGui::Spacing();
+            ImGui::Text("Text");
+            std::string prev = text.text;
+            ImGui::InputText("##text-text", &text.text);
+            if(ImGui::IsItemActivated()) prevs = prev;
+            // if(ImGui::IsItemDeactivatedAfterEdit()) 
+            // { editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(NAME, POSITION_X, registry, selectedEntity, ComponentValue(prevs), ComponentValue(entity.name)))); }
+            
+
+            ImGui::Text("Font Size");
+            ImGui::InputInt("##fontSize", &text.fontSize);
+
+            ImGui::Text("Color");
+            ImVec4 color = ImVec4((float)text.color.r / 255.0f, (float)text.color.g / 255.0f, 
+                                  (float)text.color.b / 255.0f, (float)text.color.a / 255.0f);
+            ImGui::ColorEdit4("##Color", (float*)&color, ImGuiColorEditFlags_NoInputs | ImGuiColorEditFlags_NoLabel | ImGuiColorEditFlags_AlphaPreview);
+            //text.color = 
 
             ImGui::PopItemWidth();
             ImGui::SeparatorText("");
@@ -249,7 +265,7 @@ void ComponentTab::Begin(){
         std::string prev = entity.name;
         ImGui::InputText("##name", &entity.name);
         if(ImGui::IsItemActivated()) prevs = prev;
-        if(ImGui::IsItemDeactivatedAfterEdit()) // Used arbitrary ECOmponentVar in POSITION_X, is not read by NAME edit
+        if(ImGui::IsItemDeactivatedAfterEdit()) // Used arbitrary EComponentVar (POSITION_X), it is not read by NAME edit
         { editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(NAME, POSITION_X, registry, selectedEntity, ComponentValue(prevs), ComponentValue(entity.name)))); }
         
         ImGui::PopItemWidth();

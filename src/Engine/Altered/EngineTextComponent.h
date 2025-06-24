@@ -12,7 +12,7 @@ struct EngineTextComponent {
     int fontSize;
     SDL_Color color;
 
-    EngineTextComponent(std::string filepath = "", std::string text = "", int fontSize = 8, const SDL_Color color = {0, 0, 0, 1})
+    EngineTextComponent(std::string filepath = "", std::string text = "", int fontSize = 8, const SDL_Color color = {0, 0, 0, 255})
     {
         this->filepath = filepath;
         this->text = text;

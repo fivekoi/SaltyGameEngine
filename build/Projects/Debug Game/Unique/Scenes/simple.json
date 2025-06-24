@@ -20,15 +20,12 @@
             0.0
           ]
         },
-        "sprite": {
-          "filepath": "StageDemo/player.png"
-        },
         "text": {
           "color": [
             0,
             0,
             0,
-            1
+            255
           ],
           "filepath": "",
           "fontSize": 8,

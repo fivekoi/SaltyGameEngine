@@ -94,7 +94,7 @@ void HasComponentEdit::ApplyJson(bool undo){
                         {"filepath", ""},
                         {"text", ""},
                         {"fontSize", 8},
-                        {"color", {0, 0, 0, 1}}
+                        {"color", {0, 0, 0, 255}}
                     };
                     jComponents["text"] = jText;
                 }
