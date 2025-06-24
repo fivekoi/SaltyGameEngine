@@ -21,7 +21,7 @@
           ]
         },
         "sprite": {
-          "filepath": "StageDemo/player.png"
+          "filepath": "./big.png"
         }
       },
       "name": "Player",

@@ -21,6 +21,8 @@ void EngineAssetManager::ClearAssets()
 
 void EngineAssetManager::AddTexture(const std::string& filepath)
 {
+    std::cout << filepath << '\n';
+
     if(!textures.count(filepath))
     {
         // TODO: need to check that filepath is valid, just log some error here, should never happen but who knows
