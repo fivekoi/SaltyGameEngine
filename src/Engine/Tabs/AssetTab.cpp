@@ -77,6 +77,21 @@ void AssetTab::Begin() {
                     ImGui::EndDragDropSource();
                 }
             }
+            else if(filetype == ".ttf") {
+                ImGui::Text(filename.c_str());
+                if (ImGui::BeginDragDropSource(ImGuiDragDropFlags_SourceAllowNullID)) // Flag allows ImGui::Text to be a DD source
+                {
+                    // Get subdir path if we are in one
+                    std::string subdir = std::filesystem::relative(currentDir, assetsRootDir).string();
+                    subdir = subdir.length() == 0 ? subdir : subdir + '/';
+
+                    ImGui::SetDragDropPayload("FILEPATH_TTF", (subdir+filename).c_str(), subdir.length() + filename.length() + 1);
+                    // TODO: i want this to be the image instead of the filepath? probably both
+                    ImGui::Text((subdir+filename).c_str());
+                    //ImGui::Text(filename.c_str());
+                    ImGui::EndDragDropSource();
+                }
+            }
             else{
                 ImGui::Text(filename.c_str());
             }

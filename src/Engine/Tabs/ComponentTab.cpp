@@ -133,19 +133,20 @@ void ComponentTab::Text(){
 
             ImGui::Text("Source Font");
             ImGui::Text(text.filepath.c_str()); 
-            // if (ImGui::BeginDragDropTarget()) {
-            //     if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("FILEPATH_PNG"))
-            //     {
-            //         auto payloadFilepath = static_cast<const char*>(payload->Data);
-            //         std::string filepath(payloadFilepath);
-            //         Debug::Log("Added " + filepath + " as sprite to entity");
+            if (ImGui::BeginDragDropTarget()) {
+                if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("FILEPATH_TTF"))
+                {
+                    auto payloadFilepath = static_cast<const char*>(payload->Data);
+                    std::string filepath(payloadFilepath);
+                    Debug::Log("Added " + filepath + " as ttf font to entity");
 
-            //         editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(SPRITE, FILEPATH, registry, selectedEntity, ComponentValue(sprite.filepath), ComponentValue(filepath))));
-
-            //         assetManager->AddTexture(filepath);
-            //         sprite.filepath = filepath;
-            //     }
-            // }
+                    editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(TEXT, FILEPATH, registry, selectedEntity, ComponentValue(text.filepath), ComponentValue(filepath))));
+                    
+                    text.filepath = filepath;
+                    assetManager->AddFont(filepath, text.fontSize);
+                    assetManager->AddFontTexture(filepath, text.fontSize, text.text, text.color);
+                }
+            }
 
             ImGui::Spacing();
             ImGui::Text("Text");
