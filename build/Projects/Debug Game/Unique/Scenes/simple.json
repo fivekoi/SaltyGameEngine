@@ -32,7 +32,7 @@
           ],
           "filepath": "Fonts/ka1.ttf",
           "fontSize": 8,
-          "text": ""
+          "text": "hello, this is some text!"
         }
       },
       "name": "Player",
@@ -47,13 +47,13 @@
       },
       "transform": {
         "position": [
-          956.0,
+          771.0,
           -515.0
         ],
         "rotation": 0.0,
         "scale": [
-          -4.0,
-          4.0
+          1.0,
+          1.0
         ],
         "zindex": 2
       }
@@ -80,10 +80,42 @@
         ],
         "zindex": 1
       }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            50,
+            70,
+            0,
+            255
+          ],
+          "filepath": "Fonts/ka1.ttf",
+          "fontSize": 50,
+          "text": "more text?"
+        }
+      },
+      "name": "MoreText",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          406.0,
+          -144.0
+        ],
+        "rotation": 15.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
     }
   ],
   "root-ids": [
     0,
-    1
+    1,
+    2
   ]
 }

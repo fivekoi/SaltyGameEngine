@@ -51,7 +51,9 @@ int Engine::Initialize()
 
     // Main window appears now
     // Init main SDL window
-    if(SDL_Init(SDL_INIT_VIDEO) < 0) { return -1; }
+    if(SDL_Init(SDL_INIT_VIDEO) < 0) return -1; 
+    // Init SDL TTF for text
+    if(TTF_Init() < 0) return -1;
 
     SDL_DisplayMode dm;
     SDL_GetDesktopDisplayMode(0, &dm);
@@ -340,5 +342,6 @@ void Engine::Destroy()
     TTF_Quit();
     // Mix_CloseAudio();    
     SDL_DestroyWindow(window);
+    TTF_Quit();
     SDL_Quit();
 }

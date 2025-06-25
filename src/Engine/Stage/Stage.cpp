@@ -130,7 +130,8 @@ void Stage::CreateEntityTree(json jEntities, json jRootIds){
             color.b = jValues["color"][2];
             color.a = jValues["color"][3];
 
-            // assetManager->AddTexture(filepath); // Duplicate textures are handled in assetManager
+            assetManager->AddFont(filepath, fontSize);
+            assetManager->CreateFontTexture(filepath, fontSize, text, color); 
             entity.AddComponent<EngineTextComponent>(filepath, text, fontSize, color);
         }
         if(jComponents.contains("rigidbody")){

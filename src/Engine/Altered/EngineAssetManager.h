@@ -20,7 +20,6 @@ private:
     
     // From (filepath, fontSize) -> TTF_Font
     std::map<std::pair<std::string, int>, TTF_Font*> fonts;
-    void CreateFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
     struct FontTextureKey {
         FontTextureKey(std::string filepath, int fontSize, std::string text, SDL_Color color)
         : filepath(filepath), fontSize(fontSize), text(text), color(color) {};
@@ -59,6 +58,7 @@ public:
 
     void AddFont(const std::string& filepath, int fontSize);
     TTF_Font* GetFont(const std::string& filepath, int fontSize);
+    void CreateFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
     SDL_Texture* GetFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
     glm::ivec2 GetFontTextureSize(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
 };
