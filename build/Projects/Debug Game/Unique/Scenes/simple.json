@@ -91,9 +91,14 @@
             0,
             255
           ],
-          "filepath": "Fonts/ka1.ttf",
-          "fontSize": 50,
-          "text": "more text?"
+          "filepath": [
+            50,
+            70,
+            0,
+            255
+          ],
+          "fontSize": 68,
+          "text": "WOWOWOWWO"
         }
       },
       "name": "MoreText",
@@ -104,7 +109,7 @@
           406.0,
           -144.0
         ],
-        "rotation": 15.0,
+        "rotation": 0.0,
         "scale": [
           3.0,
           3.0

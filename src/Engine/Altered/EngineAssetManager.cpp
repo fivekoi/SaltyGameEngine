@@ -62,7 +62,7 @@ TTF_Font* EngineAssetManager::GetFont(const std::string& filepath, int fontSize)
     return fonts[std::pair<std::string, int>(filepath, fontSize)];
 }
 
-void EngineAssetManager::CreateFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color){
+void EngineAssetManager::AddFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color){
     TTF_Font* font = GetFont(filepath, fontSize);
     
     SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), color);

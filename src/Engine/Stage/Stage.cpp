@@ -131,7 +131,7 @@ void Stage::CreateEntityTree(json jEntities, json jRootIds){
             color.a = jValues["color"][3];
 
             assetManager->AddFont(filepath, fontSize);
-            assetManager->CreateFontTexture(filepath, fontSize, text, color); 
+            assetManager->AddFontTexture(filepath, fontSize, text, color); 
             entity.AddComponent<EngineTextComponent>(filepath, text, fontSize, color);
         }
         if(jComponents.contains("rigidbody")){

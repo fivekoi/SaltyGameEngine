@@ -152,23 +152,49 @@ void ComponentTab::Text(){
             std::string prev = text.text;
             ImGui::InputText("##text-text", &text.text);
             if(ImGui::IsItemActivated()) prevs = prev;
-            // if(ImGui::IsItemDeactivatedAfterEdit()) 
-            // { editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(NAME, POSITION_X, registry, selectedEntity, ComponentValue(prevs), ComponentValue(entity.name)))); }
-            
+            if(ImGui::IsItemDeactivatedAfterEdit()) 
+            { editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(TEXT, TEXT_TEXT, registry, selectedEntity, ComponentValue(prevs), ComponentValue(text.text)))); }
+            if(text.text != prev){
+                // TODO: should also clear previous one from memory
+
+                assetManager->AddFontTexture(text.filepath, text.fontSize, text.text, text.color);
+            }
 
             ImGui::Text("Font Size");
+            int prev2 = text.fontSize;
             ImGui::InputInt("##fontSize", &text.fontSize);
-            
+            if(ImGui::IsItemActivated()) previ = prev2;
+            if(ImGui::IsItemDeactivatedAfterEdit()) 
+            { editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(TEXT, FONTSIZE, registry, selectedEntity, ComponentValue(previ), ComponentValue(text.fontSize)))); }
+            if(text.fontSize != prev2){
+                // TODO: should also clear previous one from memory
+
+                assetManager->AddFont(text.filepath, text.fontSize);
+                assetManager->AddFontTexture(text.filepath, text.fontSize, text.text, text.color);
+            }
             
 
             ImGui::Text("Color");
+            SDL_Color prev3 = text.color;
             ImVec4 color = ImVec4((float)text.color.r / 255.0f, (float)text.color.g / 255.0f, 
                                   (float)text.color.b / 255.0f, (float)text.color.a / 255.0f);
             ImGui::ColorEdit4("##Color", (float*)&color, ImGuiColorEditFlags_NoInputs | ImGuiColorEditFlags_NoLabel | ImGuiColorEditFlags_AlphaPreview);
-            text.color.r = int(color.x * 255);
-            text.color.g = int(color.y * 255);
-            text.color.b = int(color.z * 255);
-            text.color.a = int(color.w * 255);
+            if(ImGui::IsItemActivated()) prevc = prev3;
+            if(ImGui::IsItemDeactivatedAfterEdit()) 
+            { editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(TEXT, COLOR, registry, selectedEntity, ComponentValue(prevc), ComponentValue(text.color)))); }
+            if(text.color.r != int(color.x * 255) || text.color.g != int(color.y * 255) 
+            || text.color.b != int(color.z * 255) || text.color.a != int(color.w * 255))
+            {                
+                text.color.r = int(color.x * 255);
+                text.color.g = int(color.y * 255);
+                text.color.b = int(color.z * 255);
+                text.color.a = int(color.w * 255);
+
+                // TODO: should also clear previous one from memory
+
+                assetManager->AddFontTexture(text.filepath, text.fontSize, text.text, text.color);
+            }
+            
 
             ImGui::PopItemWidth();
             ImGui::SeparatorText("");

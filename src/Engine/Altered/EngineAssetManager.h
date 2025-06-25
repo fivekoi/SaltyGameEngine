@@ -58,7 +58,7 @@ public:
 
     void AddFont(const std::string& filepath, int fontSize);
     TTF_Font* GetFont(const std::string& filepath, int fontSize);
-    void CreateFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
+    void AddFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
     SDL_Texture* GetFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
     glm::ivec2 GetFontTextureSize(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
 };

@@ -4,6 +4,8 @@
 #include <filesystem>
 #include <vector>
 
+#include <SDL.h>
+
 #include <json.hpp>
 using json = nlohmann::json;
 
@@ -52,6 +54,7 @@ private:
     int previ;
     float prevf;
     std::string prevs;
+    SDL_Color prevc;
 
     std::shared_ptr<EditHistory> editHistory;
     std::shared_ptr<EngineData> engineData;
