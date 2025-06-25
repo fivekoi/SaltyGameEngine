@@ -21,11 +21,9 @@ void EngineAssetManager::ClearAssets()
 
 void EngineAssetManager::AddTexture(const std::string& filepath)
 {
-    std::cout << filepath << '\n';
-
     if(!textures.count(filepath))
     {
-        // TODO: need to check that filepath is valid, just log some error here, should never happen but who knows
+        // TODO: should check that filepath is valid, just log some error here, should never happen but who knows
         SDL_Surface* surface = IMG_Load(("Projects/" + engineData->projectName + + "/Unique/Assets/" + filepath).c_str());
         SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
@@ -33,6 +31,7 @@ void EngineAssetManager::AddTexture(const std::string& filepath)
         SDL_Point sdlSize;
         SDL_QueryTexture(texture, NULL, NULL, &sdlSize.x, &sdlSize.y);
         glm::vec2 size = glm::vec2(sdlSize.x, sdlSize.y);
+        // TODO: should this be an ivec2?
 
         textures.emplace(filepath, texture);
         textureSizes.emplace(filepath, size);
@@ -55,10 +54,35 @@ glm::vec2 EngineAssetManager::GetTextureSize(const std::string& filepath)
 
 void EngineAssetManager::AddFont(const std::string& filepath, int fontSize){
     fonts.emplace(std::pair<std::string, int>(filepath, fontSize), 
-                  TTF_OpenFont(("Projects/" + engineData->projectName + + "/Unique/Assets/" + filepath).c_str(), fontSize));
+                  TTF_OpenFont(("Projects/" + engineData->projectName + "/Unique/Assets/" + filepath).c_str(), fontSize));
 }
 
 TTF_Font* EngineAssetManager::GetFont(const std::string& filepath, int fontSize){
     // assert(fonts.count(filepath));
     return fonts[std::pair<std::string, int>(filepath, fontSize)];
+}
+
+void EngineAssetManager::CreateFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color){
+    TTF_Font* font = GetFont(filepath, fontSize);
+    
+    SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), color);
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+    SDL_FreeSurface(surface);
+
+    glm::ivec2 size;
+    TTF_SizeText(font, text.c_str(), &size.x, &size.y);
+
+    FontTextureKey ftk = FontTextureKey(filepath, fontSize, text, color);
+    fontTextures.emplace(ftk, texture);
+    fontTextureSizes.emplace(ftk, size);
+}
+
+SDL_Texture* EngineAssetManager::GetFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color)
+{
+    return fontTextures[FontTextureKey(filepath, fontSize, text, color)];
+}
+
+glm::ivec2 EngineAssetManager::GetFontTextureSize(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color)
+{
+    return fontTextureSizes[FontTextureKey(filepath, fontSize, text, color)];
 }

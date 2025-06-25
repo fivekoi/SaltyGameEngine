@@ -158,12 +158,17 @@ void ComponentTab::Text(){
 
             ImGui::Text("Font Size");
             ImGui::InputInt("##fontSize", &text.fontSize);
+            
+            
 
             ImGui::Text("Color");
             ImVec4 color = ImVec4((float)text.color.r / 255.0f, (float)text.color.g / 255.0f, 
                                   (float)text.color.b / 255.0f, (float)text.color.a / 255.0f);
             ImGui::ColorEdit4("##Color", (float*)&color, ImGuiColorEditFlags_NoInputs | ImGuiColorEditFlags_NoLabel | ImGuiColorEditFlags_AlphaPreview);
-            //text.color = 
+            text.color.r = int(color.x * 255);
+            text.color.g = int(color.y * 255);
+            text.color.b = int(color.z * 255);
+            text.color.a = int(color.w * 255);
 
             ImGui::PopItemWidth();
             ImGui::SeparatorText("");

@@ -20,6 +20,9 @@
             0.0
           ]
         },
+        "sprite": {
+          "filepath": "./big.png"
+        },
         "text": {
           "color": [
             0,
@@ -27,7 +30,7 @@
             0,
             255
           ],
-          "filepath": "",
+          "filepath": "Fonts/ka1.ttf",
           "fontSize": 8,
           "text": ""
         }
@@ -59,7 +62,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "StageDemo/background.png"
+          "filepath": "RedMagnet.png"
         }
       },
       "name": "BG",
