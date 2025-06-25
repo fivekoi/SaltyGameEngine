@@ -10,6 +10,7 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_ttf.h>
 #include <soloud.h>
 
 #include "Game/ECS/ECS.h"
@@ -47,6 +48,8 @@ int Game::Initialize()
 
     // Init main SDL window
     if(SDL_Init(SDL_INIT_VIDEO) < 0) { return -1; }
+    // Init SDL TTF for text
+    if(TTF_Init() < 0) return -1;
 
     std::ifstream f("Unique/settings.json");
     json jSettings = json::parse(f);
@@ -405,5 +408,6 @@ void Game::Destroy()
 
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
+    TTF_Quit();
     SDL_Quit();
 }

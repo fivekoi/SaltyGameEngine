@@ -86,19 +86,14 @@
       "components": {
         "text": {
           "color": [
-            50,
-            70,
-            0,
-            255
+            175,
+            73,
+            208,
+            83
           ],
-          "filepath": [
-            50,
-            70,
-            0,
-            255
-          ],
-          "fontSize": 68,
-          "text": "WOWOWOWWO"
+          "filepath": "Fonts/ka1.ttf",
+          "fontSize": 60,
+          "text": "WOW TEXT!"
         }
       },
       "name": "MoreText",

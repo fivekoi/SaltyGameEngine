@@ -127,7 +127,7 @@ void ComponentValueEdit::ApplyJson(bool undo){
                 case FONTSIZE: jComponents["text"]["fontSize"] = std::get<int>(val); break;
                 case COLOR: {
                     SDL_Color color = std::get<SDL_Color>(val);
-                    jComponents["text"]["filepath"] = {color.r, color.g, color.b, color.a}; 
+                    jComponents["text"]["color"] = {color.r, color.g, color.b, color.a}; 
                     break;
                 }
             }

@@ -46,9 +46,6 @@ int Engine::Initialize()
     // Handling creation before window is opened (so we do not sit on a blank screen)
     Audio::soloud.init();
 
-    // Init fonts/ttf
-    // if(TTF_Init() == -1) { return -1; } // TODO: do i need to init video before this?? idk if this does anything
-
     // Main window appears now
     // Init main SDL window
     if(SDL_Init(SDL_INIT_VIDEO) < 0) return -1; 
@@ -339,8 +336,6 @@ void Engine::Destroy()
 
     SDL_DestroyTexture(viewport);
     SDL_DestroyRenderer(renderer);
-    TTF_Quit();
-    // Mix_CloseAudio();    
     SDL_DestroyWindow(window);
     TTF_Quit();
     SDL_Quit();

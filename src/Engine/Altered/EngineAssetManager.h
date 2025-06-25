@@ -41,6 +41,7 @@ private:
             return false;
         }
     };
+    // TODO: also, should these be unordered_maps? might be faster (but requires a hash...)
     std::map<FontTextureKey, SDL_Texture*> fontTextures; // TODO: could probably combine these two into one map
     std::map<FontTextureKey, glm::ivec2> fontTextureSizes; // two
 
