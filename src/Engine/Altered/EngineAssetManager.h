@@ -4,6 +4,7 @@
 #include <map>
 #include <memory>
 #include <string>
+#include <unordered_map>
 
 #include <SDL.h>
 #include <SDL_ttf.h>
@@ -11,12 +12,21 @@
 
 #include "Engine/EngineData.h"
 
+struct TextureData {
+    SDL_Texture* texture;
+    glm::ivec2 textureSize;
+    int refCount;
+
+    TextureData() = default;
+    TextureData(SDL_Texture* texture, glm::ivec2 textureSize, int refCount)
+    : texture(texture), textureSize(textureSize), refCount(refCount) {};
+};
+
 class EngineAssetManager {
 private:
     SDL_Renderer* renderer;
 
-    std::map<std::string, SDL_Texture*> textures; // TODO: could probably combine these two into one map, so we dont need to double access
-    std::map<std::string, glm::vec2> textureSizes; // two
+    std::unordered_map<std::string, TextureData> textures;
     
     // From (filepath, fontSize) -> TTF_Font
     std::map<std::pair<std::string, int>, TTF_Font*> fonts;
@@ -54,8 +64,7 @@ public:
     void ClearAssets();
 
     void AddTexture(const std::string& filepath);
-    SDL_Texture* GetTexture(const std::string& filepath);
-    glm::vec2 GetTextureSize(const std::string& filepath);
+    TextureData GetTexture(const std::string& filepath);
 
     void AddFont(const std::string& filepath, int fontSize);
     TTF_Font* GetFont(const std::string& filepath, int fontSize);

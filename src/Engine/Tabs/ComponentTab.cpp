@@ -90,7 +90,7 @@ void ComponentTab::Sprite(){
             ImGui::Text("Source Image");
             // TODO: this should change dimensions based on texture dims
             // TODO: need a better way to determine the y-size
-            ImGui::Image(assetManager->GetTexture(sprite.filepath), ImVec2(64, 64)); 
+            ImGui::Image(assetManager->GetTexture(sprite.filepath).texture, ImVec2(64, 64)); 
             if (ImGui::BeginDragDropTarget()) {
                 if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("FILEPATH_PNG"))
                 {

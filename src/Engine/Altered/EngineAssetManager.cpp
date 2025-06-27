@@ -10,8 +10,8 @@ EngineAssetManager::~EngineAssetManager() { ClearAssets(); }
 
 void EngineAssetManager::ClearAssets()
 {
-    for(auto texture : textures)
-    { SDL_DestroyTexture(texture.second); }
+    for(const auto& kv : textures)
+    { SDL_DestroyTexture(kv.second.texture); }
     textures.clear();
 
     for(auto font : fonts)
@@ -24,31 +24,28 @@ void EngineAssetManager::AddTexture(const std::string& filepath)
     if(!textures.count(filepath))
     {
         // TODO: should check that filepath is valid, just log some error here, should never happen but who knows
-        SDL_Surface* surface = IMG_Load(("Projects/" + engineData->projectName + + "/Unique/Assets/" + filepath).c_str());
+        SDL_Surface* surface = IMG_Load(("Projects/" + engineData->projectName + "/Unique/Assets/" + filepath).c_str());
+        // Check if !surface for failure
         SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
 
         SDL_Point sdlSize;
         SDL_QueryTexture(texture, NULL, NULL, &sdlSize.x, &sdlSize.y);
-        glm::vec2 size = glm::vec2(sdlSize.x, sdlSize.y);
-        // TODO: should this be an ivec2?
+        glm::ivec2 size = glm::ivec2(sdlSize.x, sdlSize.y);
 
-        textures.emplace(filepath, texture);
-        textureSizes.emplace(filepath, size);
+        textures.emplace(filepath, TextureData(texture, size, 1));
+    }
+    else{
+        // Increment refCount of texture at filepath
+        textures[filepath].refCount++;
     }
 }
 
-SDL_Texture* EngineAssetManager::GetTexture(const std::string& filepath)
+TextureData EngineAssetManager::GetTexture(const std::string& filepath)
 {
     // TODO: add this back once i add drag and drop (also count out default "")
     // assert(textures.count(filepath));
     return textures[filepath];
-}
-
-glm::vec2 EngineAssetManager::GetTextureSize(const std::string& filepath)
-{
-    // assert(textureSizes.count(filepath));
-    return textureSizes[filepath];
 }
 
 
