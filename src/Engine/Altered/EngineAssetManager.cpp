@@ -70,16 +70,10 @@ void EngineAssetManager::AddFontTexture(const std::string& filepath, int fontSiz
     TTF_SizeText(font, text.c_str(), &size.x, &size.y);
 
     FontTextureKey ftk = FontTextureKey(filepath, fontSize, text, color);
-    fontTextures.emplace(ftk, texture);
-    fontTextureSizes.emplace(ftk, size);
+    fontTextures.emplace(ftk, TextureData(texture, size, 1));
 }
 
-SDL_Texture* EngineAssetManager::GetFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color)
+TextureData EngineAssetManager::GetFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color)
 {
     return fontTextures[FontTextureKey(filepath, fontSize, text, color)];
-}
-
-glm::ivec2 EngineAssetManager::GetFontTextureSize(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color)
-{
-    return fontTextureSizes[FontTextureKey(filepath, fontSize, text, color)];
 }

@@ -25,13 +25,13 @@
         },
         "text": {
           "color": [
-            0,
-            0,
-            0,
+            196,
+            216,
+            255,
             255
           ],
-          "filepath": "Fonts/ka1.ttf",
-          "fontSize": 8,
+          "filepath": "Fonts/NeonSans.ttf",
+          "fontSize": 60,
           "text": "hello, this is some text!"
         }
       },
@@ -47,7 +47,7 @@
       },
       "transform": {
         "position": [
-          771.0,
+          -175.0,
           -515.0
         ],
         "rotation": 0.0,

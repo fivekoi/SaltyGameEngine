@@ -52,8 +52,7 @@ private:
         }
     };
     // TODO: also, should these be unordered_maps? might be faster (but requires a hash...)
-    std::map<FontTextureKey, SDL_Texture*> fontTextures; // TODO: could probably combine these two into one map
-    std::map<FontTextureKey, glm::ivec2> fontTextureSizes; // two
+    std::map<FontTextureKey, TextureData> fontTextures;
 
     std::shared_ptr<EngineData> engineData;
 public:
@@ -69,8 +68,7 @@ public:
     void AddFont(const std::string& filepath, int fontSize);
     TTF_Font* GetFont(const std::string& filepath, int fontSize);
     void AddFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
-    SDL_Texture* GetFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
-    glm::ivec2 GetFontTextureSize(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
+    TextureData GetFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
 };
 
 #endif // ENGINEASSETMANAGER_H

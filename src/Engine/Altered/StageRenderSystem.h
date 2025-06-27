@@ -74,7 +74,8 @@ public:
             
             if(entity.HasComponent<EngineTextComponent>()){
                 const auto text = entity.GetComponent<EngineTextComponent>();
-                glm::vec2 textureSize = assetManager->GetFontTextureSize(text.filepath, text.fontSize, text.text, text.color);
+                TextureData textureData = assetManager->GetFontTexture(text.filepath, text.fontSize, text.text, text.color);
+                glm::ivec2 textureSize = textureData.textureSize;
 
                 SDL_Rect dstRect = {
                     static_cast<int>((transform.position.x  - stageCenter.x) * stageZoom), 
@@ -95,7 +96,7 @@ public:
 
                 SDL_RenderCopyEx(
                     renderer,
-                    assetManager->GetFontTexture(text.filepath, text.fontSize, text.text, text.color),
+                    textureData.texture,
                     NULL, &dstRect, -transform.rotation, // rotations are counterclockwise
                     NULL, flip
                 );
