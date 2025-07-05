@@ -86,9 +86,9 @@
       "components": {
         "text": {
           "color": [
-            175,
-            73,
-            208,
+            134,
+            28,
+            155,
             83
           ],
           "filepath": "Fonts/ka1.ttf",
@@ -111,12 +111,44 @@
         ],
         "zindex": 0
       }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            175,
+            73,
+            208,
+            83
+          ],
+          "filepath": "Fonts/ka1.ttf",
+          "fontSize": 50,
+          "text": "WOW TEXT!"
+        }
+      },
+      "name": "Empty",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          402.0,
+          35.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
     }
   ],
   "null-count": 0,
   "root-ids": [
     0,
     1,
-    2
+    2,
+    3
   ]
 }

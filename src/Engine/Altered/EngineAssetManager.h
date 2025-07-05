@@ -69,6 +69,7 @@ public:
     TTF_Font* GetFont(const std::string& filepath, int fontSize);
     void AddFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
     TextureData GetFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
+    void RemoveFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
 };
 
 #endif // ENGINEASSETMANAGER_H

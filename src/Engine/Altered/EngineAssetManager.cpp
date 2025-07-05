@@ -60,20 +60,33 @@ TTF_Font* EngineAssetManager::GetFont(const std::string& filepath, int fontSize)
 }
 
 void EngineAssetManager::AddFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color){
-    TTF_Font* font = GetFont(filepath, fontSize);
-    
-    SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), color);
-    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-    SDL_FreeSurface(surface);
-
-    glm::ivec2 size;
-    TTF_SizeText(font, text.c_str(), &size.x, &size.y);
-
     FontTextureKey ftk = FontTextureKey(filepath, fontSize, text, color);
-    fontTextures.emplace(ftk, TextureData(texture, size, 1));
+    if(fontTextures.count(ftk)){
+        fontTextures[ftk].refCount++;
+    }
+    else {
+        TTF_Font* font = GetFont(filepath, fontSize);
+    
+        SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), color);
+        SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+        SDL_FreeSurface(surface);
+
+        glm::ivec2 size;
+        TTF_SizeText(font, text.c_str(), &size.x, &size.y);
+
+        fontTextures.emplace(ftk, TextureData(texture, size, 1));
+    }
 }
 
 TextureData EngineAssetManager::GetFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color)
 {
     return fontTextures[FontTextureKey(filepath, fontSize, text, color)];
+}
+
+void EngineAssetManager::RemoveFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color){
+    FontTextureKey ftk = FontTextureKey(filepath, fontSize, text, color);
+    if(--fontTextures[ftk].refCount <= 0){
+        SDL_DestroyTexture(fontTextures[ftk].texture);
+        fontTextures.erase(ftk);
+    }
 }

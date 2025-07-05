@@ -192,7 +192,7 @@ void ComponentTab::Text(){
                 text.color.a = int(color.w * 255);
 
                 // TODO: should also clear previous one from memory
-
+                assetManager->RemoveFontTexture(text.filepath, text.fontSize, text.text, prev3);
                 assetManager->AddFontTexture(text.filepath, text.fontSize, text.text, text.color);
             }
             
