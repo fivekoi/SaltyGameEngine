@@ -22,6 +22,15 @@ struct TextureData {
     : texture(texture), textureSize(textureSize), refCount(refCount) {};
 };
 
+struct FontData {
+    TTF_Font* font;
+    int refCount;
+
+    FontData() = default;
+    FontData(TTF_Font* font, int refCount)
+    : font(font), refCount(refCount) {};
+};
+
 class EngineAssetManager {
 private:
     SDL_Renderer* renderer;
@@ -29,7 +38,8 @@ private:
     std::unordered_map<std::string, TextureData> textures;
     
     // From (filepath, fontSize) -> TTF_Font
-    std::map<std::pair<std::string, int>, TTF_Font*> fonts;
+    std::map<std::pair<std::string, int>, FontData> fonts;
+    
     struct FontTextureKey {
         FontTextureKey(std::string filepath, int fontSize, std::string text, SDL_Color color)
         : filepath(filepath), fontSize(fontSize), text(text), color(color) {};
@@ -67,6 +77,7 @@ public:
 
     void AddFont(const std::string& filepath, int fontSize);
     TTF_Font* GetFont(const std::string& filepath, int fontSize);
+    void RemoveFont(const std::string& filepath, int fontSize);
     void AddFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
     TextureData GetFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);
     void RemoveFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color);

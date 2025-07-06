@@ -86,13 +86,13 @@
       "components": {
         "text": {
           "color": [
-            134,
-            28,
-            155,
+            175,
+            73,
+            208,
             83
           ],
           "filepath": "Fonts/ka1.ttf",
-          "fontSize": 50,
+          "fontSize": 47,
           "text": "WOW TEXT!"
         }
       },

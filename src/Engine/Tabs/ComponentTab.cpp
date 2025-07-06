@@ -145,7 +145,7 @@ void ComponentTab::Text(){
                     text.filepath = filepath;
                     assetManager->AddFont(filepath, text.fontSize);
                     assetManager->AddFontTexture(filepath, text.fontSize, text.text, text.color);
-                }
+                } // TODO: should maybe remove the old one here... but i dont think its super necessary
             }
 
             ImGui::Spacing();
@@ -156,8 +156,7 @@ void ComponentTab::Text(){
             if(ImGui::IsItemDeactivatedAfterEdit()) 
             { editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(TEXT, TEXT_TEXT, registry, selectedEntity, ComponentValue(prevs), ComponentValue(text.text)))); }
             if(text.text != prev){
-                // TODO: should also clear previous one from memory
-
+                assetManager->RemoveFontTexture(text.filepath, text.fontSize, prev, text.color);
                 assetManager->AddFontTexture(text.filepath, text.fontSize, text.text, text.color);
             }
 
@@ -168,7 +167,8 @@ void ComponentTab::Text(){
             if(ImGui::IsItemDeactivatedAfterEdit()) 
             { editHistory->Do(std::move(std::make_unique<ComponentValueEdit>(TEXT, FONTSIZE, registry, selectedEntity, ComponentValue(previ), ComponentValue(text.fontSize)))); }
             if(text.fontSize != prev2){
-                // TODO: should also clear previous one from memory
+                assetManager->RemoveFont(text.filepath, prev2);
+                assetManager->RemoveFontTexture(text.filepath, prev2, text.text, text.color);
 
                 assetManager->AddFont(text.filepath, text.fontSize);
                 assetManager->AddFontTexture(text.filepath, text.fontSize, text.text, text.color);

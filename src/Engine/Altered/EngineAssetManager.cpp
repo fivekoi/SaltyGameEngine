@@ -1,6 +1,7 @@
 #include "Engine/Altered/EngineAssetManager.h"
 
 #include <iostream>
+#include <utility>
 
 #include <SDL_image.h>
 #include <SDL_ttf.h>
@@ -14,8 +15,8 @@ void EngineAssetManager::ClearAssets()
     { SDL_DestroyTexture(kv.second.texture); }
     textures.clear();
 
-    for(auto font : fonts)
-    { TTF_CloseFont(font.second); }
+    for(auto kv : fonts)
+    { TTF_CloseFont(kv.second.font); }
     fonts.clear();
 }
 
@@ -50,13 +51,27 @@ TextureData EngineAssetManager::GetTexture(const std::string& filepath)
 
 
 void EngineAssetManager::AddFont(const std::string& filepath, int fontSize){
-    fonts.emplace(std::pair<std::string, int>(filepath, fontSize), 
-                  TTF_OpenFont(("Projects/" + engineData->projectName + "/Unique/Assets/" + filepath).c_str(), fontSize));
+    std::pair<std::string, int> key = std::make_pair(filepath, fontSize);
+    if(fonts.count(key)){
+        fonts[key].refCount++;
+    }
+    else {
+        fonts.emplace(std::pair<std::string, int>(filepath, fontSize), 
+            FontData(TTF_OpenFont(("Projects/" + engineData->projectName + "/Unique/Assets/" + filepath).c_str(), fontSize), 1));
+    }
 }
 
 TTF_Font* EngineAssetManager::GetFont(const std::string& filepath, int fontSize){
     // assert(fonts.count(filepath));
-    return fonts[std::pair<std::string, int>(filepath, fontSize)];
+    return fonts[std::pair<std::string, int>(filepath, fontSize)].font;
+}
+
+void EngineAssetManager::RemoveFont(const std::string& filepath, int fontSize){
+    std::pair<std::string, int> key = std::make_pair(filepath, fontSize);
+    if(--fonts[key].refCount <= 0){
+        TTF_CloseFont(fonts[key].font);
+        fonts.erase(key);
+    }
 }
 
 void EngineAssetManager::AddFontTexture(const std::string& filepath, int fontSize, const std::string& text, SDL_Color color){
