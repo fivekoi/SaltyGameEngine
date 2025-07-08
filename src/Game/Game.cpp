@@ -43,7 +43,6 @@ Game::~Game()
 int Game::Initialize()
 {
     registry = std::make_unique<Registry>();
-    assetManager = std::make_unique<AssetManager>();
     Audio::soloud.init();
 
     // Init main SDL window
@@ -71,7 +70,7 @@ int Game::Initialize()
     }
 
     // Set app icon
-    // TODO: should probably have a default
+    // TODO: should probably have a default, well its for browser so maybe less necessary
     // SDL_Surface* icon_surf = IMG_Load("EngineAssets/logotemp.png");
     // if(!icon_surf){std::cout << "failed icon_surf imgload";}
     // SDL_SetWindowIcon(window, icon_surf);
@@ -82,13 +81,13 @@ int Game::Initialize()
         SDL_Quit();
         return -1;
     }
+    assetManager = std::make_shared<AssetManager>(renderer);
 
     // TODO: check for saved scene number here, currently just default
     LoadScene(0);
 
     // TODO: dont forget to add all systems here
-    // TODO: could potentially do this in load scene, iff it finds proper components?, no wait dont think thatll work (assume they add components with scripts)
-    registry->AddSystem<RenderSystem>();
+    registry->AddSystem<RenderSystem>(assetManager);
     registry->AddSystem<PhysicsSystem>();
 
     isRunning = true;
@@ -165,7 +164,7 @@ void Game::CreateEntityTree(json jEntities, json jRootIds){
         if(jComponents.contains("sprite")){
             json jValues = jComponents["sprite"];
             std::string filepath = jValues["filepath"];
-            assetManager->AddTexture(renderer, filepath); // Duplicate textures are handled in assetManager
+            assetManager->AddTexture(filepath); // Duplicate textures are handled in assetManager
             entity.AddComponent<SpriteComponent>(filepath);
         }
         if(jComponents.contains("rigidbody")){
@@ -237,7 +236,7 @@ SaltyType Game::CreateArg(json jType, json jVal){
         assert(registry->entityTree[id]->HasComponent<SpriteComponent>());
         SpriteComponent* sprite = &registry->entityTree[id]->GetComponent<SpriteComponent>();
         return SaltyType(sprite);
-    }
+    } // TODO: add text here (for scripts)
     else if(type == "Rigidbody*"){
         int id = jVal.get<int>();
         assert(registry->entityTree[id]->HasComponent<RigidbodyComponent>());
@@ -396,7 +395,7 @@ void Game::Render()
     SDL_SetRenderDrawColor(renderer, 40, 40, 100, 255);
     SDL_RenderClear(renderer);
 
-    registry->GetSystem<RenderSystem>().Update(renderer, assetManager, scale);
+    registry->GetSystem<RenderSystem>().Update(renderer, scale);
 
     SDL_RenderPresent(renderer);
 }

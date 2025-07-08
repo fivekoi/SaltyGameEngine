@@ -15,8 +15,11 @@
 
 
 class StageRenderSystem : public System {
+private: 
+    std::shared_ptr<EngineAssetManager> assetManager;
 public:
-    StageRenderSystem() {};
+    StageRenderSystem(std::shared_ptr<EngineAssetManager> assetManager)
+    : assetManager(assetManager) {};
 
     bool CheckEntity(Entity entity) override
     {
@@ -24,7 +27,7 @@ public:
     }
 
     // TODO: dont like this as a unique_ptr reference, or rather unsure if that is optimal?
-    void Update(SDL_Renderer* renderer, std::shared_ptr<EngineAssetManager> assetManager, glm::vec2 stageCenter, float stageZoom)
+    void Update(SDL_Renderer* renderer, glm::vec2 stageCenter, float stageZoom)
     {
         // TODO: optimize by sorting sprite objects whenever they are added
         // Can do this with a simple insertion on frames with low entity additions

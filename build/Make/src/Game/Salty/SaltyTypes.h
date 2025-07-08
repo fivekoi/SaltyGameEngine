@@ -11,6 +11,8 @@ typedef std::string string;
 typedef TransformComponent Transform;
 #include "Game/Components/SpriteComponent.h"
 typedef SpriteComponent Sprite;
+#include "Game/Components/TextComponent.h"
+typedef TextComponent Text;
 #include "Game/Components/RigidbodyComponent.h"
 typedef RigidbodyComponent Rigidbody;
 
@@ -23,7 +25,7 @@ typedef RigidbodyComponent Rigidbody;
 typedef std::variant
         <
             int, float, string,
-            Entity*, Transform*, Sprite*, Rigidbody*,
+            Entity*, Transform*, Sprite*, Text*, Rigidbody*,
             Sound
         >
         SaltyType;

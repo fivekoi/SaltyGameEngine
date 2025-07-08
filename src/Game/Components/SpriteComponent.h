@@ -2,9 +2,12 @@
 #define SPRITECOMPONENT_H
 
 #include <string>
+#include "Game/AssetManager/AssetManager.h"
 
 class SpriteComponent {
 private:
+    std::shared_ptr<AssetManager> assetManager;
+
     // Proxy class for managing sprite textures
     class PFilepath {
     private:
@@ -30,7 +33,8 @@ private:
     };
 
     void OnFilepathChanged(std::string prevFilepath, std::string newFilepath){
-        // Call instance of asset manager
+        // TODO: also remove previous texture?
+        assetManager->AddTexture(filepath);
     }
 public:
     SpriteComponent(std::string filepath = "")
@@ -39,6 +43,11 @@ public:
     }
 
     PFilepath filepath = PFilepath(this, "");
+
+    // FOR ENGINE USE ONLY, assigned by RenderSystem on AddComponent(ToSystem)
+    void SetAssetManager(std::shared_ptr<AssetManager> assetManager) {
+        this->assetManager = assetManager;
+    }
 };
 
 #endif // SPRITECOMPONENT_H

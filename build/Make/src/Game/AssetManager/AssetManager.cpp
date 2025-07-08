@@ -6,9 +6,6 @@
 #include <SDL_ttf.h>
 #include <glm.hpp>
 
-// TODO: asset manager should have access to renderer, this is also why textures will not render
-AssetManager::AssetManager() {}
-
 AssetManager::~AssetManager() { ClearAssets(); }
 
 void AssetManager::ClearAssets()
@@ -22,7 +19,7 @@ void AssetManager::ClearAssets()
     fonts.clear();
 }
 
-void AssetManager::AddTexture(SDL_Renderer* renderer, const std::string& filepath)
+void AssetManager::AddTexture(const std::string& filepath)
 {
     if(!textures.count(filepath))
     {

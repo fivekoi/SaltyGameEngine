@@ -22,7 +22,7 @@ class Game {
         SDL_Renderer* renderer;
 
         std::unique_ptr<Registry> registry; 
-        std::unique_ptr<AssetManager> assetManager;
+        std::shared_ptr<AssetManager> assetManager;
 
         // In ms
         uint64_t targetFrameTime = 8;

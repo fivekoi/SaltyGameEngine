@@ -18,6 +18,10 @@ void EngineAssetManager::ClearAssets()
     for(auto kv : fonts)
     { TTF_CloseFont(kv.second.font); }
     fonts.clear();
+
+    for(auto kv : fontTextures)
+    { SDL_DestroyTexture(kv.second.texture); }
+    fontTextures.clear();
 }
 
 void EngineAssetManager::AddTexture(const std::string& filepath)

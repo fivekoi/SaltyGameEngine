@@ -73,7 +73,7 @@ void Stage::LoadScene(int sceneIndex)
 
     CreateEntityTree(jEntities, jRootIds);
     // Will be a reset registry each time
-    registry->AddSystem<StageRenderSystem>();
+    registry->AddSystem<StageRenderSystem>(assetManager);
 }
 
 void Stage::CreateEntityTree(json jEntities, json jRootIds){
@@ -306,7 +306,7 @@ void Stage::Update()
 
     // TODO: make sure this zoom adjustment makes sense and leave a better comment
     float stageZoom = 500.0f * zoom / stageSize;
-    registry->GetSystem<StageRenderSystem>().Update(renderer, assetManager, stageCenter, stageZoom);
+    registry->GetSystem<StageRenderSystem>().Update(renderer, stageCenter, stageZoom);
 
     // Draw camera outline
     SDL_Rect cameraRect = {

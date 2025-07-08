@@ -6,7 +6,11 @@
 #include <SDL.h>
 #include <glm.hpp>
 
-struct TextComponent {
+class TextComponent {
+private:
+    std::shared_ptr<AssetManager> assetManager;
+
+public:
     std::string filepath;
     std::string text;
     int fontSize;
@@ -20,6 +24,11 @@ struct TextComponent {
         this->text = text;
         this->fontSize = fontSize;
         this->color = color;
+    }
+
+    // FOR ENGINE USE ONLY, assigned by RenderSystem on AddComponent(ToSystem)
+    void SetAssetManager(std::shared_ptr<AssetManager> assetManager) {
+        this->assetManager = assetManager;
     }
 };
 

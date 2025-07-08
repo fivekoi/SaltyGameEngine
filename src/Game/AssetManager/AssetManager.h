@@ -11,17 +11,20 @@
 
 class AssetManager {
 private:
+    SDL_Renderer* renderer;
+
     std::map<std::string, SDL_Texture*> textures; // TODO: could probably combine these two into one map, so we dont need to double access
     std::map<std::string, glm::vec2> textureSizes; // two
     // TODO: might have seperate font system later (with textures already made)
     std::map<std::string, TTF_Font*> fonts;
 public:
-    AssetManager();
+    AssetManager(SDL_Renderer* renderer)
+    : renderer(renderer) {};
     ~AssetManager();
 
     void ClearAssets();
 
-    void AddTexture(SDL_Renderer* renderer, const std::string& filepath);
+    void AddTexture(const std::string& filepath);
     SDL_Texture* GetTexture(const std::string& filepath);
     glm::vec2 GetTextureSize(const std::string& filepath);
 

@@ -14,16 +14,29 @@
 #include "Game/Salty/SaltyCamera.h"
 
 class RenderSystem : public System {
+private: 
+    std::shared_ptr<AssetManager> assetManager;
+
 public:
-    RenderSystem() {};
+    RenderSystem(std::shared_ptr<AssetManager> assetManager) 
+    : assetManager(assetManager) {};
 
     bool CheckEntity(Entity entity) override
     {
-        return entity.HasComponent<SpriteComponent>() || entity.HasComponent<TextComponent>();
+        bool hasSprite = entity.HasComponent<SpriteComponent>();
+        bool hasText = entity.HasComponent<TextComponent>();
+        if(hasSprite){
+            entity.GetComponent<SpriteComponent>().SetAssetManager(assetManager);
+        }
+        if(hasText){
+            entity.GetComponent<TextComponent>().SetAssetManager(assetManager);
+        }
+
+        return hasSprite || hasText;
     }
 
-    // TODO: dont like this as a unique_ptr reference, or rather unsure if that is optimal?
-    void Update(SDL_Renderer* renderer, std::unique_ptr<AssetManager>& assetManager, int viewportScale)
+    // TODO: should maybe get rid of these other two as well...
+    void Update(SDL_Renderer* renderer, int viewportScale)
     {
         // TODO: optimize by sorting sprite objects whenever they are added
         // Can do this with a simple insertion on frames with low entity additions

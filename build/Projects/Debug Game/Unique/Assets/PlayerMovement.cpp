@@ -37,4 +37,14 @@ void PlayerMovement::Update(float dt){
         Debug::Log("MouseX");
         std::cout << Input::MouseX << '\n';
     }
+
+    if(Input::KeyDown[KEY_C]){
+        whichSprite = !whichSprite;
+        if(whichSprite){
+            sprite->filepath = sprite2;
+        }
+        else{
+            sprite->filepath = sprite1;
+        }
+    }
 }

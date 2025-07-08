@@ -15,8 +15,14 @@ private:
 
     // Sprite* test;
     SF_ Transform* player;
-    
+    SF_ Sprite* sprite;
+
     Sound sound;
+
+    SF_ string sprite1;
+    SF_ string sprite2;
+
+    bool whichSprite = false;
 public:
     // Initialization will be handled by engine (including that of SF_ variables)
     PlayerMovement(Entity* entity, Transform* transform, std::vector<SaltyType>& serializedVars);

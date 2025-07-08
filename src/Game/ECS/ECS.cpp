@@ -208,6 +208,8 @@ void Registry::AddEntityToSystems(Entity entity)
     // TODO: could still do this, and send CheckEntity(curEntityCompSig)...
     // const auto entityId = entity.GetId();
     // const auto& curEntityCompSig = entityComponentSignatures[entityId];
+    // TODO: back to this now, I think I am mainly talking about just passing entities around as ids? rather than the object itself?
+    // ACTUALLY... because SpriteComponent and TextComponent need to have the pointer to AssetManager, here may be a perfect place to do it. 
 
     for(auto& system : systems)
     {
