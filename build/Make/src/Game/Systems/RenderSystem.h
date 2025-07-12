@@ -15,6 +15,8 @@
 
 class RenderSystem : public System {
 private: 
+    std::vector<Entity> entities;
+
     std::shared_ptr<AssetManager> assetManager;
 
 public:
@@ -35,13 +37,37 @@ public:
         return hasSprite || hasText;
     }
 
+    void AddEntityToSystem(Entity entity) override
+    {
+        entities.push_back(entity);
+    }
+
+    // Removes first elem of entities with same Id as entity
+    void RemoveEntityFromSystem(Entity entity) override
+    {
+        //TODO figure out better looking implementation
+        /*
+        int i = 0;
+        // I: entity NOT IN entities[0..i) 
+        // V: entities.size() - i
+        while(i < entities.size() && entities[i] != entity)
+        { i++; }
+
+        entities.erase(entities.begin()+i);
+        */
+        entities.erase(std::remove_if(entities.begin(), entities.end(), [&entity](Entity other) {
+            return entity == other;
+            }), entities.end()); // Erase-remove idiom
+    }
+
     // TODO: should maybe get rid of these other two as well...
     void Update(SDL_Renderer* renderer, int viewportScale)
     {
         // TODO: optimize by sorting sprite objects whenever they are added
         // Can do this with a simple insertion on frames with low entity additions
         // And with quicksort (or similar) for ones with more
-        std::vector<Entity> entities = GetSystemEntities();
+
+        
         // TODO: im worried that if objects have same layer, they will swap whos in front
         // Could add a secondary sort value by entityId, higher is above
         std::sort(entities.begin(), entities.end(), [](const Entity& a, const Entity& b)

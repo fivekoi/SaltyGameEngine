@@ -55,34 +55,6 @@ void Entity::UpdateScripts(float deltaTime){
     }
 }
 
-void System::AddEntityToSystem(Entity entity) // TODO: should probably have this be a pointer now?
-{
-    entities.push_back(entity);
-}
-
-// Removes first elem of entities with same Id as entity
-void System::RemoveEntityFromSystem(Entity entity) // TODO: this should be done by id i think
-{
-    //TODO figure out better looking implementation
-    /*
-    int i = 0;
-    // I: entity NOT IN entities[0..i) 
-    // V: entities.size() - i
-    while(i < entities.size() && entities[i] != entity)
-    { i++; }
-
-    entities.erase(entities.begin()+i);
-    */
-    entities.erase(std::remove_if(entities.begin(), entities.end(), [&entity](Entity other) {
-        return entity == other;
-        }), entities.end()); // Erase-remove idiom
-}
-
-std::vector<Entity> System::GetSystemEntities() const
-{
-    return entities;
-}
-
 Entity& Registry::CreateEntity(int parentId) // default = -1
 {
     int entityId;
@@ -205,12 +177,6 @@ void Registry::DestroyEntity(int entityId)
 
 void Registry::AddEntityToSystems(Entity entity)
 {
-    // TODO: could still do this, and send CheckEntity(curEntityCompSig)...
-    // const auto entityId = entity.GetId();
-    // const auto& curEntityCompSig = entityComponentSignatures[entityId];
-    // TODO: back to this now, I think I am mainly talking about just passing entities around as ids? rather than the object itself?
-    // ACTUALLY... because SpriteComponent and TextComponent need to have the pointer to AssetManager, here may be a perfect place to do it. 
-
     for(auto& system : systems)
     {
         if(system.second->CheckEntity(entity))
@@ -236,6 +202,14 @@ void Registry::Update()
     }
     entitiesToBeAdded.clear();
     
+    // 
+    for(auto entity : entitiesToRecheck)
+    {
+        RemoveEntityFromSystems(entity);
+        AddEntityToSystems(entity);
+    }
+    entitiesToRecheck.clear();
+
     // Remove entities from entitiesToBeRemoved to registry
     for(int entityId : entitiesToBeRemoved)
     {

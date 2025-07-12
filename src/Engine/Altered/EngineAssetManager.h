@@ -74,6 +74,9 @@ public:
 
     void AddTexture(const std::string& filepath);
     TextureData GetTexture(const std::string& filepath);
+    // TODO: i kinda wanna add a removeTexture actually for sprites too...
+    // might as well minimize memory even in the engine (cant see why people would be switching sprites too often back and forth)
+    // plus they cant do it that fast by hand anyways
 
     void AddFont(const std::string& filepath, int fontSize);
     TTF_Font* GetFont(const std::string& filepath, int fontSize);

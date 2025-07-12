@@ -154,10 +154,9 @@ public:
 // but for the sake of the clean ECS - Entity Component System class names, will break convention
 class System {
 private:
+    // NOTE: The internal representation of entities is now determined by each system
     // Entities that the system acts upon 
-    // TODO: should this be pointers to them???
-    std::vector<Entity> entities;
-
+    // std::set<Entity> entities;
 public:
     System() = default;
     ~System() = default;
@@ -165,9 +164,9 @@ public:
     // Checks if an entity should be acted upon by system
     virtual bool CheckEntity(Entity entity) = 0;
     
-    void AddEntityToSystem(Entity entity);
-    void RemoveEntityFromSystem(Entity entity);
-    std::vector<Entity> GetSystemEntities() const;
+    // Will handle duplicate protection
+    virtual void AddEntityToSystem(Entity entity) = 0;
+    virtual void RemoveEntityFromSystem(Entity entity) = 0;
 };
 
 
@@ -233,6 +232,8 @@ private:
     // Set of entities that are flagged to be added or removed in next registry Update()
     std::set<Entity> entitiesToBeAdded;
     std::set<int> entitiesToBeRemoved;
+    // Set of entities where we need to recheck what systems they are in (such as after an Add/RemoveComponent)
+    std::set<Entity> entitiesToRecheck;
 
     // Free entity ids from destroyed entities
     std::deque<int> freeIds; // TODO: not sure why this is a deque rather than a stack...?

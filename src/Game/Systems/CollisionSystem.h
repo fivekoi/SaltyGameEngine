@@ -11,12 +11,25 @@
 
 
 class CollisionSystem : public System {
+private:
+    std::set<Entity> entities;
+    
 public:
     CollisionSystem() {};
 
     bool CheckEntity(Entity entity) override
     {
         return entity.HasComponent<TransformComponent>() && entity.HasComponent<BoxColliderComponent>();
+    }
+
+    void AddEntityToSystem(Entity entity) override
+    {
+        entities.insert(entity);
+    }
+
+    void RemoveEntityFromSystem(Entity entity) override
+    {
+        entities.erase(entity);
     }
 
     void Update(std::unique_ptr<EventBus>& eventBus)

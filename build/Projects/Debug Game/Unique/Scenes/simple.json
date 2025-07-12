@@ -13,7 +13,11 @@
   "entities": [
     {
       "children-ids": [],
-      "components": {},
+      "components": {
+        "sprite": {
+          "filepath": "./small.png"
+        }
+      },
       "name": "MoreText",
       "parent-id": -1,
       "scripts": {},
