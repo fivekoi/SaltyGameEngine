@@ -40,10 +40,11 @@ void EngineAssetManager::AddTexture(const std::string& filepath)
 
         textures.emplace(filepath, TextureData(texture, size, 1));
     }
-    else{
-        // Increment refCount of texture at filepath
-        textures[filepath].refCount++;
-    }
+    // NOTE: don't need to worry about ref count for sprite in engine (will not be removing anyways)
+    // else{
+    //     // Increment refCount of texture at filepath
+    //     textures[filepath].refCount++;
+    // }
 }
 
 TextureData EngineAssetManager::GetTexture(const std::string& filepath)

@@ -10,9 +10,6 @@ private:
     SF_ int val; // TODO: might do opposite actually, include a def for ones that should be serialized, maybe just SF?
     SF_ float timer;
 
-    // Non serialized var
-    SF_ string tag;
-
     // Sprite* test;
     SF_ Transform* player;
     SF_ Sprite* sprite;

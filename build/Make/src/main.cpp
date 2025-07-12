@@ -1,8 +1,6 @@
 #include "Game/Game.h"
 
-// TODO: can main have just void as an arg?
-// TODO: not a good comment here
-// Game main, will be shipped with rest of Game dir in engine build
+// Game main, will be used when compiling Games for Windows
 int main(int argc, char* argv[]){    
     Game game;
 

@@ -76,8 +76,8 @@ void EditHistory::Save(){
         // Specifically, when removing a null entity in the middle of entities 
         // we have to update children-ids to account for shifting down of later entityIds
 
-        // Array will store new entityId at each position (and -1 if null)
-        int newEntityIds[jScene["entities"].size()];
+        // Vector will store new entityId at each position (and -1 if null)
+        std::vector<int> newEntityIds;
         // Number of nulls we have seen so far
         int nullsPassed = 0;
         // First pass to populate newEntityIds
@@ -85,11 +85,11 @@ void EditHistory::Save(){
         while(i < jScene["entities"].size()){
             if(jScene["entities"][i].empty()){
                 nullsPassed += 1;
-                newEntityIds[i] = -1;
+                newEntityIds.push_back(-1);
             }
             else{
                 // Once we removed all previous nulls, new entity id is shifted down by that much
-                newEntityIds[i] = i - nullsPassed;
+                newEntityIds.push_back(i - nullsPassed);
             }
             i++;
         }
@@ -134,7 +134,7 @@ void EditHistory::Save(){
     }
     jScene.erase("null-count");
     
-    std::ofstream("Projects/" + engineData->projectName + + "/Unique/Scenes/" + sceneName + ".json") << std::setw(2) << jScene;
+    std::ofstream("Projects/" + engineData->projectName + "/Unique/Scenes/" + sceneName + ".json") << std::setw(2) << jScene;
     g.close();
     
     unsaved = false;

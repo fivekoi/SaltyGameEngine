@@ -3,14 +3,21 @@
     "names": [
       "val",
       "timer",
-      "tag",
-      "player"
+      "player",
+      "sprite",
+      "sprite1",
+      "sprite2"
     ],
     "types": [
       "int",
       "float",
+      "Transform*",
+      "Sprite*",
       "string",
-      "Transform*"
+      "string"
     ]
-  }
+  },
+  "filepaths": [
+    "PlayerMovement"
+  ]
 }

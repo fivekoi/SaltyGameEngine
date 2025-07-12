@@ -208,7 +208,10 @@ void ComponentTab::Text(){
             // Create vector of values and add it to editHistory
             std::vector<ComponentValue> values;
             values.push_back(ComponentValue(text.filepath));
-            editHistory->Do(std::move(std::make_unique<HasComponentEdit>(SPRITE, registry, selectedEntity, false, values)));
+            values.push_back(ComponentValue(text.text));
+            values.push_back(ComponentValue(text.fontSize));
+            values.push_back(ComponentValue(text.color));
+            editHistory->Do(std::move(std::make_unique<HasComponentEdit>(TEXT, registry, selectedEntity, false, values)));
 
             entity.RemoveComponent<EngineTextComponent>();
         }

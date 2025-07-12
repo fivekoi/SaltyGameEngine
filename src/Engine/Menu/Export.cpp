@@ -169,7 +169,6 @@ void Menu::ExportWindows(){
         usersrc += "Projects/\"" + engineData->projectName + "\"/Unique/Assets/" + engineData->scriptFilepaths[scriptIdx] + ".cpp ";
     }
 
-    // TODO: statically link soloud instead, or acatually.... might be fine
     std::string soloudcore = "Make/libsrc/soloud/core/soloud.cpp Make/libsrc/soloud/core/soloud_audiosource.cpp"
                          " Make/libsrc/soloud/core/soloud_bus.cpp Make/libsrc/soloud/core/soloud_core_3d.cpp"
                          " Make/libsrc/soloud/core/soloud_core_basicops.cpp Make/libsrc/soloud/core/soloud_core_faderops.cpp"

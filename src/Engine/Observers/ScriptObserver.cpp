@@ -11,8 +11,6 @@ using json = nlohmann::json;
 #include "Game/Salty/SaltyDebug.h"
 
 void ScriptObserver::Observe(){
-    Debug::Log("observed");
-
     // We will add a new object "updated-scripts" to every entity (in every scene), and then replace "scripts" with it at the end
     std::ifstream h("Projects/" + engineData->projectName + "/Unique/scenes.json");
     json jScenes = json::parse(h)["scenes"];
@@ -60,8 +58,6 @@ void ScriptObserver::Observe(){
         if(CompareFileTime(&engineData->scriptEditTimes[i], &recentEditTime) == -1) {
             engineData->scriptEditTimes[i] = recentEditTime;
             
-            Debug::Log(engineData->scriptFilepaths[i]);
-
             // Read .h file for relevant changes/additions (to SF_ variables)
             std::vector<std::string> sfLines;
             std::ifstream f(filepath);

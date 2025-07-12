@@ -26,7 +26,6 @@ public:
         return entity.HasComponent<EngineSpriteComponent>() || entity.HasComponent<EngineTextComponent>();
     }
 
-    // TODO: dont like this as a unique_ptr reference, or rather unsure if that is optimal?
     void Update(SDL_Renderer* renderer, glm::vec2 stageCenter, float stageZoom)
     {
         // TODO: optimize by sorting sprite objects whenever they are added

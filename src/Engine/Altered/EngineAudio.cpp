@@ -9,8 +9,6 @@
 #include <soloud_wav.h>
 #include <soloud_wavstream.h>
 
-// TODO: i kinda wanna move this into EngineAssetManager
-
 // Initializes Soloud engine and Sounds vector
 SoLoud::Soloud EngineAudio::soloud;
 std::vector<std::unique_ptr<SoLoud::AudioSource>> EngineAudio::sounds;
@@ -20,7 +18,7 @@ std::deque<int> EngineAudio::freeIds;
 void EngineAudio::Load(Sound& sound){
     // audioSource has not been loaded yet <-> id = -1
     // TODO: agreed with the below, log an error (i.e. color it red)
-    assert(sound.id == -1); // TODO: maybe this should be just send a debug log later, dont want to crash stuff from randomly loading twice
+    // assert(sound.id == -1); // TODO: maybe this should be just send a debug log later, dont want to crash stuff from randomly loading twice
     int id = -1;
 
     // To limit amount of space taken
@@ -73,7 +71,7 @@ void EngineAudio::Play(Sound sound){
     // 0 <= ensures audioSource has been loaded
     // < size for bounds on loaded sounds
     // != nullptr ensures audioSource has not be deloaded
-    assert(0 <= id && id < EngineAudio::sounds.size() && EngineAudio::sounds[id] != nullptr); // TODO: need id to be within len, and then also needs to not be nullptr
+    // assert(0 <= id && id < EngineAudio::sounds.size() && EngineAudio::sounds[id] != nullptr); // TODO: need id to be within len, and then also needs to not be nullptr
     // TODO: tbh, could just load sound here if id = -1... but again, a later change
     // TODO: cont - i think its good to still have a Load() thing incase we want to load at start or specific times, but still a nice failsafe
 

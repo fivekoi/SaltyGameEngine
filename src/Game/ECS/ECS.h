@@ -329,7 +329,10 @@ void Registry::AddComponent(Entity entity, TArgs&& ...args)
 
     curComponentPool->Set(entityId, newComponent);
     entityComponentSignatures[entityId].set(componentId);
-}
+
+    // If a component is added during runtime, need to check if it fits more systems
+    entitiesToBeAdded.insert(entity); // Will be added to systems in Update()
+} // TODO: need an extra set to remove entities from systems (on remove component)
 
 template <typename TComponent>
 void Registry::RemoveComponent(Entity entity)

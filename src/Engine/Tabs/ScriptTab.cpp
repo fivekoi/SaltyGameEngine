@@ -95,6 +95,7 @@ void ScriptTab::Begin(){
             }
 
             // TODO: make sure it has no spaces
+            // TODO: also make sure it is not named specifically "filepaths"
             ImGui::BeginDisabled(overlap || newScriptName == "");
             if(ImGui::Button("Create")){
                 // Create .cpp and .h file with correct format

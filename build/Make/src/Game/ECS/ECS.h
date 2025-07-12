@@ -329,6 +329,9 @@ void Registry::AddComponent(Entity entity, TArgs&& ...args)
 
     curComponentPool->Set(entityId, newComponent);
     entityComponentSignatures[entityId].set(componentId);
+
+    // If a component is added during runtime, need to check if it fits more systems
+    entitiesToBeAdded.insert(entity); // Will be added to systems in Update()
 }
 
 template <typename TComponent>
