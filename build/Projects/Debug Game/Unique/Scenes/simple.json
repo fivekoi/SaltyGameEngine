@@ -15,7 +15,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "./small.png"
+          "filepath": "./RedMagnet.png"
         }
       },
       "name": "MoreText",
@@ -23,7 +23,7 @@
       "scripts": {},
       "transform": {
         "position": [
-          -151.0,
+          82.0,
           -144.0
         ],
         "rotation": 0.0,
@@ -31,7 +31,7 @@
           100.0,
           100.0
         ],
-        "zindex": 0
+        "zindex": 2
       }
     },
     {
@@ -56,10 +56,34 @@
         ],
         "zindex": 0
       }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "./big.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -603.0,
+          -573.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          50.0,
+          50.0
+        ],
+        "zindex": -2
+      }
     }
   ],
   "root-ids": [
     0,
-    1
+    1,
+    2
   ]
 }

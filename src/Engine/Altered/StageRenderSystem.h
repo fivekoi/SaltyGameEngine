@@ -29,23 +29,21 @@ public:
     }
 
     void AddEntityToSystem(Entity entity) override
-    {
-        entities.push_back(entity);
+    {   
+        int zindex = entity.GetComponent<TransformComponent>().zindex;
+        int id = entity.GetId();
+        
+        std::vector<Entity>::iterator it = entities.begin();
+        while(it != entities.end() && id != it->GetId() && it->GetComponent<TransformComponent>().zindex <= zindex){
+            ++it;
+        }
+        if(it == entities.end() || id != it->GetId()) // Handles the duplicate protection
+        { entities.insert(it, entity); }
     }
 
     // Removes first elem of entities with same Id as entity
     void RemoveEntityFromSystem(Entity entity, bool dontCheck) override
     {
-        //TODO figure out better looking implementation
-        /*
-        int i = 0;
-        // I: entity NOT IN entities[0..i) 
-        // V: entities.size() - i
-        while(i < entities.size() && entities[i] != entity)
-        { i++; }
-
-        entities.erase(entities.begin()+i);
-        */
         if(dontCheck || !CheckEntity(entity))
         { 
             entities.erase(std::remove_if(entities.begin(), entities.end(), [&entity](Entity other) {
@@ -62,9 +60,9 @@ public:
 
         // TODO: im worried that if objects have same layer, they will swap whos in front
         // Could add a secondary sort value by entityId, higher is above
-        std::sort(entities.begin(), entities.end(), [](const Entity& a, const Entity& b)
-            { return a.GetComponent<TransformComponent>().zindex
-            < b.GetComponent<TransformComponent>().zindex; });
+        // std::sort(entities.begin(), entities.end(), [](const Entity& a, const Entity& b)
+        //     { return a.GetComponent<TransformComponent>().zindex
+        //     < b.GetComponent<TransformComponent>().zindex; });
 
         for(auto entity : entities)
         {

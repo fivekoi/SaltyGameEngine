@@ -27,9 +27,10 @@ public:
         entities.insert(entity);
     }
 
-    void RemoveEntityFromSystem(Entity entity) override
-    {
-        entities.erase(entity);
+    void RemoveEntityFromSystem(Entity entity, bool dontCheck) override
+    {   
+        if(dontCheck || !CheckEntity(entity))
+        { entities.erase(entity); }
     }
 
     void Update(std::unique_ptr<EventBus>& eventBus)
