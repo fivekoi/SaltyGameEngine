@@ -184,31 +184,31 @@ void Registry::AddEntityToSystems(Entity entity)
     }
 }
 
-void Registry::RemoveEntityFromSystems(Entity entity)
+void Registry::RemoveEntityFromSystems(Entity entity, bool dontCheck)
 {
     for(auto system : systems)
     {
-        system.second->RemoveEntityFromSystem(entity);
+        system.second->RemoveEntityFromSystem(entity, dontCheck);
     }
 }
 
 // Adds/Removes entities from systems TODO: i kinda wanna rename this for clarity
 void Registry::Update()
 {
+    // Potentially remove entities from systems
+    for(auto entity : entitiesToRecheck)
+    {
+        // dontCheck = false. We just want to remove entities that no longer belong to each system
+        RemoveEntityFromSystems(entity, false);
+    }
+    entitiesToRecheck.clear();
+
     // Add entites from entitiesToBeAdded to registry
     for(auto entity : entitiesToBeAdded)
     { 
         AddEntityToSystems(entity);
     }
     entitiesToBeAdded.clear();
-    
-    // 
-    for(auto entity : entitiesToRecheck)
-    {
-        RemoveEntityFromSystems(entity);
-        AddEntityToSystems(entity);
-    }
-    entitiesToRecheck.clear();
 
     // Remove entities from entitiesToBeRemoved to registry
     for(int entityId : entitiesToBeRemoved)
@@ -225,7 +225,8 @@ void Registry::Update()
             rootIds.erase(std::remove(rootIds.begin(), rootIds.end(), entityId), rootIds.end()); // Erase-remove idiom
         }
 
-        RemoveEntityFromSystems(*entityTree[entityId].get());
+        // dontCheck = true. Entity is being deleted, so needs to be removed regardless of components
+        RemoveEntityFromSystems(*entityTree[entityId].get(), true);
 
         entityComponentSignatures[entityId].reset();
 

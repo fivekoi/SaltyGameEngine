@@ -43,7 +43,7 @@ public:
     }
 
     // Removes first elem of entities with same Id as entity
-    void RemoveEntityFromSystem(Entity entity) override
+    void RemoveEntityFromSystem(Entity entity, bool dontCheck) override
     {
         //TODO figure out better looking implementation
         /*
@@ -55,9 +55,12 @@ public:
 
         entities.erase(entities.begin()+i);
         */
-        entities.erase(std::remove_if(entities.begin(), entities.end(), [&entity](Entity other) {
+        if(dontCheck || !CheckEntity(entity))
+        { 
+            entities.erase(std::remove_if(entities.begin(), entities.end(), [&entity](Entity other) {
             return entity == other;
-            }), entities.end()); // Erase-remove idiom
+                }), entities.end()); // Erase-remove idiom
+        }
     }
 
     // TODO: should maybe get rid of these other two as well...

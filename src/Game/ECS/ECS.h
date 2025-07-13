@@ -166,7 +166,8 @@ public:
     
     // Will handle duplicate protection
     virtual void AddEntityToSystem(Entity entity) = 0;
-    virtual void RemoveEntityFromSystem(Entity entity) = 0;
+    // dontCheck flag will tell system to remove entity without calling CheckEntity (usually when fully removing entity)
+    virtual void RemoveEntityFromSystem(Entity entity, bool dontCheck) = 0;
 };
 
 
@@ -232,7 +233,7 @@ private:
     // Set of entities that are flagged to be added or removed in next registry Update()
     std::set<Entity> entitiesToBeAdded;
     std::set<int> entitiesToBeRemoved;
-    // Set of entities where we need to recheck what systems they are in (such as after an Add/RemoveComponent)
+    // Set of entities where we need to recheck what systems they are in (such as after a RemoveComponent)
     std::set<Entity> entitiesToRecheck;
 
     // Free entity ids from destroyed entities
@@ -271,7 +272,7 @@ public:
     
     // TODO: not sure why these two are public
     void AddEntityToSystems(Entity entity);
-    void RemoveEntityFromSystems(Entity entity);
+    void RemoveEntityFromSystems(Entity entity, bool dontCheck);
 };
 
 
@@ -342,6 +343,8 @@ void Registry::RemoveComponent(Entity entity)
     const int entityId = entity.GetId();
 
     entityComponentSignatures[entityId].set(componentId, false);
+
+    entitiesToRecheck.insert(entity);
 }
 
 template <typename TComponent>

@@ -24,9 +24,10 @@ public:
         entities.insert(entity);
     }
 
-    void RemoveEntityFromSystem(Entity entity) override
+    void RemoveEntityFromSystem(Entity entity, bool dontCheck) override
     {
-        entities.erase(entity);
+        if(dontCheck || !CheckEntity(entity))
+        { entities.erase(entity); }
     }
 
     void Update(float deltaTime)
