@@ -39,7 +39,15 @@ public:
 
     void AddEntityToSystem(Entity entity) override
     {
-        entities.push_back(entity);
+        int zindex = entity.GetComponent<TransformComponent>().zindex;
+        int id = entity.GetId();
+        
+        std::vector<Entity>::iterator it = entities.begin();
+        while(it != entities.end() && id != it->GetId() && it->GetComponent<TransformComponent>().zindex <= zindex){
+            ++it;
+        }
+        if(it == entities.end() || id != it->GetId()) // Handles the duplicate protection
+        { entities.insert(it, entity); }
     }
 
     // Removes first elem of entities with same Id as entity
@@ -66,17 +74,6 @@ public:
     // TODO: should maybe get rid of these other two as well...
     void Update(SDL_Renderer* renderer, int viewportScale)
     {
-        // TODO: optimize by sorting sprite objects whenever they are added
-        // Can do this with a simple insertion on frames with low entity additions
-        // And with quicksort (or similar) for ones with more
-
-        
-        // TODO: im worried that if objects have same layer, they will swap whos in front
-        // Could add a secondary sort value by entityId, higher is above
-        std::sort(entities.begin(), entities.end(), [](const Entity& a, const Entity& b)
-            { return a.GetComponent<TransformComponent>().zindex
-            < b.GetComponent<TransformComponent>().zindex; });
-
         // Camera values
         glm::vec2 cameraCenter = Camera::position; // TODO: later position can be actual center, and can alter here
         float scale = viewportScale / Camera::scale;  // TODO: assertion that Camera::scale is not 0??

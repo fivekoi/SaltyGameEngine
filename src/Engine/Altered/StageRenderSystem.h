@@ -54,16 +54,6 @@ public:
 
     void Update(SDL_Renderer* renderer, glm::vec2 stageCenter, float stageZoom)
     {
-        // TODO: optimize by sorting sprite objects whenever they are added
-        // Can do this with a simple insertion on frames with low entity additions
-        // And with quicksort (or similar) for ones with more
-
-        // TODO: im worried that if objects have same layer, they will swap whos in front
-        // Could add a secondary sort value by entityId, higher is above
-        // std::sort(entities.begin(), entities.end(), [](const Entity& a, const Entity& b)
-        //     { return a.GetComponent<TransformComponent>().zindex
-        //     < b.GetComponent<TransformComponent>().zindex; });
-
         for(auto entity : entities)
         {
             TransformComponent& transform = entity.GetComponent<TransformComponent>();
