@@ -122,7 +122,7 @@ void Game::LoadScene(int sceneIndex)
     scale = width / Camera::aspectRatio.x;
 
     CreateEntityTree(jEntities, jRootIds);
-    for(int id = 0; id < registry->entityTree.size(); id++){
+    for(int id = 0; id < registry->entityTree.size(); ++id){
         if(registry->entityTree[id] != nullptr) registry->entityTree[id]->StartScripts();
     }
 
@@ -139,7 +139,7 @@ void Game::CreateEntityTree(json jEntities, json jRootIds){
     for (int id : jRootIds) rootIds.push_back(id);
 
     // Create entities and add components
-    for(int id = 0; id < jEntities.size(); id++){
+    for(int id = 0; id < jEntities.size(); ++id){
         json jEntity = jEntities[id];
         Entity& entity = registry->EngineCreateEntity();
         assert(entity.GetId() == id); // TODO: this should be commented out eventually, pretty sure it is always true
@@ -180,7 +180,7 @@ void Game::CreateEntityTree(json jEntities, json jRootIds){
     json jScripts = json::parse(f);
     f.close();
 
-    for(int id = 0; id < jEntities.size(); id++){
+    for(int id = 0; id < jEntities.size(); ++id){
         json jEntityScripts = jEntities[id]["scripts"];
         Entity* entity = registry->entityTree[id].get();
 
@@ -194,7 +194,7 @@ void Game::CreateEntityTree(json jEntities, json jRootIds){
 
             // TODO: make sure i like this name
             std::vector<SaltyType> serializedVars;
-            for(int argIdx = 0; argIdx < jVals.size(); argIdx++){
+            for(int argIdx = 0; argIdx < jVals.size(); ++argIdx){
                 serializedVars.push_back(CreateArg(jTypes[argIdx], jVals[argIdx]));
             }
 
@@ -381,7 +381,7 @@ void Game::Update(float deltaTime)
 
     // TODO: Check for events here
     // TODO: probably call script updates here?
-    for(int id = 0; id < registry->entityTree.size(); id++){
+    for(int id = 0; id < registry->entityTree.size(); ++id){
         if(registry->entityTree[id] != nullptr) registry->entityTree[id]->UpdateScripts(deltaTime);
     }
 

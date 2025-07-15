@@ -20,7 +20,16 @@
       },
       "name": "MoreText",
       "parent-id": -1,
-      "scripts": {},
+      "scripts": {
+        "PlayerMovement": [
+          0,
+          0.0,
+          -1,
+          -1,
+          "",
+          ""
+        ]
+      },
       "transform": {
         "position": [
           82.0,

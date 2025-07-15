@@ -55,7 +55,7 @@ void HandleUserScripts(std::string& projectName){
     std::string inc = "";
     std::string map = "";
     std::string con = "";
-    for(int scriptIdx = 0; scriptIdx < jScripts["filepaths"].size(); scriptIdx++){
+    for(int scriptIdx = 0; scriptIdx < jScripts["filepaths"].size(); ++scriptIdx){
         std::string filepath = jScripts["filepaths"][scriptIdx].get<std::string>();
         inc += "#include \"" + filepath + ".h\"\n";
         // Assumes class name is given by name of file
@@ -80,7 +80,7 @@ void HandleUserScripts(std::string& projectName){
         if(jNames.size() != 0) { con += ", "; }
         con += '\n';
         
-        for(int argIdx = 0; argIdx < jNames.size(); argIdx++){
+        for(int argIdx = 0; argIdx < jNames.size(); ++argIdx){
             std::string type = jTypes[argIdx];
             con += jNames[argIdx].get<std::string>() + "(std::get<" + type + ">(serializedVars[" + std::to_string(argIdx) + "]))";
             if(argIdx + 1 < jNames.size()) con += ", ";
@@ -165,7 +165,7 @@ void Menu::ExportWindows(){
                       "Make/src/Game/Salty/SaltyInput.cpp Make/src/Game/Salty/SaltyAudio.cpp Make/src/Game/Salty/SaltyCamera.cpp ";
     // Add user made scripts into source files
     std::string usersrc = "";
-    for(int scriptIdx = 0; scriptIdx < engineData->scriptFilepaths.size(); scriptIdx++){
+    for(int scriptIdx = 0; scriptIdx < engineData->scriptFilepaths.size(); ++scriptIdx){
         usersrc += "Projects/\"" + engineData->projectName + "\"/Unique/Assets/" + engineData->scriptFilepaths[scriptIdx] + ".cpp ";
     }
 
@@ -242,7 +242,7 @@ void Menu::ExportWeb(){
                       "Make/src/Game/Salty/SaltyInput.cpp Make/src/Game/Salty/SaltyAudio.cpp Make/src/Game/Salty/SaltyCamera.cpp ";
     // Add user made scripts into source files
     std::string usersrc = "";
-    for(int scriptIdx = 0; scriptIdx < engineData->scriptFilepaths.size(); scriptIdx++){
+    for(int scriptIdx = 0; scriptIdx < engineData->scriptFilepaths.size(); ++scriptIdx){
         usersrc += "Projects/\"" + engineData->projectName + "\"/Unique/Assets/" + engineData->scriptFilepaths[scriptIdx] + ".cpp ";
     }
     // TODO: statically link soloud instead

@@ -83,7 +83,7 @@ public:
         // null check
         if(handlers)
         {
-            for(auto it = handlers->begin(); it != handlers->end(); it++)
+            for(auto it = handlers->begin(); it != handlers->end(); ++it)
             {
                 auto handler = it->get();
                 TEvent event(std::forward<TArgs>(args)...);

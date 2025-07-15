@@ -49,7 +49,7 @@ void HasScriptEdit::ApplyJson(bool undo){
     bool addScript = undo != add;
     if(addScript){ // Pre: addScript -> entity["scripts"] not contains scriptData.filepath
         jScripts[scriptData.filepath] = json::array();
-        for(int varIdx = 0; varIdx < scriptData.varValues.size(); varIdx++){
+        for(int varIdx = 0; varIdx < scriptData.varValues.size(); ++varIdx){
             std::string type = scriptData.varTypes[varIdx];
             if(type == "int"){ // TODO: not a big fan of this big if else stuff, find a workaround, either a switch case, or a mapping to another function on a dict
                 jScripts[scriptData.filepath].push_back(std::get<int>(scriptData.varValues[varIdx]));

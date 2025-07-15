@@ -140,7 +140,7 @@ int Engine::Initialize()
     std::ifstream f("Projects/" + engineData->projectName + "/Unique/scripts.json");
     json jScripts = json::parse(f)["filepaths"];
     f.close();
-    for(int scriptIdx = 0; scriptIdx < jScripts.size(); scriptIdx++){
+    for(int scriptIdx = 0; scriptIdx < jScripts.size(); ++scriptIdx){
         std::string scriptFilepath = jScripts[scriptIdx].get<std::string>();
         engineData->scriptFilepaths.push_back(scriptFilepath);
 

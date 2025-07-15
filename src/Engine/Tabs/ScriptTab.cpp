@@ -52,12 +52,12 @@ void ScriptTab::Begin(){
         // Resize script tree if it does not have a vector for the current entity yet
         if(engineData->scriptTree.size() <= selectedEntity) engineData->scriptTree.resize(selectedEntity + 1);
         // Display all scripts (on this entity) and their serialized variables
-        for(int scriptIdx = 0; scriptIdx < engineData->scriptTree[selectedEntity].size(); scriptIdx++){
+        for(int scriptIdx = 0; scriptIdx < engineData->scriptTree[selectedEntity].size(); ++scriptIdx){
             ScriptData& curScript = engineData->scriptTree[selectedEntity][scriptIdx];
 
             if (ImGui::CollapsingHeader(curScript.filepath.c_str(), ImGuiTreeNodeFlags_DefaultOpen))
             {
-                for(int argIdx = 0; argIdx < curScript.varNames.size(); argIdx++){
+                for(int argIdx = 0; argIdx < curScript.varNames.size(); ++argIdx){
                     ImGui::Text(curScript.varNames[argIdx].c_str());
                     RenderArgument(curScript.varTypes[argIdx], curScript.varValues[argIdx], argIdx, curScript.filepath);
                 }
@@ -90,7 +90,7 @@ void ScriptTab::Begin(){
             ImGui::PopItemWidth();
             // Detect for overlapping names (i.e. user already has a file of that name)
             bool overlap = false;
-            for(int i = 0; i < engineData->scriptNames.size(); i++){
+            for(int i = 0; i < engineData->scriptNames.size(); ++i){
                 if(engineData->scriptNames[i] == newScriptName) overlap = true;
             }
 
@@ -175,12 +175,12 @@ public:\n\
 
             // TODO: change this to a search function
             // TODO: add a dropdown of all scripts
-            for(int i = 0; i < engineData->scriptFilepaths.size(); i++){
+            for(int i = 0; i < engineData->scriptFilepaths.size(); ++i){
                 // TODO: this should disable if the entity already has the script, also add a hover prolly
                 if(engineData->scriptTree.size() <= selectedEntity) engineData->scriptTree.resize(selectedEntity + 1);
 
                 bool hasScript = false;
-                for(int j = 0; j < engineData->scriptTree[selectedEntity].size(); j++){
+                for(int j = 0; j < engineData->scriptTree[selectedEntity].size(); ++j){
                     if(engineData->scriptTree[selectedEntity][j].filepath == engineData->scriptFilepaths[i]) hasScript = true;
                 }
 
@@ -221,7 +221,7 @@ ScriptData ScriptTab::CreateDefaultScript(std::string filepath, json jNames, jso
     ScriptData scriptData;
     scriptData.filepath = filepath;
 
-    for(int argIdx = 0; argIdx < jTypes.size(); argIdx++){
+    for(int argIdx = 0; argIdx < jTypes.size(); ++argIdx){
         scriptData.varTypes.push_back(jTypes[argIdx].get<std::string>());
         scriptData.varNames.push_back(jNames[argIdx].get<std::string>());
         scriptData.varValues.push_back(DefaultArg(jTypes[argIdx]));

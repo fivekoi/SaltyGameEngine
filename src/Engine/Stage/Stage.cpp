@@ -90,7 +90,7 @@ void Stage::CreateEntityTree(json jEntities, json jRootIds){
     // Select first entity in scene
     if(rootIds.size() > 0) engineData->selectedEntity = rootIds[0]; // TODO: make sure this is fine on scene swap, might need an else -1
 
-    for(int id = 0; id < jEntities.size(); id++){
+    for(int id = 0; id < jEntities.size(); ++id){
         json jEntity = jEntities[id];
         Entity& entity = registry->EngineCreateEntity();
         assert(entity.GetId() == id); // TODO: this should be commented out eventually, pretty sure it is always true
@@ -166,7 +166,7 @@ void Stage::CreateScriptData(int entityId, std::string& filepath, json jTypes, j
     ScriptData scriptData;
     scriptData.filepath = filepath;
 
-    for(int argIdx = 0; argIdx < jTypes.size(); argIdx++){
+    for(int argIdx = 0; argIdx < jTypes.size(); ++argIdx){
         scriptData.varTypes.push_back(jTypes[argIdx].get<std::string>());
         scriptData.varNames.push_back(jNames[argIdx].get<std::string>());
         scriptData.varValues.push_back(CreateArg(jTypes[argIdx], jVals[argIdx]));
