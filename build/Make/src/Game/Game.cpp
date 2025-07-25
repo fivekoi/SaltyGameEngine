@@ -23,6 +23,7 @@
 // TODO: might seperate these salty things into another folder
 #include "Game/Salty/SaltyAudio.h"
 #include "Game/Salty/SaltyCamera.h"
+#include "Game/Salty/SaltyDebug.h"
 
 #include "Game/UserScripts.cpp"
 
@@ -83,12 +84,12 @@ int Game::Initialize()
     }
     assetManager = std::make_shared<AssetManager>(renderer);
 
-    // TODO: check for saved scene number here, currently just default
-    LoadScene(0);
-
     // TODO: dont forget to add all systems here
     registry->AddSystem<RenderSystem>(assetManager);
     registry->AddSystem<PhysicsSystem>();
+
+    // TODO: check for saved scene number here, currently just default
+    LoadScene(0);
 
     isRunning = true;
     return 0;
@@ -131,7 +132,7 @@ void Game::LoadScene(int sceneIndex)
     prevFrameTime = SDL_GetTicks64();
 }
 
-void Game::CreateEntityTree(json jEntities, json jRootIds){
+void Game::CreateEntityTree(json jEntities, json jRootIds){    
     registry->entityTree.clear(); // calls destructors of unique_ptr to deallocate
     auto& rootIds = registry->rootIds;
     rootIds.clear();

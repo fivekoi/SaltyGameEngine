@@ -82,6 +82,7 @@ public:
         {
             TransformComponent& transform = entity.GetComponent<TransformComponent>();
             const auto sprite = entity.GetComponent<SpriteComponent>();
+         
             glm::vec2 textureSize = assetManager->GetTextureSize(sprite.filepath);
 
             float cos = glm::cos(transform.rotation / 180 * 3.14);
@@ -102,7 +103,6 @@ public:
                 else if(transform.scale.y >= 0) flip = SDL_FLIP_HORIZONTAL;
                 else flip = static_cast<SDL_RendererFlip>(SDL_FLIP_VERTICAL | SDL_FLIP_HORIZONTAL); 
             }
-            
 
             SDL_RenderCopyEx(
                 renderer,

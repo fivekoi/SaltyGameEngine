@@ -6,7 +6,8 @@
       "player",
       "sprite",
       "sprite1",
-      "sprite2"
+      "sprite2",
+      "otherSprite"
     ],
     "types": [
       "int",
@@ -14,7 +15,8 @@
       "Transform*",
       "Sprite*",
       "string",
-      "string"
+      "string",
+      "Sprite*"
     ]
   },
   "filepaths": [

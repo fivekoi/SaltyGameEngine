@@ -18,6 +18,7 @@ private:
 
     SF_ string sprite1;
     SF_ string sprite2;
+    SF_ Sprite* otherSprite;
 
     bool whichSprite = false;
 public:

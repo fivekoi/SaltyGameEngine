@@ -44,6 +44,12 @@ run:
 debug:
 	cd $(BUILD_DIR) && gdb ./$(ENGINE_NAME)
 
+copy: # only copies files
+	cp -r ./src/Game/* ./$(BUILD_DIR)/Make/src/Game 
+	cp ./src/main.cpp ./$(BUILD_DIR)/Make/src
+	cp ./src/webmain.cpp ./$(BUILD_DIR)/Make/src
+	cp ./src/SaltyEngine.h ./$(BUILD_DIR)/Make/src
+
 clean:
 	cd $(BUILD_DIR) && del $(ENGINE_NAME).exe && del imgui.ini;
 

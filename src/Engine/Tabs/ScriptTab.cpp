@@ -308,7 +308,27 @@ void ScriptTab::RenderArgument(std::string type, SaltyType& value, int argIdx, s
         ImGui::InputText(tag.c_str(), &std::get<std::string>(value));
         ImGui::PopItemWidth();
 
-        if(std::get<std::string>(value) != prev) {
+        bool dropped = false;
+        if (ImGui::BeginDragDropTarget())
+        {
+            if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("FILEPATH_PNG"))
+            {
+                auto payloadFilepath = static_cast<const char*>(payload->Data);
+                
+                value = payloadFilepath;
+                dropped = true;
+
+                // Update current-scene.json accordingly
+                std::ifstream f("EngineData/current-scene.json");
+                json jScene = json::parse(f);
+                jScene["entities"][selectedEntity]["scripts"][scriptFilepath][argIdx] = payloadFilepath;
+
+                std::ofstream("EngineData/current-scene.json") << std::setw(2) << jScene;
+                f.close();
+            }
+        }
+
+        if(!dropped && std::get<std::string>(value) != prev) {
             // Update current-scene.json accordingly
             std::ifstream f("EngineData/current-scene.json");
             json jScene = json::parse(f);
