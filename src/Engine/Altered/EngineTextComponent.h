@@ -6,6 +6,7 @@
 #include <SDL.h>
 #include <glm.hpp>
 
+// Engine will handle texture asset management, so no need for proxy class like in Game's TextComponent
 struct EngineTextComponent {
     std::string filepath;
     std::string text;

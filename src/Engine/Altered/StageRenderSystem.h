@@ -63,7 +63,7 @@ public:
             if(entity.HasComponent<EngineSpriteComponent>()){
                 const auto sprite = entity.GetComponent<EngineSpriteComponent>();
                 TextureData textureData = assetManager->GetTexture(sprite.filepath);
-                glm::vec2 textureSize = textureData.textureSize;
+                glm::ivec2 textureSize = textureData.textureSize;
 
                 SDL_Rect dstRect = {
                     static_cast<int>((transform.position.x  - stageCenter.x) * stageZoom), 

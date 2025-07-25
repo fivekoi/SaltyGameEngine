@@ -61,7 +61,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "./big.png"
+          "filepath": "./RedMagnet.png"
         }
       },
       "name": "WithScript",

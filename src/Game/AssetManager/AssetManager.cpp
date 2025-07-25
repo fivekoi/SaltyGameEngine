@@ -10,8 +10,8 @@ AssetManager::~AssetManager() { ClearAssets(); }
 
 void AssetManager::ClearAssets()
 {
-    for(auto texture : textures)
-    { SDL_DestroyTexture(texture.second); }
+    for(const auto& kv : textures)
+    { SDL_DestroyTexture(kv.second.texture); }
     textures.clear();
 
     for(auto font : fonts)
@@ -30,24 +30,21 @@ void AssetManager::AddTexture(const std::string& filepath)
 
         SDL_Point sdlSize;
         SDL_QueryTexture(texture, NULL, NULL, &sdlSize.x, &sdlSize.y);
-        glm::vec2 size = glm::vec2(sdlSize.x, sdlSize.y);
+        glm::ivec2 size = glm::ivec2(sdlSize.x, sdlSize.y);
 
-        textures.emplace(filepath, texture);
-        textureSizes.emplace(filepath, size);
+        textures.emplace(filepath, TextureData(texture, size, 1));
+    }
+    else{
+        // Increment refCount of texture at filepath
+        textures[filepath].refCount++;
     }
 }
 
-SDL_Texture* AssetManager::GetTexture(const std::string& filepath)
+TextureData AssetManager::GetTexture(const std::string& filepath)
 {
     // TODO: add this back once i add drag and drop (also count out default "")
     // assert(textures.count(filepath));
     return textures[filepath];
-}
-
-glm::vec2 AssetManager::GetTextureSize(const std::string& filepath)
-{
-    // assert(textureSizes.count(filepath));
-    return textureSizes[filepath];
 }
 
 

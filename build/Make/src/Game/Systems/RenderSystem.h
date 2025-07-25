@@ -81,35 +81,65 @@ public:
         for(auto entity : entities)
         {
             TransformComponent& transform = entity.GetComponent<TransformComponent>();
-            const auto sprite = entity.GetComponent<SpriteComponent>();
-         
-            glm::vec2 textureSize = assetManager->GetTextureSize(sprite.filepath);
-
             float cos = glm::cos(transform.rotation / 180 * 3.14);
             float sin = glm::sin(transform.rotation / 180 * 3.14);
 
-            SDL_Rect dstRect = {
-                static_cast<int>((transform.position.x  - cameraCenter.x) * scale), 
-                static_cast<int>(-(transform.position.y - cameraCenter.y) * scale), // Negative so position y-axis points "up"
-                static_cast<int>(textureSize.x * glm::abs(transform.scale.x) * scale),
-                static_cast<int>(textureSize.y * glm::abs(transform.scale.y) * scale)
-            };
+            if(entity.HasComponent<SpriteComponent>()){
+                const auto sprite = entity.GetComponent<SpriteComponent>();
+                TextureData textureData = assetManager->GetTexture(sprite.filepath);
+                glm::ivec2 textureSize = textureData.textureSize;
 
-            // Handle negative scales by flipping sprite
-            SDL_RendererFlip flip = SDL_FLIP_NONE;
-            if(transform.scale.x < 0 || transform.scale.y < 0)
-            {
-                if(transform.scale.x >= 0) flip = SDL_FLIP_VERTICAL;
-                else if(transform.scale.y >= 0) flip = SDL_FLIP_HORIZONTAL;
-                else flip = static_cast<SDL_RendererFlip>(SDL_FLIP_VERTICAL | SDL_FLIP_HORIZONTAL); 
+                SDL_Rect dstRect = {
+                    static_cast<int>((transform.position.x  - cameraCenter.x) * scale), 
+                    static_cast<int>(-(transform.position.y - cameraCenter.y) * scale), // Negative so position y-axis points "up"
+                    static_cast<int>(textureSize.x * glm::abs(transform.scale.x) * scale),
+                    static_cast<int>(textureSize.y * glm::abs(transform.scale.y) * scale)
+                };
+
+                // Handle negative scales by flipping sprite
+                SDL_RendererFlip flip = SDL_FLIP_NONE;
+                if(transform.scale.x < 0 || transform.scale.y < 0)
+                {
+                    if(transform.scale.x >= 0) flip = SDL_FLIP_VERTICAL;
+                    else if(transform.scale.y >= 0) flip = SDL_FLIP_HORIZONTAL;
+                    else flip = static_cast<SDL_RendererFlip>(SDL_FLIP_VERTICAL | SDL_FLIP_HORIZONTAL); 
+                }
+
+                SDL_RenderCopyEx(
+                    renderer,
+                    textureData.texture,
+                    NULL, &dstRect, -transform.rotation, // rotations are counterclockwise
+                    NULL, flip
+                );
             }
 
-            SDL_RenderCopyEx(
-                renderer,
-                assetManager->GetTexture(sprite.filepath),
-                NULL, &dstRect, -transform.rotation, // rotations are counterclockwise
-                NULL, flip
-            );
+            if(entity.HasComponent<TextComponent>()){
+                // const auto text = entity.GetComponent<TextComponent>();
+                // glm::vec2 textureSize = assetManager->GetTextureSize(text.filepath);
+
+                // SDL_Rect dstRect = {
+                //     static_cast<int>((transform.position.x  - cameraCenter.x) * scale), 
+                //     static_cast<int>(-(transform.position.y - cameraCenter.y) * scale), // Negative so position y-axis points "up"
+                //     static_cast<int>(textureSize.x * glm::abs(transform.scale.x) * scale),
+                //     static_cast<int>(textureSize.y * glm::abs(transform.scale.y) * scale)
+                // };
+
+                // // Handle negative scales by flipping sprite
+                // SDL_RendererFlip flip = SDL_FLIP_NONE;
+                // if(transform.scale.x < 0 || transform.scale.y < 0)
+                // {
+                //     if(transform.scale.x >= 0) flip = SDL_FLIP_VERTICAL;
+                //     else if(transform.scale.y >= 0) flip = SDL_FLIP_HORIZONTAL;
+                //     else flip = static_cast<SDL_RendererFlip>(SDL_FLIP_VERTICAL | SDL_FLIP_HORIZONTAL); 
+                // }
+
+                // SDL_RenderCopyEx(
+                //     renderer,
+                //     assetManager->GetFontTexture(sprite.filepath),
+                //     NULL, &dstRect, -transform.rotation, // rotations are counterclockwise
+                //     NULL, flip
+                // );
+            }
         }
     }
 };

@@ -30,6 +30,14 @@ public:
     void SetAssetManager(std::shared_ptr<AssetManager> assetManager) {
         this->assetManager = assetManager;
     }
+
+    // SpriteComponent& operator=(const SpriteComponent& other){
+    //     if(this != &other) {
+    //         assetManager = other.assetManager;
+    //         filepath.ManuallySet(other.filepath);
+    //     }
+    //     return *this;
+    // }
 };
 
 #endif // TEXTCOMPONENT_H
