@@ -83,6 +83,8 @@ int Game::Initialize()
         return -1;
     }
     assetManager = std::make_shared<AssetManager>(renderer);
+    std::cout << "game: " << assetManager.get() << '\n';
+
 
     // TODO: dont forget to add all systems here
     registry->AddSystem<RenderSystem>(assetManager);
@@ -123,6 +125,10 @@ void Game::LoadScene(int sceneIndex)
     scale = width / Camera::aspectRatio.x;
 
     CreateEntityTree(jEntities, jRootIds);
+
+    // Registry update adds entities to systems, need to do this before running Start() in scripts
+    // One notable thing is adding AssetManager to SpriteComponents and TextComponents
+    registry->Update();
     for(int id = 0; id < registry->entityTree.size(); ++id){
         if(registry->entityTree[id] != nullptr) registry->entityTree[id]->StartScripts();
     }
@@ -254,7 +260,13 @@ SaltyType Game::CreateArg(json jType, json jVal){
         assert(registry->entityTree[id]->HasComponent<SpriteComponent>());
         SpriteComponent* sprite = &registry->entityTree[id]->GetComponent<SpriteComponent>();
         return SaltyType(sprite);
-    } // TODO: add text here (for scripts)
+    } 
+    else if(type == "Text*"){
+        int id = jVal.get<int>();
+        assert(registry->entityTree[id]->HasComponent<TextComponent>());
+        TextComponent* text = &registry->entityTree[id]->GetComponent<TextComponent>();
+        return SaltyType(text);
+    }
     else if(type == "Rigidbody*"){
         int id = jVal.get<int>();
         assert(registry->entityTree[id]->HasComponent<RigidbodyComponent>());
@@ -398,13 +410,11 @@ void Game::Update(float deltaTime)
     registry->GetSystem<PhysicsSystem>().Update(deltaTime); 
 
     // TODO: Check for events here
-    // TODO: probably call script updates here?
     for(int id = 0; id < registry->entityTree.size(); ++id){
         if(registry->entityTree[id] != nullptr) registry->entityTree[id]->UpdateScripts(deltaTime);
     }
 
-    registry->Update(); // TODO: not sure where this should be (which order)
-    
+    registry->Update();
 }
 
 void Game::Render()

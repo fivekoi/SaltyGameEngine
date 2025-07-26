@@ -12,6 +12,8 @@ void PlayerMovement::Start(){
     Audio::Load(sound);
 
     Camera::position.x = 1;
+
+    sprite->filepath = sprite2;
 }
 
 // TODO: may add more detail

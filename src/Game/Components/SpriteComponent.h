@@ -27,8 +27,6 @@ private:
             return *this;
         }
 
-
-
         // Implicit conversion to string
         operator std::string() const {
             return filepath;
@@ -52,7 +50,7 @@ public:
         this->filepath.ManuallySet(filepath);
     }
 
-    PFilepath filepath = PFilepath(this, "");
+    PFilepath filepath = PFilepath(this);
 
     // FOR ENGINE USE ONLY, assigned by RenderSystem on AddComponent(ToSystem)
     void SetAssetManager(std::shared_ptr<AssetManager> assetManager) {

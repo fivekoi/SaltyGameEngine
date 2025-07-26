@@ -29,9 +29,13 @@
           "text": "text text"
         }
       },
-      "name": "Empty",
+      "name": "TextEntity",
       "parent-id": -1,
-      "scripts": {},
+      "scripts": {
+        "TextUpdate": [
+          0
+        ]
+      },
       "transform": {
         "position": [
           663.0,

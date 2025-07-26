@@ -19,7 +19,16 @@
       "Sprite*"
     ]
   },
+  "TextUpdate": {
+    "names": [
+      "text"
+    ],
+    "types": [
+      "Text*"
+    ]
+  },
   "filepaths": [
-    "PlayerMovement"
+    "PlayerMovement",
+    "TextUpdate"
   ]
 }

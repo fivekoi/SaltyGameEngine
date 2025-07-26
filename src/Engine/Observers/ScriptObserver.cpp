@@ -327,7 +327,7 @@ SaltyType ScriptObserver::DefaultArg(std::string type){
     else if(type == "string"){
         return SaltyType("");
     }
-    else if(type == "Entity*" || type == "Transform*" || type == "Sprite*" || type == "Rigidbody*"){
+    else if(type == "Entity*" || type == "Transform*" || type == "Sprite*" || type == "Text*" || type == "Rigidbody*"){
         // -1 here signifies that no entity has been set
         return SaltyType(-1);
     }
@@ -353,7 +353,7 @@ json ScriptObserver::DefaultArgJson(std::string type){
     else if(type == "string"){
         return "";
     }
-    else if(type == "Entity*" || type == "Transform*" || type == "Sprite*" || type == "Rigidbody*"){
+    else if(type == "Entity*" || type == "Transform*" || type == "Sprite*" || type == "Text*" || type == "Rigidbody*"){
         // -1 here signifies that no entity has been set
         return -1;
     }

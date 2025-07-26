@@ -60,7 +60,7 @@ void HasScriptEdit::ApplyJson(bool undo){
             else if(type == "string"){
                 jScripts[scriptData.filepath].push_back(std::get<std::string>(scriptData.varValues[varIdx]));
             }
-            else if(type == "Entity*" || type == "Transform*" || type == "Sprite*" || type == "Rigidbody*"){
+            else if(type == "Entity*" || type == "Transform*" || type == "Sprite*" || type == "Text*" || type == "Rigidbody*"){
                 jScripts[scriptData.filepath].push_back(std::get<int>(scriptData.varValues[varIdx]));
             }
             else if(type == "Sound"){

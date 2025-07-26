@@ -53,6 +53,8 @@ TextureData AssetManager::GetTexture(const std::string& filepath)
 
 
 void AssetManager::AddFont(const std::string& filepath, int fontSize){
+    std::cout << filepath << ' ' << fontSize << '\n';
+
     std::pair<std::string, int> key = std::make_pair(filepath, fontSize);
     if(fonts.count(key)){
         fonts[key].refCount++;

@@ -191,7 +191,7 @@ SaltyType Stage::CreateArg(json jType, json jVal){
     else if(type == "string"){
         return SaltyType(jVal.get<std::string>());
     }
-    else if(type == "Entity*" || type == "Transform*" || type == "Sprite*" || type == "Rigidbody*"){
+    else if(type == "Entity*" || type == "Transform*" || type == "Sprite*" || type == "Text*" || type == "Rigidbody*"){
         return SaltyType(jVal.get<int>()); // Just returns entity id for engine
     }
     else if(type == "Sound"){

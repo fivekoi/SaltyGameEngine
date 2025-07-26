@@ -27,6 +27,7 @@ public:
     {
         bool hasSprite = entity.HasComponent<SpriteComponent>();
         bool hasText = entity.HasComponent<TextComponent>();
+
         if(hasSprite){
             entity.GetComponent<SpriteComponent>().SetAssetManager(assetManager);
         }

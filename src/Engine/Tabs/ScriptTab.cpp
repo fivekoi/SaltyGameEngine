@@ -247,7 +247,7 @@ SaltyType ScriptTab::DefaultArg(json jType){
     else if(type == "string"){
         return SaltyType("");
     }
-    else if(type == "Entity*" || type == "Transform*" || type == "Sprite*" || type == "Rigidbody*"){
+    else if(type == "Entity*" || type == "Transform*" || type == "Sprite*" || type == "Text*" || type == "Rigidbody*"){
         // -1 here signifies that no entity has been set
         return SaltyType(-1);
     }
@@ -367,7 +367,7 @@ void ScriptTab::RenderArgument(std::string type, SaltyType& value, int argIdx, s
         else { ImGui::Text((registry->entityTree[id]->name).c_str()); }
         ImGui::PopItemWidth();
     }
-    else if(type == "Transform*" || type == "Sprite*" || type == "Rigidbody*"){
+    else if(type == "Transform*" || type == "Sprite*" || type == "Text*" || type == "Rigidbody*"){
         // TODO: i have made this only update json for drag and drop right now, should disable manual input
         ImGui::PushItemWidth(ImGui::GetWindowWidth() * 0.5f);
         ImGui::InputInt(tag.c_str(), &std::get<int>(value)); 
