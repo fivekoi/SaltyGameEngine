@@ -19,7 +19,7 @@ private:
 
     std::unordered_map<std::string, TextureData> textures;
     
-    // From (filepath, fontSize) -> TTF_Font
+    // (filepath, fontSize) -> TTF_Font
     std::map<std::pair<std::string, int>, FontData> fonts;
     
     struct FontTextureKey {

@@ -42,12 +42,17 @@ public:
         int zindex = entity.GetComponent<TransformComponent>().zindex;
         int id = entity.GetId();
         
+        // Handles the duplicate protection
+        for(auto& entity : entities) {
+            if(entity.GetId() == id)
+                return;
+        }
+
         std::vector<Entity>::iterator it = entities.begin();
-        while(it != entities.end() && id != it->GetId() && it->GetComponent<TransformComponent>().zindex <= zindex){
+        while(it != entities.end() && it->GetComponent<TransformComponent>().zindex <= zindex){
             ++it;
         }
-        if(it == entities.end() || id != it->GetId()) // Handles the duplicate protection
-        { entities.insert(it, entity); }
+        entities.insert(it, entity);
     }
 
     // Removes first elem of entities with same Id as entity
@@ -114,31 +119,32 @@ public:
             }
 
             if(entity.HasComponent<TextComponent>()){
-                // const auto text = entity.GetComponent<TextComponent>();
-                // glm::vec2 textureSize = assetManager->GetTextureSize(text.filepath);
+                const auto text = entity.GetComponent<TextComponent>();
+                TextureData textureData = assetManager->GetFontTexture(text.filepath, text.fontSize, text.text, text.color);
+                glm::ivec2 textureSize = textureData.textureSize;
 
-                // SDL_Rect dstRect = {
-                //     static_cast<int>((transform.position.x  - cameraCenter.x) * scale), 
-                //     static_cast<int>(-(transform.position.y - cameraCenter.y) * scale), // Negative so position y-axis points "up"
-                //     static_cast<int>(textureSize.x * glm::abs(transform.scale.x) * scale),
-                //     static_cast<int>(textureSize.y * glm::abs(transform.scale.y) * scale)
-                // };
+                SDL_Rect dstRect = {
+                    static_cast<int>((transform.position.x  - cameraCenter.x) * scale), 
+                    static_cast<int>(-(transform.position.y - cameraCenter.y) * scale), // Negative so position y-axis points "up"
+                    static_cast<int>(textureSize.x * glm::abs(transform.scale.x) * scale),
+                    static_cast<int>(textureSize.y * glm::abs(transform.scale.y) * scale)
+                };
 
-                // // Handle negative scales by flipping sprite
-                // SDL_RendererFlip flip = SDL_FLIP_NONE;
-                // if(transform.scale.x < 0 || transform.scale.y < 0)
-                // {
-                //     if(transform.scale.x >= 0) flip = SDL_FLIP_VERTICAL;
-                //     else if(transform.scale.y >= 0) flip = SDL_FLIP_HORIZONTAL;
-                //     else flip = static_cast<SDL_RendererFlip>(SDL_FLIP_VERTICAL | SDL_FLIP_HORIZONTAL); 
-                // }
+                // Handle negative scales by flipping sprite
+                SDL_RendererFlip flip = SDL_FLIP_NONE;
+                if(transform.scale.x < 0 || transform.scale.y < 0)
+                {
+                    if(transform.scale.x >= 0) flip = SDL_FLIP_VERTICAL;
+                    else if(transform.scale.y >= 0) flip = SDL_FLIP_HORIZONTAL;
+                    else flip = static_cast<SDL_RendererFlip>(SDL_FLIP_VERTICAL | SDL_FLIP_HORIZONTAL); 
+                }
 
-                // SDL_RenderCopyEx(
-                //     renderer,
-                //     assetManager->GetFontTexture(sprite.filepath),
-                //     NULL, &dstRect, -transform.rotation, // rotations are counterclockwise
-                //     NULL, flip
-                // );
+                SDL_RenderCopyEx(
+                    renderer,
+                    textureData.texture,
+                    NULL, &dstRect, -transform.rotation, // rotations are counterclockwise
+                    NULL, flip
+                );
             }
         }
     }

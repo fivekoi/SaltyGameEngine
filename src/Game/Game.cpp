@@ -159,14 +159,31 @@ void Game::CreateEntityTree(json jEntities, json jRootIds){
         transform.position = glm::vec2(jTransform["position"][0], jTransform["position"][1]);
         transform.scale = glm::vec2(jTransform["scale"][0], jTransform["scale"][1]);
         transform.rotation = jTransform["rotation"];
+        transform.zindex = jTransform["zindex"];
 
         // Add all components to entity
         json jComponents = jEntity["components"];
         if(jComponents.contains("sprite")){
             json jValues = jComponents["sprite"];
             std::string filepath = jValues["filepath"];
+
             assetManager->AddTexture(filepath); // Duplicate textures are handled in assetManager
             entity.AddComponent<SpriteComponent>(filepath);
+        }
+        if(jComponents.contains("text")){
+            json jValues = jComponents["text"];
+            std::string filepath = jValues["filepath"];
+            int fontSize = jValues["fontSize"];
+            std::string text = jValues["text"];
+            SDL_Color color;
+            color.r = jValues["color"][0];
+            color.g = jValues["color"][1];
+            color.b = jValues["color"][2];
+            color.a = jValues["color"][3];
+
+            assetManager->AddFont(filepath, fontSize); // Duplicate textures are handled in assetManager
+            assetManager->AddFontTexture(filepath, fontSize, text, color);
+            entity.AddComponent<TextComponent>(filepath, text, fontSize, color);
         }
         if(jComponents.contains("rigidbody")){
             json jValues = jComponents["rigidbody"];
