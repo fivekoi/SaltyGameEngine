@@ -83,12 +83,6 @@ int Game::Initialize()
         return -1;
     }
     assetManager = std::make_shared<AssetManager>(renderer);
-    std::cout << "game: " << assetManager.get() << '\n';
-
-
-    // TODO: dont forget to add all systems here
-    registry->AddSystem<RenderSystem>(assetManager);
-    registry->AddSystem<PhysicsSystem>();
 
     // TODO: check for saved scene number here, currently just default
     LoadScene(0);
@@ -124,6 +118,12 @@ void Game::LoadScene(int sceneIndex)
     // glm::ivec2 viewportDims;
     scale = width / Camera::aspectRatio.x;
 
+    // Registry needs to reset (to remove entities, but also systems)
+    registry->Reset();
+    // TODO: dont forget to add all systems here
+    registry->AddSystem<RenderSystem>(assetManager);
+    registry->AddSystem<PhysicsSystem>();
+
     CreateEntityTree(jEntities, jRootIds);
 
     // Registry update adds entities to systems, need to do this before running Start() in scripts
@@ -139,7 +139,6 @@ void Game::LoadScene(int sceneIndex)
 }
 
 void Game::CreateEntityTree(json jEntities, json jRootIds){    
-    registry->entityTree.clear(); // calls destructors of unique_ptr to deallocate
     auto& rootIds = registry->rootIds;
     rootIds.clear();
     // We store rootIds in json file now (also represented by parent: -1 in entities)

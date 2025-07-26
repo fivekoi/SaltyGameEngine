@@ -45,6 +45,8 @@ private:
         }
     }
 public:
+    // TODO: consider adding a bool "DontUnloadOnChange"
+    // If the sprite will cycle between a few set filepaths then should set to true, otherwise defaults to false...?
     SpriteComponent(std::string filepath = "")
     {
         this->filepath.ManuallySet(filepath);

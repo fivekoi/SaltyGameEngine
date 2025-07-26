@@ -2,6 +2,9 @@
   "scenes": [
     {
       "name": "simple"
+    },
+    {
+      "name": "Scene2"
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "camera": {
+    "aspectRatio": [
+      16,
+      9
+    ],
+    "position": [
+      0,
+      0
+    ],
+    "scale": 10
+  },
+  "entities": [],
+  "root-ids": []
+}
