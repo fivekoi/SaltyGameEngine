@@ -39,8 +39,10 @@ private:
             filepath = newFilepath;
         }
     };
-    void OnFilepathChanged(std::string prevFilepath, std::string newFilepath){
-        // TODO: also remove previous texture?
+    void OnFilepathChanged(std::string prevFilepath, std::string newFilepath){        
+        assetManager->RemoveFont(prevFilepath, fontSize);
+        assetManager->RemoveFontTexture(prevFilepath, fontSize, text, color);
+
         assetManager->AddFont(newFilepath, fontSize);
         assetManager->AddFontTexture(newFilepath, fontSize, text, color);
     }
@@ -74,7 +76,9 @@ private:
         }
     };
     void OnFontSizeChanged(int prevFontSize, int newFontSize){
-        // TODO: also remove previous texture?
+        assetManager->RemoveFont(filepath, prevFontSize);
+        assetManager->RemoveFontTexture(filepath, prevFontSize, text, color);
+
         assetManager->AddFont(filepath, newFontSize);
         assetManager->AddFontTexture(filepath, newFontSize, text, color);
     }
@@ -109,7 +113,8 @@ private:
         }
     };
     void OnTextChanged(std::string prevText, std::string newText){
-        // TODO: also remove previous texture?
+        assetManager->RemoveFontTexture(filepath, fontSize, prevText, color);
+
         assetManager->AddFontTexture(filepath, fontSize, newText, color);
     }
 
@@ -166,7 +171,8 @@ private:
         }
     };
     void OnColorChanged(SDL_Color prevColor, SDL_Color newColor){
-        // TODO: also remove previous texture?
+        assetManager->RemoveFontTexture(filepath, fontSize, text, prevColor);
+        
         assetManager->AddFontTexture(filepath, fontSize, text, newColor);
     }
 
