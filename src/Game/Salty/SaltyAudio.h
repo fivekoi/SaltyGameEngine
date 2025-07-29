@@ -35,6 +35,9 @@ class Audio {
         static void Load(Sound& sound);
         static void Deload(Sound& sound);
         static void Play(Sound sound);
+        
+        // Called by engine on scene transition
+        static void DeloadAll();
 };
 
 #endif // SALTYAUDIO_H

@@ -94,6 +94,9 @@ int Game::Initialize()
 
 void Game::LoadScene(int sceneIndex)
 {
+    // Putting this at top, just needs to be before UserScript->Start()
+    Scene::currentScene = sceneIndex;
+
     // Get scene name from index
     std::ifstream f("Unique/scenes.json");
     json jSceneList = json::parse(f).begin().value();
@@ -121,6 +124,11 @@ void Game::LoadScene(int sceneIndex)
 
     // Registry needs to reset (to remove entities, but also systems)
     registry->Reset();
+    // TODO: could consider a flag to not do this (i.e. if some scene takes a while to load, and we 
+    // just load on startup??)
+    assetManager->ClearAssets();
+    Audio::DeloadAll();
+
     // TODO: dont forget to add all systems here
     registry->AddSystem<RenderSystem>(assetManager);
     registry->AddSystem<PhysicsSystem>();

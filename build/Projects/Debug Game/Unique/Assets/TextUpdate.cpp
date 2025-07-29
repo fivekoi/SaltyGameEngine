@@ -19,10 +19,22 @@ void TextUpdate::Update(float dt){
     text->color = {counter, 0, 0, counter};
 
     if(Input::KeyDown[KEY_2]){
-        Scene::Load(1);
+        if(Scene::currentScene == 0){
+            Scene::Load(1);
+        }
+        else{
+            Scene::Load(0);
+        }
     }
     
     if(Input::KeyDown[KEY_3]){
         other->GetScript<PlayerMovement>()->Three();
     }
+
+    if(Input::KeyDown[KEY_I]){
+        count += 1;
+        std::cout << count << '\n';
+    }
 }
+
+int TextUpdate::count = 0;

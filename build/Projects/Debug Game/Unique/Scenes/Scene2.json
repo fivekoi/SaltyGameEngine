@@ -16,14 +16,30 @@
       "components": {
         "sprite": {
           "filepath": "./RedMagnet.png"
+        },
+        "text": {
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "filepath": "./Fonts/ka1.ttf",
+          "fontSize": 20,
+          "text": "test"
         }
       },
       "name": "Greetings",
       "parent-id": -1,
-      "scripts": {},
+      "scripts": {
+        "TextUpdate": [
+          0,
+          -1
+        ]
+      },
       "transform": {
         "position": [
-          171.0,
+          124.0,
           -73.0
         ],
         "rotation": 0.0,

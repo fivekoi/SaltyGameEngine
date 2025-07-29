@@ -61,6 +61,13 @@ void Audio::Deload(Sound& sound){
     }
 }
 
+void Audio::DeloadAll(){
+    for(auto& sound : sounds){
+        Audio::soloud.stopAudioSource(*sound.get());
+    }
+    sounds.clear();
+}
+
 
 // No need to pass this by ref, just need id
 void Audio::Play(Sound sound){
