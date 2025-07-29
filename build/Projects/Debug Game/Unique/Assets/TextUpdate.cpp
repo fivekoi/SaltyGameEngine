@@ -16,4 +16,8 @@ void TextUpdate::Update(float dt){
     // text->fontSize = counter;
     text->text = std::to_string(int(std::round(timer)));
     text->color = {counter, 0, 0, counter};
+
+    if(Input::KeyDown[KEY_2]){
+        Scene::Load(1);
+    }
 }

@@ -39,6 +39,9 @@ class Game {
         // deltaTime converted into seconds here
         void Update(float deltaTime);
         void Render();
+        // Checks whether new Scene needs to be loaded
+        // TODO: dont like the name "CheckScene" very much... could maybe expand to do more later so name fits?
+        void CheckScene();
         void Destroy();
 
         bool isRunning; 

@@ -14,6 +14,7 @@
 #include "Game/Salty/SaltyCamera.h"
 #include "Game/Salty/SaltyDebug.h"
 #include "Game/Salty/SaltyInput.h"
+#include "Game/Salty/SaltyScene.h"
 #include "Game/Salty/SaltyTypes.h"
 
 // TODO: think about

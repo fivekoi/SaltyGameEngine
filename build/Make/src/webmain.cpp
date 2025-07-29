@@ -3,7 +3,6 @@
 
 #include "Game/Game.h"
 
-
 static void WebLoop(void* arg){
     // TODO: we will see if game has other stuff in main run loop later
     if(arg){
@@ -20,6 +19,9 @@ static void WebLoop(void* arg){
             game->Update(deltaTime / 1000.0f);
             
             game->Render();
+
+            // Scene::Load will be called by a user script, should process this after rendering what happens that frame
+            game->CheckScene();
         }
     }
 }

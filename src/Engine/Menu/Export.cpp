@@ -161,7 +161,7 @@ void Menu::ExportWindows(){
 
     // Compile game into .exe
     std::string src = "Make/src/main.cpp Make/src/Game/Game.cpp Make/src/Game/ECS/ECS.cpp " 
-                      "Make/src/Game/AssetManager/AssetManager.cpp Make/src/Game/Salty/SaltyDebug.cpp "
+                      "Make/src/Game/AssetManager/AssetManager.cpp Make/src/Game/Salty/SaltyDebug.cpp Make/src/Game/Salty/SaltyScene.cpp "
                       "Make/src/Game/Salty/SaltyInput.cpp Make/src/Game/Salty/SaltyAudio.cpp Make/src/Game/Salty/SaltyCamera.cpp ";
     // Add user made scripts into source files
     std::string usersrc = "";
@@ -238,7 +238,7 @@ void Menu::ExportWeb(){
 
     // Compile game into .exe
     std::string src = "Make/src/webmain.cpp Make/src/Game/Game.cpp Make/src/Game/ECS/ECS.cpp " 
-                      "Make/src/Game/AssetManager/AssetManager.cpp Make/src/Game/Salty/SaltyDebug.cpp "
+                      "Make/src/Game/AssetManager/AssetManager.cpp Make/src/Game/Salty/SaltyDebug.cpp Make/src/Game/Salty/SaltyScene.cpp "
                       "Make/src/Game/Salty/SaltyInput.cpp Make/src/Game/Salty/SaltyAudio.cpp Make/src/Game/Salty/SaltyCamera.cpp ";
     // Add user made scripts into source files
     std::string usersrc = "";

@@ -15,6 +15,7 @@
 
 #include "Game/ECS/ECS.h"
 #include "Game/Salty/SaltyInput.h"
+#include "Game/Salty/SaltyScene.h"
 #include "Game/Salty/SaltyTypes.h"
 // #include "../Components/BoxColliderComponent.h" might need for visual
 #include "Game/Systems/RenderSystem.h"
@@ -303,6 +304,9 @@ void Game::Run()
         Update(deltaTime / 1000.0f);
 
         Render();
+
+        // Scene::Load will be called by a user script, should process this after rendering what happens that frame
+        CheckScene();
     }
 }
 
@@ -425,6 +429,14 @@ void Game::Render()
     registry->GetSystem<RenderSystem>().Update(renderer, scale);
 
     SDL_RenderPresent(renderer);
+}
+
+void Game::CheckScene()
+{
+    if(Scene::sceneToLoad > -1){
+        LoadScene(Scene::sceneToLoad);
+        Scene::sceneToLoad = -1;
+    }
 }
 
 // Clean up
