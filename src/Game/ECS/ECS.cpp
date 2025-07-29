@@ -55,6 +55,7 @@ void Entity::UpdateScripts(float deltaTime){
     }
 }
 
+
 Entity& Registry::CreateEntity(int parentId) // default = -1
 {
     int entityId;

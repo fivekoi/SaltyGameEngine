@@ -21,10 +21,12 @@
   },
   "TextUpdate": {
     "names": [
-      "text"
+      "text",
+      "other"
     ],
     "types": [
-      "Text*"
+      "Text*",
+      "Entity*"
     ]
   },
   "filepaths": [

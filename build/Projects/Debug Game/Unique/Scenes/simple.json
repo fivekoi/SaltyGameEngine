@@ -33,12 +33,13 @@
       "parent-id": -1,
       "scripts": {
         "TextUpdate": [
-          0
+          0,
+          2
         ]
       },
       "transform": {
         "position": [
-          663.0,
+          659.0,
           -548.0
         ],
         "rotation": 0.0,

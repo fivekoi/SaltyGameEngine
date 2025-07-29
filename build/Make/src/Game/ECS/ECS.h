@@ -24,7 +24,7 @@
 
 // TODO: this will only be decided at end
 // Number of types of components
-const unsigned int MAX_COMPONENTS = 16;
+const unsigned int MAX_COMPONENTS = 8;
 // Tracks which components each entity has
 typedef std::bitset<MAX_COMPONENTS> Signature;
 
@@ -142,6 +142,7 @@ public:
     std::map<std::string, IScript*> scripts;
     void StartScripts();
     void UpdateScripts(float deltaTime);
+    template <typename TScript> TScript* GetScript();
 
     class Registry* registry; // TODO: would love to move this to private if i put it in initializer
 };
@@ -387,5 +388,16 @@ bool Entity::HasComponent() const
 template <typename TComponent>
 TComponent& Entity::GetComponent() const
 { return registry->GetComponent<TComponent>(*this); }
+
+template <typename TScript>
+TScript* Entity::GetScript(){ 
+    std::string scriptName = typeid(TScript).name();
+    auto it = scripts.find(scriptName);
+    if(it != scripts.end()){
+        return static_cast<TScript*>(it->second);
+    }
+    assert(false); // TODO: this needs to log a proper failure message
+    return nullptr; 
+}
 
 #endif // ECS_H

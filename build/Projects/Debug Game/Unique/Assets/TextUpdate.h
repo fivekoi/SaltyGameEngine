@@ -8,6 +8,8 @@ private:
 
     int counter = 0;
 
+    SF_ Entity* other;
+
 public:
     // Initialization will be handled by engine (including that of SF_ variables)
     TextUpdate(Entity* entity, Transform* transform, std::vector<SaltyType>& serializedVars);

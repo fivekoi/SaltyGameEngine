@@ -49,3 +49,7 @@ void PlayerMovement::Update(float dt){
         }
     }
 }
+
+void PlayerMovement::Three(){
+    std::cout << "3\n";
+}

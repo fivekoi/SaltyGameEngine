@@ -1,4 +1,5 @@
 #include "TextUpdate.h"
+#include "PlayerMovement.h"
 
 #include <cmath>
 #include <string>
@@ -19,5 +20,9 @@ void TextUpdate::Update(float dt){
 
     if(Input::KeyDown[KEY_2]){
         Scene::Load(1);
+    }
+    
+    if(Input::KeyDown[KEY_3]){
+        other->GetScript<PlayerMovement>()->Three();
     }
 }
