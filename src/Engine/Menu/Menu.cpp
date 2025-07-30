@@ -195,7 +195,7 @@ void Menu::CreateNewScene(){
         {"camera", {
             {"aspectRatio", {16, 9}},
             {"position", {0, 0}},
-            {"scale", 10}
+            {"scale", 60}
         }},
         {"entities", json::array()},
         {"root-ids", json::array()}

@@ -1,3 +1,20 @@
 {
-  "filepaths": []
+  "Fruit\\FruitMini": {
+    "names": [
+      "inputText",
+      "debugText"
+    ],
+    "types": [
+      "Text*",
+      "Text*"
+    ]
+  },
+  "Title\\TitleScreen": {
+    "names": [],
+    "types": []
+  },
+  "filepaths": [
+    "Fruit\\FruitMini",
+    "Title\\TitleScreen"
+  ]
 }

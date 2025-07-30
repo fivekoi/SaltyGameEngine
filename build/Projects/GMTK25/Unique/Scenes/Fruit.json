@@ -1,0 +1,138 @@
+{
+  "camera": {
+    "aspectRatio": [
+      16,
+      9
+    ],
+    "position": [
+      0,
+      0
+    ],
+    "scale": 60.0
+  },
+  "entities": [
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "filepath": "./Fonts/KiwiSoda.ttf",
+          "fontSize": 80,
+          "text": "Fruit Loops"
+        }
+      },
+      "name": "Title",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          17.0,
+          -28.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "filepath": "./Fonts/KiwiSoda.ttf",
+          "fontSize": 80,
+          "text": "_ _ _ _ _ _"
+        }
+      },
+      "name": "InputText",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          290.0,
+          -449.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "filepath": "./Fonts/KiwiSoda.ttf",
+          "fontSize": 80,
+          "text": "answer: "
+        }
+      },
+      "name": "DebugAnswer",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          247.0,
+          -248.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {},
+      "name": "FruitController",
+      "parent-id": -1,
+      "scripts": {
+        "Fruit\\FruitMini": [
+          1,
+          2
+        ]
+      },
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    }
+  ],
+  "root-ids": [
+    0,
+    2,
+    1,
+    3
+  ]
+}

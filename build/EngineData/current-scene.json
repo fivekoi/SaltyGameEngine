@@ -1,16 +1,52 @@
 {
   "camera": {
     "aspectRatio": [
-      50,
-      25
+      16,
+      9
     ],
     "position": [
       0,
       0
     ],
-    "scale": 10
+    "scale": 60.0
   },
-  "entities": [],
+  "entities": [
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "filepath": "",
+          "fontSize": 8,
+          "text": ""
+        }
+      },
+      "name": "Title",
+      "parent-id": -1,
+      "scripts": {
+        "Title\\TitleScreen": []
+      },
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    }
+  ],
   "null-count": 0,
-  "root-ids": []
+  "root-ids": [
+    0
+  ]
 }
