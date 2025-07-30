@@ -35,6 +35,11 @@ void TextUpdate::Update(float dt){
         count += 1;
         std::cout << count << '\n';
     }
+
+    if(Input::KeyDown[KEY_E]){
+        // TODO: entity->CreateChild();
+        
+    }
 }
 
 int TextUpdate::count = 0;
