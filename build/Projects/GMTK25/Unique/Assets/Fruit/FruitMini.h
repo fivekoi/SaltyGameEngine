@@ -12,6 +12,7 @@ private:
     std::vector<std::vector<int>> fruitsKeys = {{KEY_B, KEY_A, KEY_N, KEY_A, KEY_N, KEY_A},  // BANANA
                                                 {KEY_A, KEY_P, KEY_P, KEY_L, KEY_E},         // APPLE
                                                 {KEY_O, KEY_R, KEY_A, KEY_N, KEY_G, KEY_E}}; // ORANGE
+    std::vector<std::string> fruitStrings = {"BANANA", "APPLE", "ORANGE"};
     int currentLetter = 0;
 
     // Will be set as flag to stop reading inputs, so little celebration animation can play

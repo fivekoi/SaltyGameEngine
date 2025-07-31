@@ -1,0 +1,82 @@
+{
+  "camera": {
+    "aspectRatio": [
+      16,
+      9
+    ],
+    "position": [
+      0,
+      0
+    ],
+    "scale": 60
+  },
+  "entities": [
+    {
+      "children-ids": [
+        1
+      ],
+      "components": {
+        "text": {
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "filepath": "./Fonts/Arcade.ttf",
+          "fontSize": 80,
+          "text": "Coaster Loop"
+        }
+      },
+      "name": "Title",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          17.0,
+          13.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.2000000476837158,
+          1.2000000476837158
+        ],
+        "zindex": 3
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "filepath": "./Fonts/ArcadeIn.ttf",
+          "fontSize": 80,
+          "text": "Coaster Loop"
+        }
+      },
+      "name": "TitleBG",
+      "parent-id": 0,
+      "scripts": {},
+      "transform": {
+        "position": [
+          17.0,
+          13.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.2000000476837158,
+          1.2000000476837158
+        ],
+        "zindex": 2
+      }
+    }
+  ],
+  "root-ids": [
+    0
+  ]
+}

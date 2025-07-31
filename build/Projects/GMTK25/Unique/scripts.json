@@ -1,4 +1,18 @@
 {
+  "Attention\\AttentionBar": {
+    "names": [],
+    "types": []
+  },
+  "ForLoop\\ForMini": {
+    "names": [
+      "forText",
+      "inputText"
+    ],
+    "types": [
+      "Text*",
+      "Text*"
+    ]
+  },
   "Fruit\\FruitMini": {
     "names": [
       "inputText",
@@ -15,6 +29,8 @@
   },
   "filepaths": [
     "Fruit\\FruitMini",
-    "Title\\TitleScreen"
+    "Title\\TitleScreen",
+    "ForLoop\\ForMini",
+    "Attention\\AttentionBar"
   ]
 }

@@ -10,6 +10,83 @@
     ],
     "scale": 60.0
   },
-  "entities": [],
-  "root-ids": []
+  "entities": [
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention/AttentionBar.png"
+        }
+      },
+      "name": "AttentionBar",
+      "parent-id": -1,
+      "scripts": {
+        "Attention\\AttentionBar": []
+      },
+      "transform": {
+        "position": [
+          884.0,
+          -106.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.5,
+          3.0
+        ],
+        "zindex": 1
+      }
+    },
+    {
+      "children-ids": [
+        2
+      ],
+      "components": {
+        "sprite": {
+          "filepath": "Attention/AttentionBarBG.png"
+        }
+      },
+      "name": "AttentionBarBG",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          866.5,
+          -92.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          2.5,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention/AttentionBarBG.png"
+        }
+      },
+      "name": "BottomBG",
+      "parent-id": 1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          866.5,
+          -521.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          2.5,
+          1.0
+        ],
+        "zindex": 2
+      }
+    }
+  ],
+  "root-ids": [
+    0,
+    1
+  ]
 }
