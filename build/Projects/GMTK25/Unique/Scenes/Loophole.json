@@ -13,7 +13,9 @@
   "entities": [
     {
       "children-ids": [
-        1
+        1,
+        2,
+        3
       ],
       "components": {
         "text": {
@@ -74,9 +76,128 @@
         ],
         "zindex": 2
       }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "filepath": "./Fonts/ArcadeIn.ttf",
+          "fontSize": 60,
+          "text": "Press Space when you"
+        }
+      },
+      "name": "Description",
+      "parent-id": 0,
+      "scripts": {},
+      "transform": {
+        "position": [
+          17.0,
+          -49.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "filepath": "./Fonts/ArcadeIn.ttf",
+          "fontSize": 60,
+          "text": "see a false statement"
+        }
+      },
+      "name": "Description2",
+      "parent-id": 0,
+      "scripts": {},
+      "transform": {
+        "position": [
+          17.0,
+          -78.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {},
+      "name": "LoopholeController",
+      "parent-id": -1,
+      "scripts": {
+        "Loophole\\LoopholeController": [
+          5,
+          5
+        ]
+      },
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "filepath": "Fonts/BigShot.ttf",
+          "fontSize": 36,
+          "text": "text goes here"
+        }
+      },
+      "name": "MainText",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          35.0,
+          -354.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
     }
   ],
   "root-ids": [
-    0
+    0,
+    4,
+    5
   ]
 }

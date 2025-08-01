@@ -13,7 +13,9 @@
   "entities": [
     {
       "children-ids": [
-        1
+        1,
+        4,
+        5
       ],
       "components": {
         "text": {
@@ -74,9 +76,157 @@
         ],
         "zindex": 2
       }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Time/16x32 Walk Cycle1.png"
+        }
+      },
+      "name": "Walking Guy",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          20.0,
+          -180.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -7.0,
+          7.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {},
+      "name": "TimeController",
+      "parent-id": -1,
+      "scripts": {
+        "Time\\TimeMini": [
+          2,
+          2,
+          "Time/16x32 Walk Cycle1.png",
+          "Time/16x32 Walk Cycle2.png",
+          "Time/16x32 Walk Cycle3.png",
+          "Time/16x32 Walk Cycle4.png",
+          6
+        ]
+      },
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "filepath": "./Fonts/ArcadeIn.ttf",
+          "fontSize": 60,
+          "text": "Repeat the keys"
+        }
+      },
+      "name": "Description",
+      "parent-id": 0,
+      "scripts": {},
+      "transform": {
+        "position": [
+          17.0,
+          -49.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "filepath": "./Fonts/ArcadeIn.ttf",
+          "fontSize": 60,
+          "text": "Press R to see again"
+        }
+      },
+      "name": "Description2",
+      "parent-id": 0,
+      "scripts": {},
+      "transform": {
+        "position": [
+          17.0,
+          -78.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "filepath": "Fonts/BigShot.ttf",
+          "fontSize": 60,
+          "text": "ABCDEFGHIJKLMNO"
+        }
+      },
+      "name": "GuyLetters",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          127.0,
+          -145.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
     }
   ],
   "root-ids": [
-    0
+    0,
+    2,
+    6,
+    3
   ]
 }

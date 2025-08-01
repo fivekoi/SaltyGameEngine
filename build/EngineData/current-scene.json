@@ -12,161 +12,10 @@
   },
   "entities": [
     {
-      "children-ids": [],
-      "components": {},
-      "name": "ForLoopController",
-      "parent-id": -1,
-      "scripts": {
-        "ForLoop\\ForMini": [
-          2,
-          1
-        ]
-      },
-      "transform": {
-        "position": [
-          0.0,
-          0.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          1.0,
-          1.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "text": {
-          "color": [
-            255,
-            255,
-            255,
-            255
-          ],
-          "filepath": "./Fonts/BigShot.ttf",
-          "fontSize": 80,
-          "text": "_ _ _"
-        }
-      },
-      "name": "InputText",
-      "parent-id": -1,
-      "scripts": {},
-      "transform": {
-        "position": [
-          50.0,
-          -420.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          1.0,
-          1.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
       "children-ids": [
-        3,
-        4
-      ],
-      "components": {
-        "text": {
-          "color": [
-            255,
-            255,
-            255,
-            255
-          ],
-          "filepath": "./Fonts/BigShot.ttf",
-          "fontSize": 40,
-          "text": "for("
-        }
-      },
-      "name": "ForLoopText",
-      "parent-id": -1,
-      "scripts": {},
-      "transform": {
-        "position": [
-          50.0,
-          -192.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          1.0,
-          1.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "text": {
-          "color": [
-            255,
-            255,
-            255,
-            255
-          ],
-          "filepath": "./Fonts/BigShot.ttf",
-          "fontSize": 40,
-          "text": "print(i)"
-        }
-      },
-      "name": "ForLoop ExtraText",
-      "parent-id": 2,
-      "scripts": {},
-      "transform": {
-        "position": [
-          100.0,
-          -241.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          1.0,
-          1.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "text": {
-          "color": [
-            255,
-            255,
-            255,
-            255
-          ],
-          "filepath": "./Fonts/BigShot.ttf",
-          "fontSize": 40,
-          "text": "}"
-        }
-      },
-      "name": "ForLoop ExtraText2",
-      "parent-id": 2,
-      "scripts": {},
-      "transform": {
-        "position": [
-          50.0,
-          -297.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          1.0,
-          1.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [
-        6,
-        7,
-        8
+        1,
+        2,
+        3
       ],
       "components": {
         "text": {
@@ -178,7 +27,7 @@
           ],
           "filepath": "./Fonts/Arcade.ttf",
           "fontSize": 80,
-          "text": "For Loop"
+          "text": "Coaster Loop"
         }
       },
       "name": "Title",
@@ -209,11 +58,11 @@
           ],
           "filepath": "./Fonts/ArcadeIn.ttf",
           "fontSize": 80,
-          "text": "For Loop"
+          "text": "Coaster Loop"
         }
       },
       "name": "TitleBG",
-      "parent-id": 5,
+      "parent-id": 0,
       "scripts": {},
       "transform": {
         "position": [
@@ -240,11 +89,11 @@
           ],
           "filepath": "./Fonts/ArcadeIn.ttf",
           "fontSize": 60,
-          "text": "Type what would"
+          "text": "Press space to stop the"
         }
       },
       "name": "Description",
-      "parent-id": 5,
+      "parent-id": 0,
       "scripts": {},
       "transform": {
         "position": [
@@ -271,11 +120,11 @@
           ],
           "filepath": "./Fonts/ArcadeIn.ttf",
           "fontSize": 60,
-          "text": "be printed"
+          "text": "coaster in the green box"
         }
       },
       "name": "Description2",
-      "parent-id": 5,
+      "parent-id": 0,
       "scripts": {},
       "transform": {
         "position": [
@@ -289,13 +138,131 @@
         ],
         "zindex": 0
       }
+    },
+    {
+      "children-ids": [
+        7
+      ],
+      "components": {
+        "sprite": {
+          "filepath": "Coaster/TrackFront.png"
+        }
+      },
+      "name": "Track",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          6.0,
+          6.0
+        ],
+        "zindex": 3
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Coaster/Coaster.png"
+        }
+      },
+      "name": "Coaster",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          925.0,
+          -420.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 1
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {},
+      "name": "CoasterController",
+      "parent-id": -1,
+      "scripts": {
+        "Coaster\\CoasterMini": [
+          5
+        ]
+      },
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Coaster/TrackBehind.png"
+        }
+      },
+      "name": "TrackBehind",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          6.0,
+          6.0
+        ],
+        "zindex": -1
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Coaster/Greenbox.png"
+        }
+      },
+      "name": "Greenbox",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          709.0,
+          -410.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          6.0,
+          6.0
+        ],
+        "zindex": 0
+      }
     }
   ],
   "null-count": 0,
   "root-ids": [
-    5,
     0,
-    1,
-    2
+    4,
+    5,
+    6,
+    8
   ]
 }

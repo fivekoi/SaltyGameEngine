@@ -3,6 +3,14 @@
     "names": [],
     "types": []
   },
+  "Coaster\\CoasterMini": {
+    "names": [
+      "coaster"
+    ],
+    "types": [
+      "Transform*"
+    ]
+  },
   "ForLoop\\ForMini": {
     "names": [
       "forText",
@@ -23,6 +31,64 @@
       "Text*"
     ]
   },
+  "Knot\\KnotMini": {
+    "names": [
+      "leftLetterText",
+      "leftLetterTransform",
+      "rightLetterText",
+      "rightLetterTransform"
+    ],
+    "types": [
+      "Text*",
+      "Transform*",
+      "Text*",
+      "Transform*"
+    ]
+  },
+  "Loophole\\LoopholeController": {
+    "names": [
+      "mainText",
+      "textTransform"
+    ],
+    "types": [
+      "Text*",
+      "Transform*"
+    ]
+  },
+  "Microphone\\MicMini": {
+    "names": [
+      "letter1",
+      "letter2",
+      "letter3",
+      "letter4"
+    ],
+    "types": [
+      "Text*",
+      "Text*",
+      "Text*",
+      "Text*"
+    ]
+  },
+  "Time\\TimeMini": {
+    "names": [
+      "walkSprite",
+      "walkTransform",
+      "walk1",
+      "walk2",
+      "walk3",
+      "walk4",
+      "goalText"
+    ],
+    "types": [
+      "Sprite*",
+      "Transform*",
+      "string",
+      "string",
+      "string",
+      "string",
+      "Text*"
+    ]
+  },
   "Title\\TitleScreen": {
     "names": [],
     "types": []
@@ -31,6 +97,11 @@
     "Fruit\\FruitMini",
     "Title\\TitleScreen",
     "ForLoop\\ForMini",
-    "Attention\\AttentionBar"
+    "Attention\\AttentionBar",
+    "Loophole\\LoopholeController",
+    "Knot\\KnotMini",
+    "Time\\TimeMini",
+    "Microphone\\MicMini",
+    "Coaster\\CoasterMini"
   ]
 }
