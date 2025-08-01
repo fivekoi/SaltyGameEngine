@@ -14,6 +14,7 @@ private:
     std::vector<std::string> nextThree;
     int statementIndex = 2;
     int falseIndex = -1;
+    int pushedTrue = 0;
 
     float timer = 0;
 
@@ -25,4 +26,7 @@ public:
 
     void Start() override;
     void Update(float dt) override;
+
+    // Generates which of the next 3 will be false
+    void GenerateStatements();
 };
