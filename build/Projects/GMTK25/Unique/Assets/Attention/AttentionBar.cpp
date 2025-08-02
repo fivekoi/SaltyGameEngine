@@ -21,3 +21,12 @@ void AttentionBar::Update(float dt){
     
 
 }
+
+void AttentionBar::DDRInput(bool correct){
+    if(correct){
+        transform->position.y += 30;
+    }
+    else{
+        transform->position.y -= 20;
+    }
+}

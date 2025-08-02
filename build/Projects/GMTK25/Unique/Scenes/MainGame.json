@@ -206,7 +206,7 @@
           6.0,
           6.0
         ],
-        "zindex": 0
+        "zindex": 1
       }
     },
     {
@@ -237,7 +237,7 @@
           6.0,
           6.0
         ],
-        "zindex": 0
+        "zindex": 2
       }
     },
     {
@@ -1739,6 +1739,651 @@
         ],
         "zindex": 0
       }
+    },
+    {
+      "children-ids": [
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "components": {},
+      "name": "Keys",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/4.png"
+        }
+      },
+      "name": "4",
+      "parent-id": 69,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -93.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/C.png"
+        }
+      },
+      "name": "C",
+      "parent-id": 69,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -178.0,
+          -157.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/F.png"
+        }
+      },
+      "name": "F",
+      "parent-id": 69,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -186.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/K.png"
+        }
+      },
+      "name": "K",
+      "parent-id": 69,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -190.0,
+          -92.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/M.png"
+        }
+      },
+      "name": "M",
+      "parent-id": 69,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -78.0,
+          -118.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/O.png"
+        }
+      },
+      "name": "O",
+      "parent-id": 69,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -112.0,
+          -190.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/T.png"
+        }
+      },
+      "name": "T",
+      "parent-id": 69,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -60.0,
+          -158.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame/Room.png"
+        }
+      },
+      "name": "Room",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          18.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.200000047683716,
+          3.200000047683716
+        ],
+        "zindex": -7
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame/table.png"
+        }
+      },
+      "name": "Table",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -21.0,
+          -290.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          7.0,
+          7.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        80,
+        81,
+        82
+      ],
+      "components": {},
+      "name": "DDR",
+      "parent-id": -1,
+      "scripts": {
+        "Attention\\DDR\\DDR": [
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        83,
+        84,
+        85,
+        86
+      ],
+      "components": {},
+      "name": "Ws",
+      "parent-id": 79,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        87,
+        88,
+        89,
+        90
+      ],
+      "components": {},
+      "name": "As",
+      "parent-id": 79,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        91,
+        92,
+        93,
+        94
+      ],
+      "components": {},
+      "name": "Ds",
+      "parent-id": 79,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention\\DDR/W.png"
+        }
+      },
+      "name": "W",
+      "parent-id": 80,
+      "scripts": {
+        "Attention\\DDR\\DDRLerp": []
+      },
+      "transform": {
+        "position": [
+          210.0,
+          -394.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention\\DDR/W.png"
+        }
+      },
+      "name": "W",
+      "parent-id": 80,
+      "scripts": {
+        "Attention\\DDR\\DDRLerp": []
+      },
+      "transform": {
+        "position": [
+          300.0,
+          -394.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention\\DDR/W.png"
+        }
+      },
+      "name": "W",
+      "parent-id": 80,
+      "scripts": {
+        "Attention\\DDR\\DDRLerp": []
+      },
+      "transform": {
+        "position": [
+          380.0,
+          -394.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention\\DDR/W.png"
+        }
+      },
+      "name": "W",
+      "parent-id": 80,
+      "scripts": {
+        "Attention\\DDR\\DDRLerp": []
+      },
+      "transform": {
+        "position": [
+          460.0,
+          -394.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention\\DDR/A.png"
+        }
+      },
+      "name": "A",
+      "parent-id": 81,
+      "scripts": {
+        "Attention\\DDR\\DDRLerp": []
+      },
+      "transform": {
+        "position": [
+          540.0,
+          -434.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention\\DDR/A.png"
+        }
+      },
+      "name": "A",
+      "parent-id": 81,
+      "scripts": {
+        "Attention\\DDR\\DDRLerp": []
+      },
+      "transform": {
+        "position": [
+          620.0,
+          -434.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention\\DDR/A.png"
+        }
+      },
+      "name": "A",
+      "parent-id": 81,
+      "scripts": {
+        "Attention\\DDR\\DDRLerp": []
+      },
+      "transform": {
+        "position": [
+          700.0,
+          -434.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention\\DDR/A.png"
+        }
+      },
+      "name": "A",
+      "parent-id": 81,
+      "scripts": {
+        "Attention\\DDR\\DDRLerp": []
+      },
+      "transform": {
+        "position": [
+          780.0,
+          -434.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention\\DDR/D.png"
+        }
+      },
+      "name": "D",
+      "parent-id": 82,
+      "scripts": {
+        "Attention\\DDR\\DDRLerp": []
+      },
+      "transform": {
+        "position": [
+          364.0,
+          -476.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention\\DDR/D.png"
+        }
+      },
+      "name": "D",
+      "parent-id": 82,
+      "scripts": {
+        "Attention\\DDR\\DDRLerp": []
+      },
+      "transform": {
+        "position": [
+          308.0,
+          -476.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention\\DDR/D.png"
+        }
+      },
+      "name": "D",
+      "parent-id": 82,
+      "scripts": {
+        "Attention\\DDR\\DDRLerp": []
+      },
+      "transform": {
+        "position": [
+          262.0,
+          -476.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention\\DDR/D.png"
+        }
+      },
+      "name": "D",
+      "parent-id": 82,
+      "scripts": {
+        "Attention\\DDR\\DDRLerp": []
+      },
+      "transform": {
+        "position": [
+          413.0,
+          -476.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 2
+      }
     }
   ],
   "root-ids": [
@@ -1747,6 +2392,10 @@
     3,
     4,
     6,
-    20
+    20,
+    69,
+    77,
+    78,
+    79
   ]
 }

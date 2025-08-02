@@ -3,6 +3,42 @@
     "names": [],
     "types": []
   },
+  "Attention\\DDR\\DDR": {
+    "names": [
+      "w1",
+      "w2",
+      "w3",
+      "w4",
+      "a1",
+      "a2",
+      "a3",
+      "a4",
+      "d1",
+      "d2",
+      "d3",
+      "d4",
+      "attention"
+    ],
+    "types": [
+      "Entity*",
+      "Entity*",
+      "Entity*",
+      "Entity*",
+      "Entity*",
+      "Entity*",
+      "Entity*",
+      "Entity*",
+      "Entity*",
+      "Entity*",
+      "Entity*",
+      "Entity*",
+      "Entity*"
+    ]
+  },
+  "Attention\\DDR\\DDRLerp": {
+    "names": [],
+    "types": []
+  },
   "Coaster\\CoasterMini": {
     "names": [
       "coaster"
@@ -129,6 +165,8 @@
     "Coaster\\CoasterMini",
     "MainGame\\PersonController",
     "MainGame\\Hats\\DJIdle",
-    "MainGame\\MainMini"
+    "MainGame\\MainMini",
+    "Attention\\DDR\\DDR",
+    "Attention\\DDR\\DDRLerp"
   ]
 }

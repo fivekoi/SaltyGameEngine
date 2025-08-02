@@ -10,4 +10,6 @@ public:
 
     void Start() override;
     void Update(float dt) override;
+
+    void DDRInput(bool correct);
 };

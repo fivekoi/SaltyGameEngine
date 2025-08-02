@@ -36,6 +36,9 @@ void MainMini::Update(float dt){
         for(int id : peopleOn){
             entity->registry->entityTree[id]->GetScript<PersonController>()->Tick(frameNum);
         }
+        for(int id : peopleOff){
+            entity->registry->entityTree[id]->GetScript<PersonController>()->Tick(frameNum);
+        }
     }
 
     walkTimer -= dt;
@@ -44,5 +47,13 @@ void MainMini::Update(float dt){
         entity->registry->entityTree[peopleOff[0]]->GetScript<PersonController>()->WalkOn();
         peopleOn.push_back(peopleOff[0]);
         peopleOff.erase(peopleOff.begin());
+
+        if(peopleOn.size() >= 3){
+            if(entity->registry->entityTree[peopleOn[0]]->GetScript<PersonController>()->IsIdle()){
+                entity->registry->entityTree[peopleOn[0]]->GetScript<PersonController>()->WalkOff();
+                peopleOff.push_back(peopleOn[0]);
+                peopleOn.erase(peopleOn.begin());
+            }
+        }
     }
 }
