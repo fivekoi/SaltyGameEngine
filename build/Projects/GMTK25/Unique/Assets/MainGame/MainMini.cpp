@@ -2,27 +2,98 @@
 
 #include "PersonController.h"
 
+#include <cstdlib>
+#include <ctime>
+
 // Called before the first frame of Update()
 void MainMini::Start(){
-    for(int pId : entity->childrenIds){
-        for(int id : entity->registry->entityTree[pId]->childrenIds){
-            peopleOff.push_back(id);
+    srand(time(0));
+
+    if(!started){
+        // Start summoning people (including 2 facing forwards...)
+        started = true;
+
+        for(int pId : entity->childrenIds){
+            for(int id : entity->registry->entityTree[pId]->childrenIds){
+                std::string fp = entity->registry->entityTree[id]->GetComponent<SpriteComponent>().filepath;
+                if(fp == "MainGame\\Idle/Idle1.png"){
+                    forwardPeopleOff.push_back(id);
+                }
+                else{
+                    peopleOff.push_back(id);
+                }
+            }
+        }
+
+        for(int id : peopleOff){
+            Transform& t = entity->registry->entityTree[id]->GetComponent<TransformComponent>();
+            entity->registry->entityTree[id]->GetScript<PersonController>()->goalX = t.position.x;
+            if(t.position.x < 397){
+                t.position.x = -90;
+                entity->registry->entityTree[id]->GetScript<PersonController>()->startX = -90;
+            }
+            else{
+                t.position.x = 970;
+                entity->registry->entityTree[id]->GetScript<PersonController>()->startX = 970;
+            }
+
+            entity->registry->entityTree[id]->GetScript<PersonController>()->facing = t.scale.x;
+        }
+        for(int id : forwardPeopleOff){
+            Transform& t = entity->registry->entityTree[id]->GetComponent<TransformComponent>();
+            entity->registry->entityTree[id]->GetScript<PersonController>()->goalX = t.position.x;
+            if(t.position.x < 397){
+                t.position.x = -90;
+                entity->registry->entityTree[id]->GetScript<PersonController>()->startX = -90;
+            }
+            else{
+                t.position.x = 970;
+                entity->registry->entityTree[id]->GetScript<PersonController>()->startX = 970;
+            }
+
+            entity->registry->entityTree[id]->GetScript<PersonController>()->facing = t.scale.x;
+        }
+
+        int r = rand() % forwardPeopleOff.size();
+        entity->registry->entityTree[forwardPeopleOff[r]]->GetScript<PersonController>()->WalkOn();
+        forwardPeopleOn.push_back(forwardPeopleOff[r]);
+        forwardPeopleOff.erase(forwardPeopleOff.begin() + r);
+
+        for(int i = 0; i < 5; ++i){
+            r = rand() % peopleOff.size();
+
+            entity->registry->entityTree[peopleOff[r]]->GetScript<PersonController>()->WalkOn();
+            peopleOn.push_back(peopleOff[r]);
+            peopleOff.erase(peopleOff.begin() + r);
         }
     }
+    else{
+        // Restore people to their positions from before
+        for(int pId : entity->childrenIds){
+            for(int id : entity->registry->entityTree[pId]->childrenIds){
+                Transform& t = entity->registry->entityTree[id]->GetComponent<TransformComponent>();
+                entity->registry->entityTree[id]->GetScript<PersonController>()->goalX = t.position.x;
+                if(t.position.x < 397){
+                    t.position.x = -90;
+                    entity->registry->entityTree[id]->GetScript<PersonController>()->startX = -90;
+                }
+                else{
+                    t.position.x = 970;
+                    entity->registry->entityTree[id]->GetScript<PersonController>()->startX = 970;
+                }
 
-    for(int id : peopleOff){
-        Transform& t = entity->registry->entityTree[id]->GetComponent<TransformComponent>();
-        entity->registry->entityTree[id]->GetScript<PersonController>()->goalX = t.position.x;
-        if(t.position.x < 397){
-            t.position.x = -90;
-            entity->registry->entityTree[id]->GetScript<PersonController>()->startX = -90;
-        }
-        else{
-            t.position.x = 970;
-            entity->registry->entityTree[id]->GetScript<PersonController>()->startX = 970;
+                entity->registry->entityTree[id]->GetScript<PersonController>()->facing = t.scale.x;
+            }
         }
 
-        entity->registry->entityTree[id]->GetScript<PersonController>()->facing = t.scale.x;
+        for(int id : peopleOn){
+            Transform& t = entity->registry->entityTree[id]->GetComponent<TransformComponent>();
+            t.position.x = entity->registry->entityTree[id]->GetScript<PersonController>()->goalX;
+        }
+        for(int id : forwardPeopleOn){
+            Transform& t = entity->registry->entityTree[id]->GetComponent<TransformComponent>();
+            t.position.x = entity->registry->entityTree[id]->GetScript<PersonController>()->goalX;
+        }
     }
 }
 
@@ -56,4 +127,15 @@ void MainMini::Update(float dt){
             }
         }
     }
+
+
+    if(Input::KeyDown[KEY_0]){
+        Scene::Load(0);
+    }
 }
+
+bool MainMini::started = false;
+std::vector<int> MainMini::peopleOff;
+std::vector<int> MainMini::peopleOn;
+std::vector<int> MainMini::forwardPeopleOff;
+std::vector<int> MainMini::forwardPeopleOn;

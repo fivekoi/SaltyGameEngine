@@ -3,6 +3,9 @@
 #include "DDRLerp.h"
 #include "../AttentionBar.h"
 
+#include <cstdlib>
+#include <ctime>
+
 // Called before the first frame of Update()
 void DDR::Start(){
     availKeys.push_back(w1);
