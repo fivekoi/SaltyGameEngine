@@ -84,9 +84,10 @@
       "scripts": {
         "Fruit\\FruitMini": [
           1,
-          4,
-          22,
-          36
+          3,
+          21,
+          35,
+          49
         ]
       },
       "transform": {
@@ -954,7 +955,7 @@
       "scripts": {},
       "transform": {
         "position": [
-          0.0,
+          2.0,
           0.0
         ],
         "rotation": 0.0,
@@ -1289,6 +1290,29 @@
         ],
         "zindex": 0
       }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Mini/Check.png"
+        }
+      },
+      "name": "Check",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -426.0,
+          -53.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          15.0,
+          15.0
+        ],
+        "zindex": 8
+      }
     }
   ],
   "root-ids": [
@@ -1297,6 +1321,7 @@
     2,
     3,
     21,
-    35
+    35,
+    49
   ]
 }

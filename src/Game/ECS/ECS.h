@@ -396,6 +396,7 @@ TScript* Entity::GetScript(){
     if(it != scripts.end()){
         return static_cast<TScript*>(it->second);
     }
+    std::cout << this->GetId() << "-" << this->name << "failed to access: " << typeid(TScript).name() <<'\n';
     assert(false); // TODO: this needs to log a proper failure message
     return nullptr; 
 }

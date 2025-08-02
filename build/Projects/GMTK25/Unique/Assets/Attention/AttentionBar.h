@@ -4,7 +4,7 @@
 class AttentionBar : public IScript {
 private:
     SF_ Text* scoreTxt;
-    int score = 0;
+    static int score;
 
 public:
     // Initialization will be handled by engine (including that of SF_ variables)

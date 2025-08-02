@@ -45,7 +45,7 @@ void Disrupt::Update(float dt){
         if(Input::KeyDown[keyCode]){
             if(Scene::sceneToLoad == -1){
                 phase = 0;
-                mainMini->GetScript<MainMini>()->FinishedDisruption(entity->GetId(), 1);
+                mainMini->GetScript<MainMini>()->FinishedDisruption(entity->GetId(), fId);
                 Scene::Load(keyScene);
             }
         }
@@ -53,8 +53,9 @@ void Disrupt::Update(float dt){
     
 }
 
-void Disrupt::Appear(float x, float y, int forwardId){
+void Disrupt::Appear(float x, float y, int forwardId, bool wait){
     phase = 1;
-    timer = 2.5;
+    timer = wait ? 2.5 : 0;
     where = {x, y};
+    fId = forwardId;
 }

@@ -18,6 +18,7 @@ private:
     int keyScene;
 
     SF_ Entity* mainMini;
+    float fId;
 
 public:
     // Initialization will be handled by engine (including that of SF_ variables)
@@ -26,5 +27,5 @@ public:
     void Start() override;
     void Update(float dt) override;
 
-    void Appear(float x, float y, int forwardId);
+    void Appear(float x, float y, int forwardId, bool wait);
 };

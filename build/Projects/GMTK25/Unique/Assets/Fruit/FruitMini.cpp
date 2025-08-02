@@ -42,8 +42,18 @@ void FruitMini::Update(float dt){
         if(currentLetter >= fruitsKeys[randomFruit].size()){
             std::cout << "win\n";
             won = true;
+            Scene::Load(1);
         }
     }
+
+    // Final timer just to animate ding
+    // if(won){
+    //     check->position.x = 216;
+    //     winTimer -= dt;
+    //     if(winTimer <= 0){
+    //         Scene::Load(1);
+    //     }
+    // }
 }
 
 void FruitMini::HideChildren(Entity* e){

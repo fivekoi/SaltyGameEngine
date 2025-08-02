@@ -101,6 +101,30 @@ void MainMini::Start(){
             Transform& t = entity->registry->entityTree[id]->GetComponent<TransformComponent>();
             t.position.x = entity->registry->entityTree[id]->GetScript<PersonController>()->goalX;
         }
+        for(int id : forwardPeopleDisrupt){
+            Transform& t = entity->registry->entityTree[id]->GetComponent<TransformComponent>();
+            t.position.x = entity->registry->entityTree[id]->GetScript<PersonController>()->goalX;
+        }
+
+        for(auto& pair : usedDisruptions){
+            Transform& t = entity->registry->entityTree[pair.second]->GetComponent<TransformComponent>();
+            float y = t.position.y - 20;
+            // if size = 5 -> 8
+            // otherwise -> 6
+            float offset = 6;
+            if(t.scale.x == 5.0){
+                offset = 11;
+            }
+            else if(t.scale.x == 4.0){
+                offset = 5.25;
+            }
+            float x = entity->registry->entityTree[pair.second]->GetScript<PersonController>()->goalX + offset;
+            entity->registry->entityTree[pair.first]->GetScript<Disrupt>()->Appear(x, y, pair.second, false);
+        }
+        // Make disrupter walk off
+        entity->registry->entityTree[disrupter]->GetScript<PersonController>()->WalkOff();
+        forwardPeopleOff.push_back(disrupter);
+        forwardPeopleOn.erase(std::remove(forwardPeopleOn.begin(), forwardPeopleOn.end(), disrupter), forwardPeopleOn.end());
     }
 }
 
@@ -132,7 +156,7 @@ void MainMini::Update(float dt){
     if(disruptTimer <= 0){
         if(difficulty == 0){
             // EASY
-            disruptTimer = 5;
+            disruptTimer = 1;
             if(disruptions < 7){
                 StartDisruption();
             }
@@ -203,12 +227,13 @@ void MainMini::StartDisruption(){
         offset = 5.25;
     }
     float x = entity->registry->entityTree[forwardPeopleOn[r]]->GetScript<PersonController>()->goalX + offset;
-    entity->registry->entityTree[availableDisruptions[d]]->GetScript<Disrupt>()->Appear(x, y, forwardPeopleOn[r]);
+    entity->registry->entityTree[availableDisruptions[d]]->GetScript<Disrupt>()->Appear(x, y, forwardPeopleOn[r], true);
     // Switch them to forwardPeopleDisrupt
     forwardPeopleDisrupt.push_back(forwardPeopleOn[r]);
-    forwardPeopleOn.erase(forwardPeopleOn.begin() + r);
+    usedDisruptions[availableDisruptions[d]] = forwardPeopleOn[r];
     
     availableDisruptions.erase(availableDisruptions.begin() + d);
+    forwardPeopleOn.erase(forwardPeopleOn.begin() + r);
 }
 
 void MainMini::FinishedDisruption(int disruptionId, int forwardId){
@@ -216,7 +241,11 @@ void MainMini::FinishedDisruption(int disruptionId, int forwardId){
     forwardPeopleOn.push_back(forwardId);
     // Remove forwardId from forwardPeopleDisrupt
     forwardPeopleDisrupt.erase(std::remove(forwardPeopleDisrupt.begin(), forwardPeopleDisrupt.end(), forwardId), forwardPeopleDisrupt.end());
+    usedDisruptions.erase(disruptionId);
     // set flag for forwardId to walk off after load back
+    disrupter = forwardId;
+
+    disruptions -= 1;
 }
 
 bool MainMini::started = false;
@@ -229,3 +258,5 @@ std::vector<int> MainMini::forwardPeopleDisrupt;
 int MainMini::difficulty = 0;
 int MainMini::disruptions = 0;
 std::vector<int> MainMini::availableDisruptions;
+std::map<int, int> MainMini::usedDisruptions;
+int MainMini::disrupter;

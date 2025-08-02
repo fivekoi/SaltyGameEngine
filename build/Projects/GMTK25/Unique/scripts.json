@@ -70,13 +70,15 @@
       "inputText",
       "banana",
       "orange",
-      "apple"
+      "apple",
+      "check"
     ],
     "types": [
       "Text*",
       "Entity*",
       "Entity*",
-      "Entity*"
+      "Entity*",
+      "Transform*"
     ]
   },
   "Knot\\KnotMini": {

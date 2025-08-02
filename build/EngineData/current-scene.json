@@ -12,37 +12,78 @@
   },
   "entities": [
     {
-      "children-ids": [
-        5,
-        6
-      ],
+      "children-ids": [],
       "components": {
-        "text": {
-          "color": [
-            0,
-            0,
-            0,
-            255
-          ],
-          "filepath": "./Fonts/Arcade.ttf",
-          "fontSize": 80,
-          "text": "Fruit Loops"
+        "sprite": {
+          "filepath": "Attention/AttentionBar.png"
         }
       },
-      "name": "Title",
+      "name": "AttentionBar",
+      "parent-id": -1,
+      "scripts": {
+        "Attention\\AttentionBar": [
+          3
+        ]
+      },
+      "transform": {
+        "position": [
+          884.0,
+          -106.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.5,
+          3.0
+        ],
+        "zindex": 1
+      }
+    },
+    {
+      "children-ids": [
+        2
+      ],
+      "components": {
+        "sprite": {
+          "filepath": "Attention/AttentionBarBG.png"
+        }
+      },
+      "name": "AttentionBarBG",
       "parent-id": -1,
       "scripts": {},
       "transform": {
         "position": [
-          17.0,
-          13.0
+          866.5,
+          -92.0
         ],
         "rotation": 0.0,
         "scale": [
-          1.2000000476837158,
-          1.2000000476837158
+          2.5,
+          3.0
         ],
-        "zindex": 3
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention/AttentionBarBG.png"
+        }
+      },
+      "name": "BottomBG",
+      "parent-id": 1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          866.5,
+          -521.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          2.5,
+          1.0
+        ],
+        "zindex": 2
       }
     },
     {
@@ -50,23 +91,61 @@
       "components": {
         "text": {
           "color": [
-            0,
-            0,
-            0,
+            255,
+            255,
+            255,
             255
           ],
-          "filepath": "./Fonts/KiwiSoda.ttf",
-          "fontSize": 80,
-          "text": "_ _ _ _ _ _"
+          "filepath": "./Fonts/BigShot.ttf",
+          "fontSize": 40,
+          "text": "Score: 123456"
         }
       },
-      "name": "InputText",
+      "name": "Score",
       "parent-id": -1,
       "scripts": {},
       "transform": {
         "position": [
-          290.0,
-          -449.0
+          627.0,
+          -12.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        14,
+        15,
+        17,
+        21,
+        24,
+        31,
+        37,
+        41,
+        49,
+        53,
+        56,
+        60,
+        64,
+        68
+      ],
+      "components": {},
+      "name": "People",
+      "parent-id": -1,
+      "scripts": {
+        "MainGame\\MainMini": [
+          69
+        ]
+      },
+      "transform": {
+        "position": [
+          0.0,
+          0.0
         ],
         "rotation": 0.0,
         "scale": [
@@ -78,15 +157,1886 @@
     },
     {
       "children-ids": [],
-      "components": {},
-      "name": "FruitController",
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle1.png"
+        }
+      },
+      "name": "PersonDown",
+      "parent-id": 14,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          164.0,
+          -153.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": -3
+      }
+    },
+    {
+      "children-ids": [
+        7
+      ],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle17.png"
+        }
+      },
+      "name": "DJ",
       "parent-id": -1,
       "scripts": {
-        "Fruit\\FruitMini": [
-          1,
-          4,
-          22,
-          36
+        "MainGame\\Hats\\DJIdle": [
+          "MainGame\\Idle/Idle17.png",
+          "MainGame\\Idle/Idle18.png",
+          "MainGame\\Idle/Idle19.png",
+          "MainGame\\Idle/Idle20.png",
+          6
+        ]
+      },
+      "transform": {
+        "position": [
+          45.0,
+          -338.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          6.0,
+          6.0
+        ],
+        "zindex": 1
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Hats\\Headphones/headphones1.png"
+        }
+      },
+      "name": "Hat",
+      "parent-id": 6,
+      "scripts": {
+        "MainGame\\Hats\\DJIdle": [
+          "MainGame\\Hats\\Headphones/headphones1.png",
+          "MainGame\\Hats\\Headphones/headphones2.png",
+          "MainGame\\Hats\\Headphones/headphones3.png",
+          "MainGame\\Hats\\Headphones/headphones4.png",
+          7
+        ]
+      },
+      "transform": {
+        "position": [
+          45.0,
+          -338.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          6.0,
+          6.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle5.png"
+        }
+      },
+      "name": "Group1",
+      "parent-id": 14,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          240.0,
+          -169.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": -2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle5.png"
+        }
+      },
+      "name": "Person",
+      "parent-id": 14,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          98.0,
+          -177.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -5.0,
+          5.0
+        ],
+        "zindex": -2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle13.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 14,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          195.0,
+          -209.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle9.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 15,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          142.0,
+          -83.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.5,
+          4.5
+        ],
+        "zindex": -4
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle5.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 15,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          22.0,
+          -78.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -4.5,
+          4.5
+        ],
+        "zindex": -4
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle1.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 15,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          83.0,
+          -60.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.5,
+          4.5
+        ],
+        "zindex": -5
+      }
+    },
+    {
+      "children-ids": [
+        5,
+        8,
+        9,
+        10
+      ],
+      "components": {},
+      "name": "Group1",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        11,
+        12,
+        13
+      ],
+      "components": {},
+      "name": "Group2",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle1.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 17,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          18.0,
+          -190.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": -1
+      }
+    },
+    {
+      "children-ids": [
+        16
+      ],
+      "components": {},
+      "name": "Group3",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle13.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 21,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          14.0,
+          5.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -4.0,
+          4.0
+        ],
+        "zindex": -5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle5.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 21,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          80.0,
+          19.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": -6
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame/Track.png"
+        }
+      },
+      "name": "Track",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          185.0,
+          -391.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          7.0,
+          5.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        18,
+        19
+      ],
+      "components": {},
+      "name": "Group4",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle9.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 24,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          290.0,
+          -221.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -5.0,
+          5.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle9.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 24,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          363.0,
+          -215.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        22,
+        23
+      ],
+      "components": {},
+      "name": "Group5",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle13.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 31,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          222.0,
+          -93.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -4.5,
+          4.5
+        ],
+        "zindex": -3
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle13.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 31,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          290.0,
+          -109.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.5,
+          4.5
+        ],
+        "zindex": -3
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle9.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 31,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          191.0,
+          -45.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -4.5,
+          4.5
+        ],
+        "zindex": -4
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle1.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 31,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          246.0,
+          -22.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.5,
+          4.5
+        ],
+        "zindex": -4
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle1.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 31,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          302.0,
+          -34.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.5,
+          4.5
+        ],
+        "zindex": -4
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle9.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 31,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          344.0,
+          -74.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.5,
+          4.5
+        ],
+        "zindex": -3
+      }
+    },
+    {
+      "children-ids": [
+        30,
+        29,
+        28,
+        27,
+        26,
+        25
+      ],
+      "components": {},
+      "name": "Group6",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle13.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 37,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          353.0,
+          -142.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -5.0,
+          5.0
+        ],
+        "zindex": -2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle1.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 37,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          404.0,
+          -84.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": -3
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle13.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 37,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          426.0,
+          -151.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": -2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle5.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 37,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          474.0,
+          -86.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": -3
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle9.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 37,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          498.0,
+          -131.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": -2
+      }
+    },
+    {
+      "children-ids": [
+        36,
+        35,
+        34,
+        33,
+        32
+      ],
+      "components": {},
+      "name": "Group7",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle9.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 41,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          139.0,
+          1.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -4.0,
+          4.0
+        ],
+        "zindex": -6
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle9.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 41,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          241.0,
+          14.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": -6
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle5.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 41,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          187.0,
+          26.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -4.0,
+          4.0
+        ],
+        "zindex": -7
+      }
+    },
+    {
+      "children-ids": [
+        40,
+        39,
+        38
+      ],
+      "components": {},
+      "name": "Group8",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle1.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 49,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          617.0,
+          -89.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": -4
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle1.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 49,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          760.0,
+          -101.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": -4
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle5.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 49,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          693.0,
+          -84.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": -4
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle13.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 49,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          785.0,
+          -166.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": -3
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle9.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 49,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          568.0,
+          -154.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -5.0,
+          5.0
+        ],
+        "zindex": -3
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle13.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 49,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          618.0,
+          -184.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -5.0,
+          5.0
+        ],
+        "zindex": -2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle13.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 49,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          711.0,
+          -195.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": -2
+      }
+    },
+    {
+      "children-ids": [
+        48,
+        47,
+        46,
+        45,
+        44,
+        43,
+        42
+      ],
+      "components": {},
+      "name": "Group9",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle13.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 53,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          451.0,
+          -222.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -5.0,
+          5.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle9.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 53,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          580.0,
+          -221.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle5.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 53,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          525.0,
+          -195.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": -1
+      }
+    },
+    {
+      "children-ids": [
+        52,
+        51,
+        50
+      ],
+      "components": {},
+      "name": "Group10",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle13.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 60,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          362.0,
+          -16.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -4.5,
+          4.5
+        ],
+        "zindex": -4
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle1.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 56,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          311.0,
+          22.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": -6
+      }
+    },
+    {
+      "children-ids": [
+        55
+      ],
+      "components": {},
+      "name": "Group11",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle5.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 60,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          375.0,
+          28.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -4.5,
+          4.5
+        ],
+        "zindex": -6
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle1.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 60,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          439.0,
+          31.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.5,
+          4.5
+        ],
+        "zindex": -6
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle9.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 60,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          485.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.5,
+          4.5
+        ],
+        "zindex": -5
+      }
+    },
+    {
+      "children-ids": [
+        59,
+        58,
+        57,
+        54
+      ],
+      "components": {},
+      "name": "Group12",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle5.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 64,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          546.0,
+          25.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -4.5,
+          4.5
+        ],
+        "zindex": -6
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle13.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 64,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          551.0,
+          -43.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -4.5,
+          4.5
+        ],
+        "zindex": -5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle9.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 64,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          607.0,
+          -24.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.5,
+          4.5
+        ],
+        "zindex": -5
+      }
+    },
+    {
+      "children-ids": [
+        63,
+        62,
+        61
+      ],
+      "components": {},
+      "name": "Group13",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle9.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 68,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          671.0,
+          -31.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          -4.5,
+          4.5
+        ],
+        "zindex": -5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle1.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 68,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          733.0,
+          -25.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.5,
+          4.5
+        ],
+        "zindex": -5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Idle/Idle5.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 68,
+      "scripts": {
+        "MainGame\\PersonController": []
+      },
+      "transform": {
+        "position": [
+          796.0,
+          -30.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.5,
+          4.5
+        ],
+        "zindex": -5
+      }
+    },
+    {
+      "children-ids": [
+        67,
+        66,
+        65
+      ],
+      "components": {},
+      "name": "Group14",
+      "parent-id": 4,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "components": {},
+      "name": "Keys",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/4.png"
+        }
+      },
+      "name": "4",
+      "parent-id": 69,
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "4",
+          4
+        ]
+      },
+      "transform": {
+        "position": [
+          -96.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/C.png"
+        }
+      },
+      "name": "C",
+      "parent-id": 69,
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "C",
+          4
+        ]
+      },
+      "transform": {
+        "position": [
+          -178.0,
+          -157.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/F.png"
+        }
+      },
+      "name": "F",
+      "parent-id": 69,
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "F",
+          4
+        ]
+      },
+      "transform": {
+        "position": [
+          -189.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/K.png"
+        }
+      },
+      "name": "K",
+      "parent-id": 69,
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "K",
+          4
+        ]
+      },
+      "transform": {
+        "position": [
+          -194.0,
+          -92.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/M.png"
+        }
+      },
+      "name": "M",
+      "parent-id": 69,
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "M",
+          4
+        ]
+      },
+      "transform": {
+        "position": [
+          -78.0,
+          -118.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/O.png"
+        }
+      },
+      "name": "O",
+      "parent-id": 69,
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "O",
+          4
+        ]
+      },
+      "transform": {
+        "position": [
+          -112.0,
+          -190.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\KeySymbols/T.png"
+        }
+      },
+      "name": "T",
+      "parent-id": 69,
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "T",
+          4
+        ]
+      },
+      "transform": {
+        "position": [
+          -78.0,
+          -158.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.0,
+          4.0
+        ],
+        "zindex": 5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame/Room.png"
+        }
+      },
+      "name": "Room",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          18.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.200000047683716,
+          3.200000047683716
+        ],
+        "zindex": -7
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame/table.png"
+        }
+      },
+      "name": "Table",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -21.0,
+          -290.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          7.0,
+          7.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        80,
+        81,
+        82
+      ],
+      "components": {},
+      "name": "DDR",
+      "parent-id": -1,
+      "scripts": {
+        "Attention\\DDR\\DDR": [
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          0
         ]
       },
       "transform": {
@@ -104,25 +2054,62 @@
     },
     {
       "children-ids": [
-        4,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
+        83,
+        84,
+        85,
+        86
       ],
       "components": {},
-      "name": "Banana",
-      "parent-id": -1,
+      "name": "Ws",
+      "parent-id": 79,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        87,
+        88,
+        89,
+        90
+      ],
+      "components": {},
+      "name": "As",
+      "parent-id": 79,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        91,
+        92,
+        93,
+        94
+      ],
+      "components": {},
+      "name": "Ds",
+      "parent-id": 79,
       "scripts": {},
       "transform": {
         "position": [
@@ -141,54 +2128,23 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
+          "filepath": "Attention\\DDR/W.png"
         }
       },
-      "name": "Loop1",
-      "parent-id": 3,
+      "name": "W",
+      "parent-id": 80,
       "scripts": {
-        "Fruit\\FruitHover": []
+        "Attention\\DDR\\DDRLerp": []
       },
       "transform": {
         "position": [
-          156.0,
-          -166.0
+          210.0,
+          -394.0
         ],
         "rotation": 0.0,
         "scale": [
           3.0,
           3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "text": {
-          "color": [
-            255,
-            255,
-            255,
-            255
-          ],
-          "filepath": "./Fonts/ArcadeIn.ttf",
-          "fontSize": 80,
-          "text": "Fruit Loops"
-        }
-      },
-      "name": "TitleBG",
-      "parent-id": 0,
-      "scripts": {},
-      "transform": {
-        "position": [
-          17.0,
-          13.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          1.2000000476837158,
-          1.2000000476837158
         ],
         "zindex": 2
       }
@@ -196,1098 +2152,276 @@
     {
       "children-ids": [],
       "components": {
-        "text": {
-          "color": [
-            255,
-            255,
-            255,
-            255
-          ],
-          "filepath": "./Fonts/ArcadeIn.ttf",
-          "fontSize": 60,
-          "text": "type the fruit"
-        }
-      },
-      "name": "Description",
-      "parent-id": 0,
-      "scripts": {},
-      "transform": {
-        "position": [
-          17.0,
-          -49.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          1.0,
-          1.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
         "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
+          "filepath": "Attention\\DDR/W.png"
         }
       },
-      "name": "Empty",
-      "parent-id": 3,
+      "name": "W",
+      "parent-id": 80,
       "scripts": {
-        "Fruit\\FruitHover": []
+        "Attention\\DDR\\DDRLerp": []
       },
       "transform": {
         "position": [
-          186.0,
-          -216.0
+          300.0,
+          -394.0
         ],
         "rotation": 0.0,
         "scale": [
           3.0,
           3.0
         ],
-        "zindex": 0
+        "zindex": 2
       }
     },
     {
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
+          "filepath": "Attention\\DDR/W.png"
         }
       },
-      "name": "Empty",
-      "parent-id": 3,
+      "name": "W",
+      "parent-id": 80,
       "scripts": {
-        "Fruit\\FruitHover": []
+        "Attention\\DDR\\DDRLerp": []
       },
       "transform": {
         "position": [
-          243.0,
-          -213.0
+          380.0,
+          -394.0
         ],
         "rotation": 0.0,
         "scale": [
           3.0,
           3.0
         ],
-        "zindex": 0
+        "zindex": 2
       }
     },
     {
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
+          "filepath": "Attention\\DDR/W.png"
         }
       },
-      "name": "Empty",
-      "parent-id": 3,
+      "name": "W",
+      "parent-id": 80,
       "scripts": {
-        "Fruit\\FruitHover": []
+        "Attention\\DDR\\DDRLerp": []
       },
       "transform": {
         "position": [
-          217.0,
-          -266.0
+          460.0,
+          -394.0
         ],
         "rotation": 0.0,
         "scale": [
           3.0,
           3.0
         ],
-        "zindex": 0
+        "zindex": 2
       }
     },
     {
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 3,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          286.0,
-          -251.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 3,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          281.0,
-          -308.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
+          "filepath": "Attention\\DDR/A.png"
         }
       },
       "name": "A",
-      "parent-id": 3,
+      "parent-id": 81,
       "scripts": {
-        "Fruit\\FruitHover": []
+        "Attention\\DDR\\DDRLerp": []
       },
       "transform": {
         "position": [
-          348.0,
-          -269.0
+          540.0,
+          -434.0
         ],
         "rotation": 0.0,
         "scale": [
           3.0,
           3.0
         ],
-        "zindex": 0
+        "zindex": 2
       }
     },
     {
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 3,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          330.0,
-          -316.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 3,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          386.0,
-          -319.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 3,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          416.0,
-          -270.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 3,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          480.0,
-          -255.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 3,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          493.0,
-          -311.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 3,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          529.0,
-          -281.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 3,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          593.0,
-          -240.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopYellow.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 3,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          449.0,
-          -315.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [
-        22,
-        23,
-        24,
-        25,
-        26,
-        27,
-        28,
-        29,
-        30,
-        31,
-        32,
-        33,
-        34
-      ],
-      "components": {},
-      "name": "Orange",
-      "parent-id": -1,
-      "scripts": {},
-      "transform": {
-        "position": [
-          0.0,
-          0.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          1.0,
-          1.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopOrange.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 21,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          506.0,
-          -305.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopOrange.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 21,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          445.0,
-          -298.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopOrange.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 21,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          379.0,
-          -305.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopOrange.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 21,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          315.0,
-          -300.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopOrange.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 21,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          455.0,
-          -350.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopOrange.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 21,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          343.0,
-          -357.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopOrange.png"
+          "filepath": "Attention\\DDR/A.png"
         }
       },
       "name": "A",
-      "parent-id": 21,
+      "parent-id": 81,
       "scripts": {
-        "Fruit\\FruitHover": []
+        "Attention\\DDR\\DDRLerp": []
       },
       "transform": {
         "position": [
-          403.0,
-          -372.0
+          620.0,
+          -434.0
         ],
         "rotation": 0.0,
         "scale": [
           3.0,
           3.0
         ],
-        "zindex": 0
+        "zindex": 2
       }
     },
     {
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Fruit/FruitLoopOrange.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 21,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          450.0,
-          -202.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopOrange.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 21,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          373.0,
-          -199.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopOrange.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 21,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          405.0,
-          -247.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopOrange.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 21,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          494.0,
-          -246.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopOrange.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 21,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          326.0,
-          -243.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopGreen.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 21,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          418.0,
-          -157.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [
-        36,
-        37,
-        38,
-        39,
-        40,
-        41,
-        42,
-        43,
-        44,
-        45,
-        46,
-        47,
-        48
-      ],
-      "components": {},
-      "name": "Apple",
-      "parent-id": -1,
-      "scripts": {},
-      "transform": {
-        "position": [
-          0.0,
-          0.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          1.0,
-          1.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopRed.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 35,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          490.0,
-          -273.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopRed.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 35,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          436.0,
-          -272.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopRed.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 35,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          387.0,
-          -265.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopRed.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 35,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          334.0,
-          -280.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopRed.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 35,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          404.0,
-          -321.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopRed.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 35,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          479.0,
-          -325.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopRed.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 35,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          338.0,
-          -326.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopRed.png"
-        }
-      },
-      "name": "Empty",
-      "parent-id": 35,
-      "scripts": {
-        "Fruit\\FruitHover": []
-      },
-      "transform": {
-        "position": [
-          433.0,
-          -368.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          3.0,
-          3.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
-      "components": {
-        "sprite": {
-          "filepath": "Fruit/FruitLoopRed.png"
+          "filepath": "Attention\\DDR/A.png"
         }
       },
       "name": "A",
-      "parent-id": 35,
+      "parent-id": 81,
       "scripts": {
-        "Fruit\\FruitHover": []
+        "Attention\\DDR\\DDRLerp": []
       },
       "transform": {
         "position": [
-          379.0,
-          -367.0
+          700.0,
+          -434.0
         ],
         "rotation": 0.0,
         "scale": [
           3.0,
           3.0
         ],
-        "zindex": 0
+        "zindex": 2
       }
     },
     {
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Fruit/FruitLoopRed.png"
+          "filepath": "Attention\\DDR/A.png"
         }
       },
-      "name": "Empty",
-      "parent-id": 35,
+      "name": "A",
+      "parent-id": 81,
       "scripts": {
-        "Fruit\\FruitHover": []
+        "Attention\\DDR\\DDRLerp": []
       },
       "transform": {
         "position": [
-          375.0,
-          -221.0
+          780.0,
+          -434.0
         ],
         "rotation": 0.0,
         "scale": [
           3.0,
           3.0
         ],
-        "zindex": 0
+        "zindex": 2
       }
     },
     {
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Fruit/FruitLoopRed.png"
+          "filepath": "Attention\\DDR/D.png"
         }
       },
-      "name": "Empty",
-      "parent-id": 35,
+      "name": "D",
+      "parent-id": 82,
       "scripts": {
-        "Fruit\\FruitHover": []
+        "Attention\\DDR\\DDRLerp": []
       },
       "transform": {
         "position": [
-          441.0,
-          -227.0
+          364.0,
+          -476.0
         ],
         "rotation": 0.0,
         "scale": [
           3.0,
           3.0
         ],
-        "zindex": 0
+        "zindex": 2
       }
     },
     {
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Fruit/FruitLoopGreen.png"
+          "filepath": "Attention\\DDR/D.png"
         }
       },
-      "name": "Empty",
-      "parent-id": 35,
+      "name": "D",
+      "parent-id": 82,
       "scripts": {
-        "Fruit\\FruitHover": []
+        "Attention\\DDR\\DDRLerp": []
       },
       "transform": {
         "position": [
-          425.0,
-          -181.0
+          308.0,
+          -476.0
         ],
         "rotation": 0.0,
         "scale": [
           3.0,
           3.0
         ],
-        "zindex": 0
+        "zindex": 2
       }
     },
     {
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Fruit/FruitLoopGreen.png"
+          "filepath": "Attention\\DDR/D.png"
         }
       },
-      "name": "Empty",
-      "parent-id": 35,
+      "name": "D",
+      "parent-id": 82,
       "scripts": {
-        "Fruit\\FruitHover": []
+        "Attention\\DDR\\DDRLerp": []
       },
       "transform": {
         "position": [
-          468.0,
-          -163.0
+          262.0,
+          -476.0
         ],
         "rotation": 0.0,
         "scale": [
           3.0,
           3.0
         ],
-        "zindex": 0
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention\\DDR/D.png"
+        }
+      },
+      "name": "D",
+      "parent-id": 82,
+      "scripts": {
+        "Attention\\DDR\\DDRLerp": []
+      },
+      "transform": {
+        "position": [
+          413.0,
+          -476.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 2
       }
     }
   ],
@@ -1295,9 +2429,13 @@
   "root-ids": [
     0,
     1,
-    2,
     3,
-    21,
-    35
+    4,
+    6,
+    20,
+    69,
+    77,
+    78,
+    79
   ]
 }

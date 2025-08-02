@@ -1,6 +1,8 @@
 #pragma once
 #include "SaltyEngine.h"
 
+#include <map>
+
 class MainMini : public IScript {
 private:
     static std::vector<int> peopleOff;
@@ -25,8 +27,13 @@ private:
     float disruptTimer = 5;
     static int disruptions;
     static std::vector<int> availableDisruptions;
+    // Maps from disruptionId to parentId
+    static std::map<int, int> usedDisruptions;
 
     SF_ Entity* disruptionParent;
+
+    // Will walk off after you return from mini
+    static int disrupter;
 
 public:
     // Initialization will be handled by engine (including that of SF_ variables)

@@ -4,7 +4,7 @@
 class FruitMini : public IScript {
 private:
     SF_ Text* inputText;
-    
+
     // Will be set on start
     int randomFruit = 0;
     std::vector<std::vector<int>> fruitsKeys = {{KEY_B, KEY_A, KEY_N, KEY_A, KEY_N, KEY_A},  // BANANA
@@ -19,6 +19,8 @@ private:
 
     // Will be set as flag to stop reading inputs, so little celebration animation can play
     bool won = false;
+    SF_ Transform* check;
+    float winTimer = 0.8;
 public:
     // Initialization will be handled by engine (including that of SF_ variables)
     FruitMini(Entity* entity, Transform* transform, std::vector<SaltyType>& serializedVars);
