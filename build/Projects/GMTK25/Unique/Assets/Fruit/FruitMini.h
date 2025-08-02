@@ -15,6 +15,10 @@ private:
     std::vector<std::string> fruitStrings = {"BANANA", "APPLE", "ORANGE"};
     int currentLetter = 0;
 
+    SF_ Entity* banana;
+    SF_ Entity* orange;
+    SF_ Entity* apple;
+
     // Will be set as flag to stop reading inputs, so little celebration animation can play
     bool won = false;
 public:
@@ -23,4 +27,6 @@ public:
 
     void Start() override;
     void Update(float dt) override;
+
+    void HideChildren(Entity* e);
 };

@@ -115,7 +115,10 @@
       "scripts": {
         "Fruit\\FruitMini": [
           1,
-          2
+          2,
+          4,
+          22,
+          36
         ]
       },
       "transform": {
@@ -133,7 +136,21 @@
     },
     {
       "children-ids": [
-        5
+        5,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
       ],
       "components": {},
       "name": "Banana",
@@ -161,7 +178,9 @@
       },
       "name": "Loop1",
       "parent-id": 4,
-      "scripts": {},
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
       "transform": {
         "position": [
           156.0,
@@ -236,6 +255,1072 @@
         ],
         "zindex": 0
       }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          186.0,
+          -216.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          243.0,
+          -213.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          217.0,
+          -266.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          286.0,
+          -251.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          281.0,
+          -308.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "A",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          348.0,
+          -269.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          330.0,
+          -316.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          386.0,
+          -319.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          416.0,
+          -270.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          480.0,
+          -255.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          493.0,
+          -311.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          529.0,
+          -281.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          593.0,
+          -240.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopYellow.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 4,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          449.0,
+          -315.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "components": {},
+      "name": "Orange",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopOrange.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 22,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          506.0,
+          -305.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopOrange.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 22,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          445.0,
+          -298.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopOrange.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 22,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          379.0,
+          -305.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopOrange.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 22,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          315.0,
+          -300.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopOrange.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 22,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          455.0,
+          -350.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopOrange.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 22,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          343.0,
+          -357.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopOrange.png"
+        }
+      },
+      "name": "A",
+      "parent-id": 22,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          403.0,
+          -372.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopOrange.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 22,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          450.0,
+          -202.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopOrange.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 22,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          373.0,
+          -199.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopOrange.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 22,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          405.0,
+          -247.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopOrange.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 22,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          494.0,
+          -246.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopOrange.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 22,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          326.0,
+          -243.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopGreen.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 22,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          418.0,
+          -157.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "components": {},
+      "name": "Apple",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopRed.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 36,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          490.0,
+          -273.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopRed.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 36,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          436.0,
+          -272.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopRed.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 36,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          387.0,
+          -265.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopRed.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 36,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          334.0,
+          -280.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopRed.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 36,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          404.0,
+          -321.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopRed.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 36,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          479.0,
+          -325.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopRed.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 36,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          338.0,
+          -326.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopRed.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 36,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          433.0,
+          -368.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopRed.png"
+        }
+      },
+      "name": "A",
+      "parent-id": 36,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          379.0,
+          -367.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopRed.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 36,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          375.0,
+          -221.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopRed.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 36,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          441.0,
+          -227.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopGreen.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 36,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          425.0,
+          -181.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Fruit/FruitLoopGreen.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 36,
+      "scripts": {
+        "Fruit\\FruitHover": []
+      },
+      "transform": {
+        "position": [
+          468.0,
+          -163.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          3.0,
+          3.0
+        ],
+        "zindex": 0
+      }
     }
   ],
   "root-ids": [
@@ -243,6 +1328,8 @@
     2,
     1,
     3,
-    4
+    4,
+    22,
+    36
   ]
 }

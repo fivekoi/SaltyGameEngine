@@ -57,14 +57,24 @@
       "Text*"
     ]
   },
+  "Fruit\\FruitHover": {
+    "names": [],
+    "types": []
+  },
   "Fruit\\FruitMini": {
     "names": [
       "inputText",
-      "debugText"
+      "debugText",
+      "banana",
+      "orange",
+      "apple"
     ],
     "types": [
       "Text*",
-      "Text*"
+      "Text*",
+      "Entity*",
+      "Entity*",
+      "Entity*"
     ]
   },
   "Knot\\KnotMini": {
@@ -167,6 +177,7 @@
     "MainGame\\Hats\\DJIdle",
     "MainGame\\MainMini",
     "Attention\\DDR\\DDR",
-    "Attention\\DDR\\DDRLerp"
+    "Attention\\DDR\\DDRLerp",
+    "Fruit\\FruitHover"
   ]
 }
