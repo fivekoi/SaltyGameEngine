@@ -21,7 +21,9 @@
       "name": "AttentionBar",
       "parent-id": -1,
       "scripts": {
-        "Attention\\AttentionBar": []
+        "Attention\\AttentionBar": [
+          3
+        ]
       },
       "transform": {
         "position": [
@@ -136,7 +138,9 @@
       "name": "People",
       "parent-id": -1,
       "scripts": {
-        "MainGame\\MainMini": []
+        "MainGame\\MainMini": [
+          69
+        ]
       },
       "transform": {
         "position": [
@@ -1776,10 +1780,15 @@
       },
       "name": "4",
       "parent-id": 69,
-      "scripts": {},
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "4",
+          4
+        ]
+      },
       "transform": {
         "position": [
-          -93.0,
+          -96.0,
           0.0
         ],
         "rotation": 0.0,
@@ -1799,7 +1808,12 @@
       },
       "name": "C",
       "parent-id": 69,
-      "scripts": {},
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "C",
+          4
+        ]
+      },
       "transform": {
         "position": [
           -178.0,
@@ -1822,10 +1836,15 @@
       },
       "name": "F",
       "parent-id": 69,
-      "scripts": {},
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "F",
+          4
+        ]
+      },
       "transform": {
         "position": [
-          -186.0,
+          -189.0,
           0.0
         ],
         "rotation": 0.0,
@@ -1845,10 +1864,15 @@
       },
       "name": "K",
       "parent-id": 69,
-      "scripts": {},
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "K",
+          4
+        ]
+      },
       "transform": {
         "position": [
-          -190.0,
+          -194.0,
           -92.0
         ],
         "rotation": 0.0,
@@ -1868,7 +1892,12 @@
       },
       "name": "M",
       "parent-id": 69,
-      "scripts": {},
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "M",
+          4
+        ]
+      },
       "transform": {
         "position": [
           -78.0,
@@ -1891,7 +1920,12 @@
       },
       "name": "O",
       "parent-id": 69,
-      "scripts": {},
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "O",
+          4
+        ]
+      },
       "transform": {
         "position": [
           -112.0,
@@ -1914,10 +1948,15 @@
       },
       "name": "T",
       "parent-id": 69,
-      "scripts": {},
+      "scripts": {
+        "MainGame\\KeySymbols\\Disrupt": [
+          "T",
+          4
+        ]
+      },
       "transform": {
         "position": [
-          -60.0,
+          -78.0,
           -158.0
         ],
         "rotation": 0.0,

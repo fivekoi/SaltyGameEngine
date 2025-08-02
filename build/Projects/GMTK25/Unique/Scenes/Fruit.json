@@ -13,8 +13,8 @@
   "entities": [
     {
       "children-ids": [
-        6,
-        7
+        5,
+        6
       ],
       "components": {
         "text": {
@@ -78,44 +78,12 @@
     },
     {
       "children-ids": [],
-      "components": {
-        "text": {
-          "color": [
-            0,
-            0,
-            0,
-            255
-          ],
-          "filepath": "./Fonts/KiwiSoda.ttf",
-          "fontSize": 80,
-          "text": "answer: "
-        }
-      },
-      "name": "DebugAnswer",
-      "parent-id": -1,
-      "scripts": {},
-      "transform": {
-        "position": [
-          247.0,
-          -248.0
-        ],
-        "rotation": 0.0,
-        "scale": [
-          1.0,
-          1.0
-        ],
-        "zindex": 0
-      }
-    },
-    {
-      "children-ids": [],
       "components": {},
       "name": "FruitController",
       "parent-id": -1,
       "scripts": {
         "Fruit\\FruitMini": [
           1,
-          2,
           4,
           22,
           36
@@ -136,7 +104,8 @@
     },
     {
       "children-ids": [
-        5,
+        4,
+        7,
         8,
         9,
         10,
@@ -149,8 +118,7 @@
         17,
         18,
         19,
-        20,
-        21
+        20
       ],
       "components": {},
       "name": "Banana",
@@ -177,7 +145,7 @@
         }
       },
       "name": "Loop1",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -264,7 +232,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -289,7 +257,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -314,7 +282,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -339,7 +307,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -364,7 +332,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -389,7 +357,7 @@
         }
       },
       "name": "A",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -414,7 +382,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -439,7 +407,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -464,7 +432,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -489,7 +457,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -514,7 +482,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -539,7 +507,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -564,7 +532,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -589,7 +557,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 4,
+      "parent-id": 3,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -608,6 +576,7 @@
     },
     {
       "children-ids": [
+        22,
         23,
         24,
         25,
@@ -619,8 +588,7 @@
         31,
         32,
         33,
-        34,
-        35
+        34
       ],
       "components": {},
       "name": "Orange",
@@ -647,7 +615,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 22,
+      "parent-id": 21,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -672,7 +640,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 22,
+      "parent-id": 21,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -697,7 +665,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 22,
+      "parent-id": 21,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -722,7 +690,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 22,
+      "parent-id": 21,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -747,7 +715,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 22,
+      "parent-id": 21,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -772,7 +740,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 22,
+      "parent-id": 21,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -797,7 +765,7 @@
         }
       },
       "name": "A",
-      "parent-id": 22,
+      "parent-id": 21,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -822,7 +790,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 22,
+      "parent-id": 21,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -847,7 +815,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 22,
+      "parent-id": 21,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -872,7 +840,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 22,
+      "parent-id": 21,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -897,7 +865,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 22,
+      "parent-id": 21,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -922,7 +890,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 22,
+      "parent-id": 21,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -947,7 +915,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 22,
+      "parent-id": 21,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -966,6 +934,7 @@
     },
     {
       "children-ids": [
+        36,
         37,
         38,
         39,
@@ -977,8 +946,7 @@
         45,
         46,
         47,
-        48,
-        49
+        48
       ],
       "components": {},
       "name": "Apple",
@@ -1005,7 +973,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 36,
+      "parent-id": 35,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -1030,7 +998,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 36,
+      "parent-id": 35,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -1055,7 +1023,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 36,
+      "parent-id": 35,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -1080,7 +1048,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 36,
+      "parent-id": 35,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -1105,7 +1073,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 36,
+      "parent-id": 35,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -1130,7 +1098,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 36,
+      "parent-id": 35,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -1155,7 +1123,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 36,
+      "parent-id": 35,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -1180,7 +1148,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 36,
+      "parent-id": 35,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -1205,7 +1173,7 @@
         }
       },
       "name": "A",
-      "parent-id": 36,
+      "parent-id": 35,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -1230,7 +1198,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 36,
+      "parent-id": 35,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -1255,7 +1223,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 36,
+      "parent-id": 35,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -1280,7 +1248,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 36,
+      "parent-id": 35,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -1305,7 +1273,7 @@
         }
       },
       "name": "Empty",
-      "parent-id": 36,
+      "parent-id": 35,
       "scripts": {
         "Fruit\\FruitHover": []
       },
@@ -1325,11 +1293,10 @@
   ],
   "root-ids": [
     0,
-    2,
     1,
+    2,
     3,
-    4,
-    22,
-    36
+    21,
+    35
   ]
 }

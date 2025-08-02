@@ -2,7 +2,7 @@
 
 // Called before the first frame of Update()
 void AttentionBar::Start(){
-
+    scoreTxt->text = "Score: 0";
 }
 
 // Called every frame before Render()
@@ -25,6 +25,8 @@ void AttentionBar::Update(float dt){
 void AttentionBar::DDRInput(bool correct){
     if(correct){
         transform->position.y += 30;
+        score += 1;
+        scoreTxt->text = "Score: " + std::to_string(score);
     }
     else{
         transform->position.y -= 20;

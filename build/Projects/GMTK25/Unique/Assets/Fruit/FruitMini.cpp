@@ -14,8 +14,6 @@ void FruitMini::Start(){
     }
     inputText->text = blanks;
 
-    // Temp for debug
-    debugText->text = fruitStrings[randomFruit];
     if(randomFruit == 0){
         // banana
         HideChildren(apple);

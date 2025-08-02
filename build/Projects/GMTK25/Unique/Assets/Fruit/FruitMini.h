@@ -4,9 +4,7 @@
 class FruitMini : public IScript {
 private:
     SF_ Text* inputText;
-
-    SF_ Text* debugText;
-
+    
     // Will be set on start
     int randomFruit = 0;
     std::vector<std::vector<int>> fruitsKeys = {{KEY_B, KEY_A, KEY_N, KEY_A, KEY_N, KEY_A},  // BANANA
