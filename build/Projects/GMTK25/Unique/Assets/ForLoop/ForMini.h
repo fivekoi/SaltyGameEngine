@@ -16,7 +16,8 @@ private:
 
     // Will be set as flag to stop reading inputs, so little celebration animation can play
     bool won = false;
-
+    SF_ Transform* check;
+    float winTimer = 0.8;
 public:
     // Initialization will be handled by engine (including that of SF_ variables)
     ForMini(Entity* entity, Transform* transform, std::vector<SaltyType>& serializedVars);

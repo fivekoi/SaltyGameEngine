@@ -21,7 +21,13 @@
           6,
           7,
           8,
-          9
+          9,
+          11,
+          "Microphone/mic1.png",
+          "Microphone/mic2.png",
+          "Microphone/mic3.png",
+          "Microphone/mic4.png",
+          10
         ]
       },
       "transform": {
@@ -209,8 +215,8 @@
       "scripts": {},
       "transform": {
         "position": [
-          100.0,
-          -425.0
+          69.0,
+          -438.0
         ],
         "rotation": 0.0,
         "scale": [
@@ -240,8 +246,8 @@
       "scripts": {},
       "transform": {
         "position": [
-          250.0,
-          -425.0
+          177.0,
+          -440.0
         ],
         "rotation": 0.0,
         "scale": [
@@ -271,8 +277,8 @@
       "scripts": {},
       "transform": {
         "position": [
-          400.0,
-          -425.0
+          418.0,
+          -439.0
         ],
         "rotation": 0.0,
         "scale": [
@@ -302,8 +308,8 @@
       "scripts": {},
       "transform": {
         "position": [
-          550.0,
-          -425.0
+          575.0,
+          -438.0
         ],
         "rotation": 0.0,
         "scale": [
@@ -312,11 +318,192 @@
         ],
         "zindex": 0
       }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Mini/Check.png"
+        }
+      },
+      "name": "Check",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -421.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          15.0,
+          15.0
+        ],
+        "zindex": 8
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Microphone/mic4.png"
+        }
+      },
+      "name": "Mic",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          -89.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          4.5,
+          4.5
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame/Room.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -101.0,
+          354.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          6.5,
+          6.5
+        ],
+        "zindex": -3
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "filepath": "./Fonts/BigShot.ttf",
+          "fontSize": 40,
+          "text": "Score: 123456"
+        }
+      },
+      "name": "Score",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          627.0,
+          -12.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        15,
+        16
+      ],
+      "components": {
+        "sprite": {
+          "filepath": "Attention/AttentionBar.png"
+        }
+      },
+      "name": "AttentionBar",
+      "parent-id": -1,
+      "scripts": {
+        "Attention\\AttentionBar": [
+          13
+        ]
+      },
+      "transform": {
+        "position": [
+          884.0,
+          -106.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.5,
+          3.0
+        ],
+        "zindex": 3
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention/AttentionBarBG.png"
+        }
+      },
+      "name": "AttentionBarBG",
+      "parent-id": 14,
+      "scripts": {},
+      "transform": {
+        "position": [
+          866.5,
+          -92.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          2.5,
+          3.5
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention/AttentionBarBG.png"
+        }
+      },
+      "name": "AttentionBarBottom",
+      "parent-id": 14,
+      "scripts": {},
+      "transform": {
+        "position": [
+          866.5,
+          -521.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          2.5,
+          1.0
+        ],
+        "zindex": 4
+      }
     }
   ],
   "root-ids": [
     1,
     0,
-    5
+    5,
+    10,
+    11,
+    12,
+    13,
+    14
   ]
 }

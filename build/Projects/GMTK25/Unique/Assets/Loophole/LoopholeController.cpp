@@ -57,4 +57,13 @@ void LoopholeController::Update(float dt){
         
     }
     
+    // Final timer just to animate ding
+    if(won){
+        check->position.x = 216;
+        check->position.y = -53;
+        winTimer -= dt;
+        if(winTimer <= 0){
+            Scene::Load(1);
+        }
+    }
 }

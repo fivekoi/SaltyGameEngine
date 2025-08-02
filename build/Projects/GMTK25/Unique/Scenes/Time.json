@@ -113,7 +113,8 @@
           "Time/16x32 Walk Cycle2.png",
           "Time/16x32 Walk Cycle3.png",
           "Time/16x32 Walk Cycle4.png",
-          6
+          6,
+          7
         ]
       },
       "transform": {
@@ -221,12 +222,286 @@
         ],
         "zindex": 0
       }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Mini/Check.png"
+        }
+      },
+      "name": "Check",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          -406.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          15.0,
+          15.0
+        ],
+        "zindex": 8
+      }
+    },
+    {
+      "children-ids": [
+        9,
+        12,
+        11,
+        10,
+        13
+      ],
+      "components": {},
+      "name": "BG",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Time\\BG/1.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 8,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.7000000476837158,
+          1.7000000476837158
+        ],
+        "zindex": -5
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Time\\BG/4.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 8,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.7000000476837158,
+          1.7000000476837158
+        ],
+        "zindex": -3
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Time\\BG/3.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 8,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.7000000476837158,
+          1.7000000476837158
+        ],
+        "zindex": -2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Time\\BG/2.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 8,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.7000000476837158,
+          1.7000000476837158
+        ],
+        "zindex": -4
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Coaster\\BG/grey.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 8,
+      "scripts": {},
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          35.0,
+          25.0
+        ],
+        "zindex": -1
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "filepath": "./Fonts/BigShot.ttf",
+          "fontSize": 40,
+          "text": "Score: 123456"
+        }
+      },
+      "name": "Score",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          627.0,
+          -12.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        16,
+        17
+      ],
+      "components": {
+        "sprite": {
+          "filepath": "Attention/AttentionBar.png"
+        }
+      },
+      "name": "AttentionBar",
+      "parent-id": -1,
+      "scripts": {
+        "Attention\\AttentionBar": [
+          14
+        ]
+      },
+      "transform": {
+        "position": [
+          884.0,
+          -106.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.5,
+          3.0
+        ],
+        "zindex": 3
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention/AttentionBarBG.png"
+        }
+      },
+      "name": "AttentionBarBG",
+      "parent-id": 15,
+      "scripts": {},
+      "transform": {
+        "position": [
+          866.5,
+          -92.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          2.5,
+          3.5
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "Attention/AttentionBarBG.png"
+        }
+      },
+      "name": "AttentionBarBottom",
+      "parent-id": 15,
+      "scripts": {},
+      "transform": {
+        "position": [
+          866.5,
+          -521.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          2.5,
+          1.0
+        ],
+        "zindex": 4
+      }
     }
   ],
   "root-ids": [
     0,
     2,
     6,
-    3
+    3,
+    7,
+    8,
+    14,
+    15
   ]
 }

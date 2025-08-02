@@ -19,8 +19,15 @@ private:
     int leftPresses = 0;
     int rightPresses = 0;
 
+    SF_ string knot2;
+    SF_ string knot3;
+    SF_ Sprite* knotSprite;
+    SF_ Transform* knotTransform;
+    bool plus;
+
     bool won = false;
-    
+    SF_ Transform* check;
+    float winTimer = 0.8;
 public:
     // Initialization will be handled by engine (including that of SF_ variables)
     KnotMini(Entity* entity, Transform* transform, std::vector<SaltyType>& serializedVars);

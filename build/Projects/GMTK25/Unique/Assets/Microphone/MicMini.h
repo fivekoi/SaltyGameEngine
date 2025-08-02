@@ -13,7 +13,15 @@ private:
 
     int correct;
 
+    SF_ Sprite* mic;
+    SF_ string mic1;
+    SF_ string mic2;
+    SF_ string mic3;
+    SF_ string mic4;
+
     bool won = false;
+    SF_ Transform* check;
+    float winTimer = 0.8;
 public:
     // Initialization will be handled by engine (including that of SF_ variables)
     MicMini(Entity* entity, Transform* transform, std::vector<SaltyType>& serializedVars);

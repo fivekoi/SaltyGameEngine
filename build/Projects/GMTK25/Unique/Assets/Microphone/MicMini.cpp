@@ -13,8 +13,13 @@ void MicMini::Start(){
     letter3->text = std::to_string(numbers[(startNum + 2) % numbers.size()]);
     letter4->text = std::to_string(numbers[(startNum + 3) % numbers.size()]);
 
+    std::vector<string> sprites;
+    sprites.push_back(mic1);
+    sprites.push_back(mic2);
+    sprites.push_back(mic3);
+    sprites.push_back(mic4);
     int which = rand() % 4;
-    std::cout << which << '\n';
+    mic->filepath = sprites[which];
     correct = numberKeys[(startNum + which) % numbers.size()];
 }
 
@@ -23,5 +28,15 @@ void MicMini::Update(float dt){
     if(Input::KeyDown[correct]){
         std::cout << "won\n";
         won = true;
+    }
+
+    // Final timer just to animate ding
+    if(won){
+        check->position.x = 216;
+        check->position.y = -53;
+        winTimer -= dt;
+        if(winTimer <= 0){
+            Scene::Load(1);
+        }
     }
 }

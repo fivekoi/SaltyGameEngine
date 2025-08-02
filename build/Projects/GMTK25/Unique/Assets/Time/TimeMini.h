@@ -25,7 +25,8 @@ private:
     std::vector<int> letterPositions = {90, 368, 655};
 
     bool won = false;
-
+    SF_ Transform* check;
+    float winTimer = 0.8;
 public:
     // Initialization will be handled by engine (including that of SF_ variables)
     TimeMini(Entity* entity, Transform* transform, std::vector<SaltyType>& serializedVars);

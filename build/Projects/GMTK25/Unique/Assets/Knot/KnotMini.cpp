@@ -22,19 +22,41 @@ void KnotMini::Update(float dt){
             leftPresses += 1;
             leftLetterTransform->position.x -= 10;
 
+            knotTransform->position.x -= 10;
+
             if(leftPresses >= 10 && rightPresses >= 10){
                 std::cout << "won\n";
+                knotSprite->filepath = knot3;
                 won = true;
+            }
+            else if(leftPresses + rightPresses >= 10){
+                knotSprite->filepath = knot2;
             }
         }
         if(rightPresses < 10 && Input::KeyDown[rightKeys[right]]){
             rightPresses += 1;
             rightLetterTransform->position.x += 10;
 
+            knotTransform->position.x += 10;
+
             if(leftPresses >= 10 && rightPresses >= 10){
                 std::cout << "won\n";
+                knotSprite->filepath = knot3;
                 won = true;
             }
+            else if(leftPresses + rightPresses >= 10){
+                knotSprite->filepath = knot2;
+            }
+        }
+    }
+
+    // Final timer just to animate ding
+    if(won){
+        check->position.x = 216;
+        check->position.y = -53;
+        winTimer -= dt;
+        if(winTimer <= 0){
+            Scene::Load(1);
         }
     }
 }

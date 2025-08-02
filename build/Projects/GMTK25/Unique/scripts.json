@@ -45,20 +45,24 @@
   },
   "Coaster\\CoasterMini": {
     "names": [
-      "coaster"
+      "coaster",
+      "check"
     ],
     "types": [
+      "Transform*",
       "Transform*"
     ]
   },
   "ForLoop\\ForMini": {
     "names": [
       "forText",
-      "inputText"
+      "inputText",
+      "check"
     ],
     "types": [
       "Text*",
-      "Text*"
+      "Text*",
+      "Transform*"
     ]
   },
   "Fruit\\FruitHover": {
@@ -86,22 +90,34 @@
       "leftLetterText",
       "leftLetterTransform",
       "rightLetterText",
-      "rightLetterTransform"
+      "rightLetterTransform",
+      "knot2",
+      "knot3",
+      "knotSprite",
+      "knotTransform",
+      "check"
     ],
     "types": [
       "Text*",
       "Transform*",
       "Text*",
+      "Transform*",
+      "string",
+      "string",
+      "Sprite*",
+      "Transform*",
       "Transform*"
     ]
   },
   "Loophole\\LoopholeController": {
     "names": [
       "mainText",
-      "textTransform"
+      "textTransform",
+      "check"
     ],
     "types": [
       "Text*",
+      "Transform*",
       "Transform*"
     ]
   },
@@ -148,13 +164,25 @@
       "letter1",
       "letter2",
       "letter3",
-      "letter4"
+      "letter4",
+      "mic",
+      "mic1",
+      "mic2",
+      "mic3",
+      "mic4",
+      "check"
     ],
     "types": [
       "Text*",
       "Text*",
       "Text*",
-      "Text*"
+      "Text*",
+      "Sprite*",
+      "string",
+      "string",
+      "string",
+      "string",
+      "Transform*"
     ]
   },
   "Time\\TimeMini": {
@@ -165,7 +193,8 @@
       "walk2",
       "walk3",
       "walk4",
-      "goalText"
+      "goalText",
+      "check"
     ],
     "types": [
       "Sprite*",
@@ -174,7 +203,8 @@
       "string",
       "string",
       "string",
-      "Text*"
+      "Text*",
+      "Transform*"
     ]
   },
   "Title\\TitleScreen": {
