@@ -65,6 +65,7 @@
           "MainGame/Idle/Idle18.png",
           "MainGame/Idle/Idle19.png",
           "MainGame/Idle/Idle20.png",
+          0,
           1
         ]
       },
@@ -96,6 +97,7 @@
           "MainGame/Hats/Headphones/headphones2.png",
           "MainGame/Hats/Headphones/headphones3.png",
           "MainGame/Hats/Headphones/headphones4.png",
+          1,
           2
         ]
       },
@@ -368,6 +370,100 @@
         ],
         "zindex": 0
       }
+    },
+    {
+      "children-ids": [
+        13,
+        14
+      ],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame/Hats/Crown/crown1.png"
+        }
+      },
+      "name": "Crown",
+      "parent-id": -1,
+      "scripts": {
+        "Fruit\\FruitHover": [],
+        "MainGame\\Hats\\Crown\\CrownRemove": [
+          13,
+          14
+        ]
+      },
+      "transform": {
+        "position": [
+          740.0,
+          -329.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          5.0,
+          5.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "filepath": "./Fonts/BigShot.ttf",
+          "fontSize": 33,
+          "text": "Reach 3500 score to"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 12,
+      "scripts": {},
+      "transform": {
+        "position": [
+          314.0,
+          -336.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 2
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "filepath": "./Fonts/BigShot.ttf",
+          "fontSize": 33,
+          "text": "get the crown ---->"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 12,
+      "scripts": {},
+      "transform": {
+        "position": [
+          314.0,
+          -372.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
     }
   ],
   "root-ids": [
@@ -378,6 +474,7 @@
     6,
     7,
     9,
-    11
+    11,
+    12
   ]
 }

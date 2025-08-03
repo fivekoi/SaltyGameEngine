@@ -9,17 +9,17 @@
 void LoopholeController::Start(){
     srand(time(0));
 
-    timer = 2;
+    timer = 1.5;
     statementIndex = 0;
     textTransform->position.y = -350 + (rand() % 200);
 
-    GenerateStatements();
+    GenerateStatements(2);
     mainText->text = nextThree[statementIndex];
 }
 
-void LoopholeController::GenerateStatements(){
+void LoopholeController::GenerateStatements(int max){
     // Generates which of the next 3 will be false
-    falseIndex = rand() % 3;
+    falseIndex = rand() % max;
     nextThree.clear();
     for(int i = 0; i < 3; ++i){
         if(falseIndex == i){

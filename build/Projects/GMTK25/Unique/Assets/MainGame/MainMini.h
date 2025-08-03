@@ -23,7 +23,7 @@ private:
     // Easy: only one at a time (first 3)
     // Medium: up to 2 at a time (next 7)
     // Hard: up to 7 at a time (forever)
-    float disruptTimer = 1;
+    float disruptTimer = 1.5;
     static int disruptions;
     static std::vector<int> availableDisruptions;
     // Maps from disruptionId to parentId

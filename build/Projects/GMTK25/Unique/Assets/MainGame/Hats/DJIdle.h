@@ -7,6 +7,9 @@ private:
     SF_ string idle2;
     SF_ string idle3;
     SF_ string idle4;
+    
+    SF_ int hat;
+
     std::vector<string> idles;
 
     int i = 0;

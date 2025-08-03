@@ -131,6 +131,8 @@ void MainMini::Start(){
         forwardPeopleOn.erase(std::remove(forwardPeopleOn.begin(), forwardPeopleOn.end(), disrupter), forwardPeopleOn.end());
 
         attentionBar->GetScript<AttentionBar>()->numberOfDistrupters -= 1;
+        attentionBar->GetScript<AttentionBar>()->DDRInput(true);
+        attentionBar->GetScript<AttentionBar>()->DDRInput(true);
 
         if(peopleOff.size() >= 5){
             for(int i = 0; i < 5; ++i){
@@ -204,15 +206,20 @@ void MainMini::Update(float dt){
             // HARD
             disruptTimer = 3;
             int r = rand() % 3;
-            if(r <= 1 && disruptions < 7){
+            if(r != 0 && disruptions < 5){
                 StartDisruption();
             }
         }
         else{
             // ENDLESS
-            disruptTimer = 2;
-            int r = rand() % 3;
-            if(r <= 1 && disruptions < 7){
+            disruptTimer = 3;
+
+            int r = rand() % 5;
+            if(r != 0 && disruptions < 7){
+                StartDisruption();
+            }
+            r = rand() % 5;
+            if(r != 0 && disruptions < 7){
                 StartDisruption();
             }
         }
@@ -277,10 +284,10 @@ void MainMini::FinishedDisruption(int disruptionId, int forwardId){
     if(difficulty == 0 && attentionBar->GetScript<AttentionBar>()->numberOfSolves >= 3){
         difficulty = 1;
     }
-    else if(difficulty == 1 && attentionBar->GetScript<AttentionBar>()->numberOfSolves >= 9){
+    else if(difficulty == 1 && attentionBar->GetScript<AttentionBar>()->numberOfSolves >= 7){
         difficulty = 2;
     }
-    else if(difficulty == 2 && attentionBar->GetScript<AttentionBar>()->numberOfSolves >= 15){
+    else if(difficulty == 2 && attentionBar->GetScript<AttentionBar>()->numberOfSolves >= 12){
         difficulty = 3;
     }
 }

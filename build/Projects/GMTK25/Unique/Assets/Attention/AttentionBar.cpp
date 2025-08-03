@@ -17,11 +17,34 @@ void AttentionBar::Update(float dt){
     if(scale > 3.5){
         scale = 3.5;
     }
-    if(scale > 1 && inMini == 0){
-        scale = 1;
+    if(inMini == 0){
+        if(numberOfDistrupters > 0){
+            if(numberOfDistrupters < 3){
+                scale = 1;
+            }
+            else if(numberOfDistrupters < 6){
+                scale = 2;
+            }
+            else{
+                scale = 3;
+            }
+            hype -=  1.5 * scale * dt;
+        }
+    }
+    else{
+        if(numberOfDistrupters > 5){
+            scale *= 5;
+        }
+        else if(numberOfDistrupters > 3){
+            scale *= 3;
+        }
+        else{
+            scale *= numberOfDistrupters;
+        }
+        hype -= 1.5 * scale * dt;
     }
 
-    hype -= 1.5 * scale * numberOfDistrupters * dt;
+    
 
     if(hype < -10){
         transform->position.y = -522;

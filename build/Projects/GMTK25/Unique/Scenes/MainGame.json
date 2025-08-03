@@ -199,6 +199,7 @@
           "MainGame/Idle/Idle18.png",
           "MainGame/Idle/Idle19.png",
           "MainGame/Idle/Idle20.png",
+          0,
           6
         ]
       },
@@ -230,6 +231,7 @@
           "MainGame/Hats/Headphones/headphones2.png",
           "MainGame/Hats/Headphones/headphones3.png",
           "MainGame/Hats/Headphones/headphones4.png",
+          1,
           7
         ]
       },

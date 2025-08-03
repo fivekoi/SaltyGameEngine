@@ -29,5 +29,5 @@ public:
     void Update(float dt) override;
 
     // Generates which of the next 3 will be false
-    void GenerateStatements();
+    void GenerateStatements(int max = 3);
 };

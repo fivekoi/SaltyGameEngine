@@ -293,6 +293,225 @@
         ],
         "zindex": 0
       }
+    },
+    {
+      "children-ids": [
+        11,
+        12,
+        14
+      ],
+      "components": {
+        "sprite": {
+          "filepath": "Thumbnail/thumbnail.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          1305.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        13
+      ],
+      "components": {
+        "text": {
+          "color": [
+            14,
+            14,
+            14,
+            255
+          ],
+          "filepath": "./Fonts/Arcade.ttf",
+          "fontSize": 150,
+          "text": "Feed"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 10,
+      "scripts": {},
+      "transform": {
+        "position": [
+          1320.0,
+          -294.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        15
+      ],
+      "components": {
+        "text": {
+          "color": [
+            14,
+            14,
+            14,
+            255
+          ],
+          "filepath": "Fonts/Arcade.ttf",
+          "fontSize": 150,
+          "text": "back"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 10,
+      "scripts": {},
+      "transform": {
+        "position": [
+          1320.0,
+          -363.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            240,
+            79,
+            79,
+            255
+          ],
+          "filepath": "Fonts/ArcadeIn.ttf",
+          "fontSize": 150,
+          "text": "Feed"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 11,
+      "scripts": {},
+      "transform": {
+        "position": [
+          1320.0,
+          -294.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [
+        16
+      ],
+      "components": {
+        "text": {
+          "color": [
+            14,
+            14,
+            14,
+            255
+          ],
+          "filepath": "./Fonts/Arcade.ttf",
+          "fontSize": 150,
+          "text": "Loop"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 10,
+      "scripts": {},
+      "transform": {
+        "position": [
+          1772.0,
+          -334.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            240,
+            79,
+            79,
+            255
+          ],
+          "filepath": "./Fonts/ArcadeIn.ttf",
+          "fontSize": 150,
+          "text": "You Lose"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 12,
+      "scripts": {},
+      "transform": {
+        "position": [
+          1320.0,
+          -363.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            68,
+            195,
+            217,
+            255
+          ],
+          "filepath": "Fonts/ArcadeIn.ttf",
+          "fontSize": 150,
+          "text": "Loop"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 14,
+      "scripts": {},
+      "transform": {
+        "position": [
+          1772.0,
+          -334.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
     }
   ],
   "root-ids": [
@@ -302,6 +521,7 @@
     5,
     6,
     7,
-    8
+    8,
+    10
   ]
 }

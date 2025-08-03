@@ -177,12 +177,23 @@
       "Entity*"
     ]
   },
+  "MainGame\\Hats\\Crown\\CrownRemove": {
+    "names": [
+      "text1",
+      "text2"
+    ],
+    "types": [
+      "Transform*",
+      "Transform*"
+    ]
+  },
   "MainGame\\Hats\\DJIdle": {
     "names": [
       "idle1",
       "idle2",
       "idle3",
       "idle4",
+      "hat",
       "sprite"
     ],
     "types": [
@@ -190,6 +201,7 @@
       "string",
       "string",
       "string",
+      "int",
       "Sprite*"
     ]
   },
@@ -298,6 +310,7 @@
     "Lose\\Score",
     "Lose\\LoseControl",
     "HowTo\\HowToControl",
-    "Sounds\\SoundManager"
+    "Sounds\\SoundManager",
+    "MainGame\\Hats\\Crown\\CrownRemove"
   ]
 }

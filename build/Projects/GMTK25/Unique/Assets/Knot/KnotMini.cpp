@@ -31,6 +31,9 @@ void KnotMini::Update(float dt){
                 std::cout << "won\n";
                 knotSprite->filepath = knot3;
                 won = true;
+
+                Audio::Play(SoundManager::winding);
+                Audio::Stop(SoundManager::rope);
             }
             else if(leftPresses + rightPresses >= 10){
                 knotSprite->filepath = knot2;
