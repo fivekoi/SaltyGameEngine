@@ -56,6 +56,13 @@ int AttentionBar::DDRInput(bool correct){
     return score;
 }
 
+void AttentionBar::ResetValues(){
+    score = 0;
+    numberOfDistrupters = 0;
+    numberOfSolves = 0;
+    hype = 50;
+}
+
 int AttentionBar::score = 0;
 int AttentionBar::numberOfDistrupters = 0;
 int AttentionBar::numberOfSolves = 0;

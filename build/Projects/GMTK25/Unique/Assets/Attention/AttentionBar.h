@@ -19,6 +19,7 @@ public:
     void Update(float dt) override;
 
     int DDRInput(bool correct);
+    static void ResetValues();
 
     static int numberOfDistrupters;
     static int numberOfSolves;

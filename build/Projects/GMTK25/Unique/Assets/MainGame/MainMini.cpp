@@ -282,6 +282,21 @@ void MainMini::FinishedDisruption(int disruptionId, int forwardId){
     }
 }
 
+void MainMini::ResetValues(){
+    started = false;
+    peopleOff.clear();
+    peopleOn.clear();
+    forwardPeopleOff.clear();
+    forwardPeopleOn.clear();
+    forwardPeopleDisrupt.clear();
+
+    difficulty = 0;
+    disruptions = 0;
+    availableDisruptions.clear();
+    usedDisruptions.clear();
+    disrupter = 0;
+}
+
 bool MainMini::started = false;
 std::vector<int> MainMini::peopleOff;
 std::vector<int> MainMini::peopleOn;

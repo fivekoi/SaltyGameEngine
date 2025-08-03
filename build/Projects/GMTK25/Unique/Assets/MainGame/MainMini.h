@@ -47,4 +47,5 @@ public:
     static int difficulty;
     void StartDisruption();
     void FinishedDisruption(int disruptionId, int forwardId);
+    static void ResetValues();
 };
