@@ -1,10 +1,12 @@
 {
   "Attention\\AttentionBar": {
     "names": [
-      "scoreTxt"
+      "scoreTxt",
+      "inMini"
     ],
     "types": [
-      "Text*"
+      "Text*",
+      "int"
     ]
   },
   "Attention\\DDR\\DDR": {
@@ -121,6 +123,28 @@
       "Transform*"
     ]
   },
+  "MainGame\\Colors\\ColorSwitch": {
+    "names": [
+      "sprite",
+      "green1",
+      "green2",
+      "orange1",
+      "orange2",
+      "red1",
+      "red2",
+      "mini"
+    ],
+    "types": [
+      "Sprite*",
+      "string",
+      "string",
+      "string",
+      "string",
+      "string",
+      "string",
+      "Entity*"
+    ]
+  },
   "MainGame\\Hats\\DJIdle": {
     "names": [
       "idle1",
@@ -149,9 +173,11 @@
   },
   "MainGame\\MainMini": {
     "names": [
-      "disruptionParent"
+      "disruptionParent",
+      "attentionBar"
     ],
     "types": [
+      "Entity*",
       "Entity*"
     ]
   },
@@ -227,6 +253,7 @@
     "Attention\\DDR\\DDR",
     "Attention\\DDR\\DDRLerp",
     "Fruit\\FruitHover",
-    "MainGame\\KeySymbols\\Disrupt"
+    "MainGame\\KeySymbols\\Disrupt",
+    "MainGame\\Colors\\ColorSwitch"
   ]
 }

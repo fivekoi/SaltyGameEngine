@@ -6,6 +6,8 @@ void CoasterMini::Start(){
     coaster->rotation = rotations[0];
 
     for(size_t i = 0; i < rotations.size()-1; ++i){
+        times[i] = times[i] / 2;
+
         if(i != 1 && i != 9 && rotations[i] != rotations[i+1]){
             glm::vec2 mid = 0.5f * (positions[i] + positions[i+1]);
             glm::vec2 dir = positions[i+1] - positions[i];

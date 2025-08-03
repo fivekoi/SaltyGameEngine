@@ -23,8 +23,7 @@ private:
     // Easy: only one at a time (first 3)
     // Medium: up to 2 at a time (next 7)
     // Hard: up to 7 at a time (forever)
-    static int difficulty;
-    float disruptTimer = 5;
+    float disruptTimer = 1;
     static int disruptions;
     static std::vector<int> availableDisruptions;
     // Maps from disruptionId to parentId
@@ -34,6 +33,9 @@ private:
 
     // Will walk off after you return from mini
     static int disrupter;
+    bool dis = false;
+
+    SF_ Entity* attentionBar;
 
 public:
     // Initialization will be handled by engine (including that of SF_ variables)
@@ -42,6 +44,7 @@ public:
     void Start() override;
     void Update(float dt) override;
 
+    static int difficulty;
     void StartDisruption();
     void FinishedDisruption(int disruptionId, int forwardId);
 };

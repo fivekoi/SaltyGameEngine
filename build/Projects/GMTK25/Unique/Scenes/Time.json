@@ -431,7 +431,8 @@
       "parent-id": -1,
       "scripts": {
         "Attention\\AttentionBar": [
-          14
+          14,
+          0
         ]
       },
       "transform": {

@@ -10,27 +10,50 @@ void AttentionBar::Update(float dt){
     // Max y = -106
     // Min y = -516
     // 0 y = -522
-
-    if(transform->position.y > -516){
-        transform->position.y -= 50 * dt;
+    float scale = numberOfSolves / 10.0;
+    if(scale < 1){
+        scale = 1;
     }
-    if(transform->position.y < -106 && Input::KeyDown[KEY_W]){
-        transform->position.y += 20;
+    if(scale > 3.5){
+        scale = 3.5;
+    }
+    if(scale > 1 && inMini == 0){
+        scale = 1;
     }
 
-    
+    hype -= 1.5 * scale * numberOfDistrupters * dt;
 
+    if(hype < -10){
+        transform->position.y = -522;
+    }
+    else{
+        float bounded = hype;
+        if(hype > 100){
+            bounded = 100;
+        }
+        if(hype < 0){
+            bounded = 0;
+        }
+        float f = bounded / 100.0;
+
+        transform->position.y = (1 - f) * -516 + f * -106;
+    }
 }
 
 void AttentionBar::DDRInput(bool correct){
     if(correct){
-        transform->position.y += 30;
-        score += 1;
+        if(hype < 120){
+            hype += 4;
+        }
+        score += numberOfSolves + 1;
         scoreTxt->text = "Score: " + std::to_string(score);
     }
     else{
-        transform->position.y -= 20;
+        hype -= 7;
     }
 }
 
 int AttentionBar::score = 0;
+int AttentionBar::numberOfDistrupters = 0;
+int AttentionBar::numberOfSolves = 0;
+float AttentionBar::hype = 50;

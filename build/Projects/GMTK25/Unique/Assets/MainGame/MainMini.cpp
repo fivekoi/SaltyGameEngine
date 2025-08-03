@@ -2,6 +2,7 @@
 
 #include "PersonController.h"
 #include "./KeySymbols/Disrupt.h"
+#include "../Attention/AttentionBar.h"
 
 #include <algorithm>
 #include <cstdlib>
@@ -125,6 +126,19 @@ void MainMini::Start(){
         entity->registry->entityTree[disrupter]->GetScript<PersonController>()->WalkOff();
         forwardPeopleOff.push_back(disrupter);
         forwardPeopleOn.erase(std::remove(forwardPeopleOn.begin(), forwardPeopleOn.end(), disrupter), forwardPeopleOn.end());
+
+        attentionBar->GetScript<AttentionBar>()->numberOfDistrupters -= 1;
+
+        if(peopleOff.size() >= 5){
+            for(int i = 0; i < 5; ++i){
+                int r = rand() % peopleOff.size();
+
+                entity->registry->entityTree[peopleOff[r]]->GetScript<PersonController>()->WalkOn();
+                peopleOn.push_back(peopleOff[r]);
+                peopleOff.erase(peopleOff.begin() + r);
+            }
+        }
+        
     }
 }
 
@@ -153,46 +167,55 @@ void MainMini::Update(float dt){
     }
 
     disruptTimer -= dt;
+    if(disruptTimer <= 1 && dis){
+        dis = false;
+        if(peopleOn.size() >= 3){
+            int n = rand() % 3 + 1;
+            for(int i = 0; i < n; ++i){
+                int r = rand() % peopleOn.size();
+
+                entity->registry->entityTree[peopleOn[r]]->GetScript<PersonController>()->WalkOff();
+                peopleOff.push_back(peopleOn[r]);
+                peopleOn.erase(peopleOn.begin());
+            }
+        }
+    }
+    
+    
     if(disruptTimer <= 0){
         if(difficulty == 0){
             // EASY
-            disruptTimer = 1;
+            disruptTimer = 5;
             if(disruptions < 7){
                 StartDisruption();
             }
         }
         else if(difficulty == 1){
             // MEDIUM
-            disruptTimer = 4;
+            disruptTimer = 2;
             if(disruptions < 3){
                 StartDisruption();
             }
         }
-        else{
+        else if(difficulty == 2){
             // HARD
             disruptTimer = 3;
-            if(disruptions < 7){
+            int r = rand() % 3;
+            if(r <= 1 && disruptions < 7){
                 StartDisruption();
             }
         }
+        else{
+            // ENDLESS
+            disruptTimer = 2;
+            int r = rand() % 3;
+            if(r <= 1 && disruptions < 7){
+                StartDisruption();
+            }
+        }
+
+        dis = true;
     }
-    
-
-    // walkTimer -= dt;
-    // if(walkTimer <= 0 && peopleOff.size() > 0){
-    //     walkTimer = 3;
-    //     entity->registry->entityTree[peopleOff[0]]->GetScript<PersonController>()->WalkOn();
-    //     peopleOn.push_back(peopleOff[0]);
-    //     peopleOff.erase(peopleOff.begin());
-
-    //     if(peopleOn.size() >= 3){
-    //         if(entity->registry->entityTree[peopleOn[0]]->GetScript<PersonController>()->IsIdle()){
-    //             entity->registry->entityTree[peopleOn[0]]->GetScript<PersonController>()->WalkOff();
-    //             peopleOff.push_back(peopleOn[0]);
-    //             peopleOn.erase(peopleOn.begin());
-    //         }
-    //     }
-    // }
 
 
     if(Input::KeyDown[KEY_0]){
@@ -202,6 +225,7 @@ void MainMini::Update(float dt){
 
 void MainMini::StartDisruption(){
     disruptions += 1;
+    attentionBar->GetScript<AttentionBar>()->numberOfDistrupters += 1;
 
     if(forwardPeopleOn.size() == 0){
         // Make someone walk on
@@ -246,6 +270,16 @@ void MainMini::FinishedDisruption(int disruptionId, int forwardId){
     disrupter = forwardId;
 
     disruptions -= 1;
+    attentionBar->GetScript<AttentionBar>()->numberOfSolves += 1;
+    if(difficulty == 0 && attentionBar->GetScript<AttentionBar>()->numberOfSolves >= 3){
+        difficulty = 1;
+    }
+    else if(difficulty == 1 && attentionBar->GetScript<AttentionBar>()->numberOfSolves >= 9){
+        difficulty = 2;
+    }
+    else if(difficulty == 2 && attentionBar->GetScript<AttentionBar>()->numberOfSolves >= 15){
+        difficulty = 3;
+    }
 }
 
 bool MainMini::started = false;
