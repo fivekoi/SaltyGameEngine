@@ -226,11 +226,6 @@ void MainMini::Update(float dt){
 
         dis = true;
     }
-
-
-    if(Input::KeyDown[KEY_0]){
-        Scene::Load(0);
-    }
 }
 
 void MainMini::StartDisruption(){
