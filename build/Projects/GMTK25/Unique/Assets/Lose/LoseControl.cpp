@@ -6,8 +6,11 @@
 
 // Called before the first frame of Update()
 void LoseControl::Start(){
-    if(!score->GetScript<Score>()->wasHighScore){
+    if(score->GetScript<Score>()->highScore >= score->GetScript<Score>()->recentScore){
         highScoreTransform->position.x = 2000;
+    }
+    else{
+        score->GetScript<Score>()->highScore = score->GetScript<Score>()->recentScore;
     }
     scoreText->text = "Score: " + std::to_string(score->GetScript<Score>()->recentScore);
     score->GetScript<Score>()->recentScore = 0;

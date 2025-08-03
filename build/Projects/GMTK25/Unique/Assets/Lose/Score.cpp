@@ -12,4 +12,3 @@ void Score::Update(float dt){
 
 int Score::recentScore = 0;
 int Score::highScore = 0;
-bool Score::wasHighScore = false;

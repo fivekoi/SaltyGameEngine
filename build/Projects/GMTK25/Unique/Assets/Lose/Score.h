@@ -11,7 +11,6 @@ public:
     void Start() override;
     void Update(float dt) override;
 
-    static bool wasHighScore;
     static int recentScore;
     static int highScore;
 };
