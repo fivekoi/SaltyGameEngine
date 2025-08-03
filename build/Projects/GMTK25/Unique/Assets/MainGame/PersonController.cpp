@@ -4,29 +4,29 @@
 void PersonController::Start(){
     //MainGame\Idle/Idle1.png
     std::string frame1 = entity->GetComponent<SpriteComponent>().filepath;
-    if(frame1 == "MainGame\\Idle/Idle1.png"){
-        idleFrames.push_back("MainGame\\Idle/Idle1.png");
-        idleFrames.push_back("MainGame\\Idle/Idle2.png");
-        idleFrames.push_back("MainGame\\Idle/Idle3.png");
-        idleFrames.push_back("MainGame\\Idle/Idle4.png");
+    if(frame1 == "MainGame/Idle/Idle1.png"){
+        idleFrames.push_back("MainGame/Idle/Idle1.png");
+        idleFrames.push_back("MainGame/Idle/Idle2.png");
+        idleFrames.push_back("MainGame/Idle/Idle3.png");
+        idleFrames.push_back("MainGame/Idle/Idle4.png");
     }
-    else if(frame1 == "MainGame\\Idle/Idle5.png"){
-        idleFrames.push_back("MainGame\\Idle/Idle5.png");
-        idleFrames.push_back("MainGame\\Idle/Idle6.png");
-        idleFrames.push_back("MainGame\\Idle/Idle7.png");
-        idleFrames.push_back("MainGame\\Idle/Idle8.png");
+    else if(frame1 == "MainGame/Idle/Idle5.png"){
+        idleFrames.push_back("MainGame/Idle/Idle5.png");
+        idleFrames.push_back("MainGame/Idle/Idle6.png");
+        idleFrames.push_back("MainGame/Idle/Idle7.png");
+        idleFrames.push_back("MainGame/Idle/Idle8.png");
     }
-    else if(frame1 == "MainGame\\Idle/Idle9.png"){
-        idleFrames.push_back("MainGame\\Idle/Idle9.png");
-        idleFrames.push_back("MainGame\\Idle/Idle10.png");
-        idleFrames.push_back("MainGame\\Idle/Idle11.png");
-        idleFrames.push_back("MainGame\\Idle/Idle12.png");
+    else if(frame1 == "MainGame/Idle/Idle9.png"){
+        idleFrames.push_back("MainGame/Idle/Idle9.png");
+        idleFrames.push_back("MainGame/Idle/Idle10.png");
+        idleFrames.push_back("MainGame/Idle/Idle11.png");
+        idleFrames.push_back("MainGame/Idle/Idle12.png");
     }
-    else if(frame1 == "MainGame\\Idle/Idle13.png"){
-        idleFrames.push_back("MainGame\\Idle/Idle13.png");
-        idleFrames.push_back("MainGame\\Idle/Idle14.png");
-        idleFrames.push_back("MainGame\\Idle/Idle15.png");
-        idleFrames.push_back("MainGame\\Idle/Idle16.png");
+    else if(frame1 == "MainGame/Idle/Idle13.png"){
+        idleFrames.push_back("MainGame/Idle/Idle13.png");
+        idleFrames.push_back("MainGame/Idle/Idle14.png");
+        idleFrames.push_back("MainGame/Idle/Idle15.png");
+        idleFrames.push_back("MainGame/Idle/Idle16.png");
     }
 }
 

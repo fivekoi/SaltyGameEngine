@@ -19,7 +19,7 @@ void MainMini::Start(){
         for(int pId : entity->childrenIds){
             for(int id : entity->registry->entityTree[pId]->childrenIds){
                 std::string fp = entity->registry->entityTree[id]->GetComponent<SpriteComponent>().filepath;
-                if(fp == "MainGame\\Idle/Idle1.png"){
+                if(fp == "MainGame/Idle/Idle1.png"){
                     forwardPeopleOff.push_back(id);
                 }
                 else{

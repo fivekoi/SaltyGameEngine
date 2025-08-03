@@ -54,17 +54,17 @@
       ],
       "components": {
         "sprite": {
-          "filepath": "MainGame\\Idle/Idle17.png"
+          "filepath": "MainGame/Idle/Idle17.png"
         }
       },
       "name": "DJ",
       "parent-id": -1,
       "scripts": {
         "MainGame\\Hats\\DJIdle": [
-          "MainGame\\Idle/Idle17.png",
-          "MainGame\\Idle/Idle18.png",
-          "MainGame\\Idle/Idle19.png",
-          "MainGame\\Idle/Idle20.png",
+          "MainGame/Idle/Idle17.png",
+          "MainGame/Idle/Idle18.png",
+          "MainGame/Idle/Idle19.png",
+          "MainGame/Idle/Idle20.png",
           1
         ]
       },
@@ -85,17 +85,17 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "MainGame\\Hats\\Headphones/headphones1.png"
+          "filepath": "MainGame/Hats/Headphones/headphones1.png"
         }
       },
       "name": "Hat",
       "parent-id": 1,
       "scripts": {
         "MainGame\\Hats\\DJIdle": [
-          "MainGame\\Hats\\Headphones/headphones1.png",
-          "MainGame\\Hats\\Headphones/headphones2.png",
-          "MainGame\\Hats\\Headphones/headphones3.png",
-          "MainGame\\Hats\\Headphones/headphones4.png",
+          "MainGame/Hats/Headphones/headphones1.png",
+          "MainGame/Hats/Headphones/headphones2.png",
+          "MainGame/Hats/Headphones/headphones3.png",
+          "MainGame/Hats/Headphones/headphones4.png",
           2
         ]
       },

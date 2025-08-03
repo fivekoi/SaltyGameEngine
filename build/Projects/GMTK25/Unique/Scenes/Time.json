@@ -275,7 +275,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Time\\BG/1.png"
+          "filepath": "Time/BG/1.png"
         }
       },
       "name": "Empty",
@@ -298,7 +298,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Time\\BG/4.png"
+          "filepath": "Time/BG/4.png"
         }
       },
       "name": "Empty",
@@ -321,7 +321,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Time\\BG/3.png"
+          "filepath": "Time/BG/3.png"
         }
       },
       "name": "Empty",
@@ -344,7 +344,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Time\\BG/2.png"
+          "filepath": "Time/BG/2.png"
         }
       },
       "name": "Empty",
@@ -367,7 +367,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Coaster\\BG/grey.png"
+          "filepath": "Coaster/BG/grey.png"
         }
       },
       "name": "Empty",

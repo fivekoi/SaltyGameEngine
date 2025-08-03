@@ -343,7 +343,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "ForLoop\\BG/1.png"
+          "filepath": "ForLoop/BG/1.png"
         }
       },
       "name": "Empty",
@@ -366,7 +366,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "ForLoop\\BG/2.png"
+          "filepath": "ForLoop/BG/2.png"
         }
       },
       "name": "Empty",
@@ -389,7 +389,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "ForLoop\\BG/3.png"
+          "filepath": "ForLoop/BG/3.png"
         }
       },
       "name": "Empty",
@@ -412,7 +412,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "ForLoop\\BG/4.png"
+          "filepath": "ForLoop/BG/4.png"
         }
       },
       "name": "Empty",
@@ -435,7 +435,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Coaster\\BG/grey.png"
+          "filepath": "Coaster/BG/grey.png"
         }
       },
       "name": "Empty",

@@ -205,7 +205,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Coaster\\BG/grey.png"
+          "filepath": "Coaster/BG/grey.png"
         }
       },
       "name": "Empty",

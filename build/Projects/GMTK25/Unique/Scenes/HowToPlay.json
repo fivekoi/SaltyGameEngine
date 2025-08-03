@@ -40,17 +40,17 @@
       ],
       "components": {
         "sprite": {
-          "filepath": "MainGame\\Idle/Idle17.png"
+          "filepath": "MainGame/Idle/Idle17.png"
         }
       },
       "name": "DJ",
       "parent-id": -1,
       "scripts": {
         "MainGame\\Hats\\DJIdle": [
-          "MainGame\\Idle/Idle17.png",
-          "MainGame\\Idle/Idle18.png",
-          "MainGame\\Idle/Idle19.png",
-          "MainGame\\Idle/Idle20.png",
+          "MainGame/Idle/Idle17.png",
+          "MainGame/Idle/Idle18.png",
+          "MainGame/Idle/Idle19.png",
+          "MainGame/Idle/Idle20.png",
           1
         ]
       },
@@ -71,17 +71,17 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "MainGame\\Hats\\Headphones/headphones1.png"
+          "filepath": "MainGame/Hats/Headphones/headphones1.png"
         }
       },
       "name": "Hat",
       "parent-id": 1,
       "scripts": {
         "MainGame\\Hats\\DJIdle": [
-          "MainGame\\Hats\\Headphones/headphones1.png",
-          "MainGame\\Hats\\Headphones/headphones2.png",
-          "MainGame\\Hats\\Headphones/headphones3.png",
-          "MainGame\\Hats\\Headphones/headphones4.png",
+          "MainGame/Hats/Headphones/headphones1.png",
+          "MainGame/Hats/Headphones/headphones2.png",
+          "MainGame/Hats/Headphones/headphones3.png",
+          "MainGame/Hats/Headphones/headphones4.png",
           2
         ]
       },
@@ -390,7 +390,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Attention\\DDR/W.png"
+          "filepath": "Attention/DDR/W.png"
         }
       },
       "name": "Empty",
@@ -413,7 +413,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Attention\\DDR/A.png"
+          "filepath": "Attention/DDR/A.png"
         }
       },
       "name": "Empty",
@@ -436,7 +436,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Attention\\DDR/W.png"
+          "filepath": "Attention/DDR/W.png"
         }
       },
       "name": "Empty",
@@ -459,7 +459,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "Attention\\DDR/D.png"
+          "filepath": "Attention/DDR/D.png"
         }
       },
       "name": "Empty",
@@ -482,7 +482,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "MainGame\\Colors/darkgreen.png"
+          "filepath": "MainGame/Colors/darkgreen.png"
         }
       },
       "name": "Empty",
@@ -660,7 +660,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "MainGame\\Idle/Idle1.png"
+          "filepath": "MainGame/Idle/Idle1.png"
         }
       },
       "name": "Empty",
@@ -683,7 +683,7 @@
       "children-ids": [],
       "components": {
         "sprite": {
-          "filepath": "MainGame\\KeySymbols/F.png"
+          "filepath": "MainGame/KeySymbols/F.png"
         }
       },
       "name": "Empty",

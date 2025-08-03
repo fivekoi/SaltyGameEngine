@@ -6,7 +6,7 @@ private:
     // Idle Anim
     std::vector<string> idleFrames;
 
-    std::vector<string> walkFrames = {"Time\\16x32 Walk Cycle1.png", "Time\\16x32 Walk Cycle2.png", "Time\\16x32 Walk Cycle3.png", "Time\\16x32 Walk Cycle4.png"};
+    std::vector<string> walkFrames = {"Time/16x32 Walk Cycle1.png", "Time/16x32 Walk Cycle2.png", "Time/16x32 Walk Cycle3.png", "Time/16x32 Walk Cycle4.png"};
     bool walkingOn = false;
     float walkOnTimer = 0;
     bool walkingOff = false;
