@@ -8,7 +8,7 @@ Scene Demo above uses assets from:
 - [Generic Character Asset — brullov](https://brullov.itch.io/generic-char-asset)
 
 ## Sample Games
-- [Feedback Loop](https://fivekoi.itch.io/feedback-loop) - a game made for the 2025 GMTK Game Jam (Loop)
+- [Feedback Loop](https://fivekoi.itch.io/feedback-loop) - a game made for the 2025 GMTK Game Jam with the theme "Loop"
 - [Dino Run](https://fivekoi.itch.io/dino-run) - a simple 2D sidescroller where you collect coins
 
 ## Features
