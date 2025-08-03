@@ -540,7 +540,9 @@
       }
     },
     {
-      "children-ids": [],
+      "children-ids": [
+        96
+      ],
       "components": {
         "sprite": {
           "filepath": "MainGame/Track.png"
@@ -559,7 +561,7 @@
           7.0,
           5.0
         ],
-        "zindex": 2
+        "zindex": 1
       }
     },
     {
@@ -2038,7 +2040,8 @@
           92,
           93,
           94,
-          0
+          0,
+          95
         ]
       },
       "transform": {
@@ -2425,6 +2428,50 @@
         ],
         "zindex": 3
       }
+    },
+    {
+      "children-ids": [],
+      "components": {},
+      "name": "Score",
+      "parent-id": -1,
+      "scripts": {
+        "Lose\\Score": []
+      },
+      "transform": {
+        "position": [
+          -3.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "sprite": {
+          "filepath": "MainGame\\Colors/darkgreen.png"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 20,
+      "scripts": {},
+      "transform": {
+        "position": [
+          186.0,
+          -392.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          0.6000000238418579,
+          1.5
+        ],
+        "zindex": 2
+      }
     }
   ],
   "root-ids": [
@@ -2437,6 +2484,7 @@
     69,
     77,
     78,
-    79
+    79,
+    95
   ]
 }

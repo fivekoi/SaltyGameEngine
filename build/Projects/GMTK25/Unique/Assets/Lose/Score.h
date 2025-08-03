@@ -1,14 +1,17 @@
 #pragma once
 #include "SaltyEngine.h"
 
-class TitleScreen : public IScript {
+class Score : public IScript {
 private:
-    SF_ Text* scoreTxt;
 
 public:
     // Initialization will be handled by engine (including that of SF_ variables)
-    TitleScreen(Entity* entity, Transform* transform, std::vector<SaltyType>& serializedVars);
+    Score(Entity* entity, Transform* transform, std::vector<SaltyType>& serializedVars);
 
     void Start() override;
     void Update(float dt) override;
+
+    static bool wasHighScore;
+    static int recentScore;
+    static int highScore;
 };

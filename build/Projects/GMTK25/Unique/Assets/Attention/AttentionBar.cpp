@@ -25,6 +25,7 @@ void AttentionBar::Update(float dt){
 
     if(hype < -10){
         transform->position.y = -522;
+        Scene::Load(9);
     }
     else{
         float bounded = hype;
@@ -40,7 +41,7 @@ void AttentionBar::Update(float dt){
     }
 }
 
-void AttentionBar::DDRInput(bool correct){
+int AttentionBar::DDRInput(bool correct){
     if(correct){
         if(hype < 120){
             hype += 4;
@@ -49,8 +50,10 @@ void AttentionBar::DDRInput(bool correct){
         scoreTxt->text = "Score: " + std::to_string(score);
     }
     else{
-        hype -= 7;
+        hype -= 12;
     }
+
+    return score;
 }
 
 int AttentionBar::score = 0;

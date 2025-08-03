@@ -23,9 +23,11 @@
       "d2",
       "d3",
       "d4",
-      "attention"
+      "attention",
+      "score"
     ],
     "types": [
+      "Entity*",
       "Entity*",
       "Entity*",
       "Entity*",
@@ -87,6 +89,20 @@
       "Transform*"
     ]
   },
+  "HowTo\\HowToControl": {
+    "names": [
+      "h1",
+      "h2",
+      "h3",
+      "nav"
+    ],
+    "types": [
+      "Entity*",
+      "Entity*",
+      "Entity*",
+      "Text*"
+    ]
+  },
   "Knot\\KnotMini": {
     "names": [
       "leftLetterText",
@@ -122,6 +138,22 @@
       "Transform*",
       "Transform*"
     ]
+  },
+  "Lose\\LoseControl": {
+    "names": [
+      "scoreText",
+      "score",
+      "highScoreTransform"
+    ],
+    "types": [
+      "Text*",
+      "Entity*",
+      "Transform*"
+    ]
+  },
+  "Lose\\Score": {
+    "names": [],
+    "types": []
   },
   "MainGame\\Colors\\ColorSwitch": {
     "names": [
@@ -234,8 +266,12 @@
     ]
   },
   "Title\\TitleScreen": {
-    "names": [],
-    "types": []
+    "names": [
+      "scoreTxt"
+    ],
+    "types": [
+      "Text*"
+    ]
   },
   "filepaths": [
     "Fruit\\FruitMini",
@@ -254,6 +290,9 @@
     "Attention\\DDR\\DDRLerp",
     "Fruit\\FruitHover",
     "MainGame\\KeySymbols\\Disrupt",
-    "MainGame\\Colors\\ColorSwitch"
+    "MainGame\\Colors\\ColorSwitch",
+    "Lose\\Score",
+    "Lose\\LoseControl",
+    "HowTo\\HowToControl"
   ]
 }

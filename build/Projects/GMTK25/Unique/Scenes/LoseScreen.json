@@ -131,7 +131,9 @@
       },
       "name": "New High Score",
       "parent-id": -1,
-      "scripts": {},
+      "scripts": {
+        "Lose\\Score": []
+      },
       "transform": {
         "position": [
           198.0,
@@ -208,7 +210,13 @@
       },
       "name": "Empty",
       "parent-id": -1,
-      "scripts": {},
+      "scripts": {
+        "Lose\\LoseControl": [
+          0,
+          4,
+          4
+        ]
+      },
       "transform": {
         "position": [
           0.0,

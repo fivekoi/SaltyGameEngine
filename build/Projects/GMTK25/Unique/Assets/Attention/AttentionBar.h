@@ -18,7 +18,7 @@ public:
     void Start() override;
     void Update(float dt) override;
 
-    void DDRInput(bool correct);
+    int DDRInput(bool correct);
 
     static int numberOfDistrupters;
     static int numberOfSolves;

@@ -26,6 +26,7 @@ private:
     std::vector<int> usedInputs;
 
     SF_ Entity* attention;
+    SF_ Entity* score;
 
 public:
     // Initialization will be handled by engine (including that of SF_ variables)

@@ -2,6 +2,7 @@
 
 #include "DDRLerp.h"
 #include "../AttentionBar.h"
+#include "../../Lose/Score.h"
 
 #include <cstdlib>
 #include <ctime>
@@ -68,7 +69,12 @@ void DDR::Update(float dt){
         availKeys.push_back(usedKeys[0]);
         availInputs.push_back(usedInputs[0]);
 
-        attention->GetScript<AttentionBar>()->DDRInput(true);
+        int s = attention->GetScript<AttentionBar>()->DDRInput(true);
+        score->GetScript<Score>()->recentScore = s;
+        if(score->GetScript<Score>()->recentScore > score->GetScript<Score>()->highScore){
+            score->GetScript<Score>()->highScore = s;
+            score->GetScript<Score>()->wasHighScore = true;
+        }
     } // This elses will only happen if the first if isnt satisfied (so will be wrong input)
     else if(Input::KeyDown[KEY_W] || Input::KeyDown[KEY_A] || Input::KeyDown[KEY_D]){
         attention->GetScript<AttentionBar>()->DDRInput(false);

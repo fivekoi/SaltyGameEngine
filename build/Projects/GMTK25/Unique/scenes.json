@@ -29,6 +29,9 @@
     },
     {
       "name": "LoseScreen"
+    },
+    {
+      "name": "HowToPlay"
     }
   ]
 }
