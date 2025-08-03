@@ -1,5 +1,6 @@
 #include "Game/Salty/SaltyAudio.h"
 
+#include <cassert>
 #include <deque>
 #include <memory>
 #include <vector>
@@ -69,8 +70,8 @@ void Audio::DeloadAll(){
 }
 
 
-// No need to pass this by ref, just need id
-void Audio::Play(Sound sound){
+// No need to pass this by ref, just need id, TODO: should pass by ref... no need to copy
+void Audio::Play(Sound sound, bool looping){
     int id = sound.id;
     // 0 <= ensures audioSource has been loaded
     // < size for bounds on loaded sounds
@@ -80,5 +81,14 @@ void Audio::Play(Sound sound){
     // TODO: cont - i think its good to still have a Load() thing incase we want to load at start or specific times, but still a nice failsafe
 
     SoLoud::AudioSource& aud = *Audio::sounds[id].get();
+    aud.setLooping(looping);
     Audio::soloud.play(aud);
+}
+
+void Audio::Stop(Sound sound){
+    int id = sound.id;
+    assert(0 <= id && id < Audio::sounds.size() && Audio::sounds[id] != nullptr);
+
+    SoLoud::AudioSource& aud = *Audio::sounds[id].get();
+    Audio::soloud.stopAudioSource(aud);
 }

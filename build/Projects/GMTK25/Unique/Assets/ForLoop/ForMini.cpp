@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 
+#include "../Sounds/SoundManager.h"
+
 // Called before the first frame of Update()
 void ForMini::Start(){
     srand(time(0));
@@ -27,6 +29,8 @@ void ForMini::Start(){
         blanks += "_ ";
     }
     inputText->text = blanks;
+
+    Audio::Play(SoundManager::typing);
 }
 
 // Called every frame before Render()
@@ -40,6 +44,9 @@ void ForMini::Update(float dt){
         if(currentNumber >= values.size()){
             std::cout << "win\n";
             won = true;
+
+            Audio::Play(SoundManager::winding);
+            Audio::Stop(SoundManager::typing);
         }
     }
 

@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 
+#include "../Sounds/SoundManager.h"
 
 // Called before the first frame of Update()
 void KnotMini::Start(){
@@ -13,6 +14,8 @@ void KnotMini::Start(){
 
     right = rand() % rightKeys.size();
     rightLetterText->text = rightKeyLetters[right];
+
+    Audio::Play(SoundManager::rope);
 }
 
 // Called every frame before Render()
@@ -43,6 +46,9 @@ void KnotMini::Update(float dt){
                 std::cout << "won\n";
                 knotSprite->filepath = knot3;
                 won = true;
+
+                Audio::Play(SoundManager::winding);
+                Audio::Stop(SoundManager::rope);
             }
             else if(leftPresses + rightPresses >= 10){
                 knotSprite->filepath = knot2;

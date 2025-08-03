@@ -127,7 +127,8 @@ void Game::LoadScene(int sceneIndex)
     // TODO: could consider a flag to not do this (i.e. if some scene takes a while to load, and we 
     // just load on startup??)
     assetManager->ClearAssets();
-    Audio::DeloadAll();
+    // TODO: TEMP REMOVE (i want to preserve music between scenes)
+    // Audio::DeloadAll();
 
     // TODO: dont forget to add all systems here
     registry->AddSystem<RenderSystem>(assetManager);

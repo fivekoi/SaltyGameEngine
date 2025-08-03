@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 
+#include "../Sounds/SoundManager.h"
+
 // Called before the first frame of Update()
 void LoopholeController::Start(){
     srand(time(0));
@@ -38,6 +40,8 @@ void LoopholeController::Update(float dt){
             if(statementIndex == falseIndex){
                 std::cout << "won\n";
                 won = true;
+
+                Audio::Play(SoundManager::winding);
             }
         }
 

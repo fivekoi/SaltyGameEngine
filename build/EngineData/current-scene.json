@@ -23,7 +23,7 @@
           ],
           "filepath": "./Fonts/BigShot.ttf",
           "fontSize": 80,
-          "text": "Score: 123456"
+          "text": "Score: 1234"
         }
       },
       "name": "Score",
@@ -31,7 +31,7 @@
       "scripts": {},
       "transform": {
         "position": [
-          171.0,
+          213.0,
           -244.0
         ],
         "rotation": 0.0,
@@ -229,6 +229,70 @@
         ],
         "zindex": -2
       }
+    },
+    {
+      "children-ids": [
+        9
+      ],
+      "components": {
+        "text": {
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "filepath": "./Fonts/Arcade.ttf",
+          "fontSize": 150,
+          "text": "You Lose"
+        }
+      },
+      "name": "YouLose",
+      "parent-id": -1,
+      "scripts": {},
+      "transform": {
+        "position": [
+          191.0,
+          22.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
+    },
+    {
+      "children-ids": [],
+      "components": {
+        "text": {
+          "color": [
+            240,
+            79,
+            79,
+            255
+          ],
+          "filepath": "./Fonts/ArcadeIn.ttf",
+          "fontSize": 150,
+          "text": "You Lose"
+        }
+      },
+      "name": "Empty",
+      "parent-id": 8,
+      "scripts": {},
+      "transform": {
+        "position": [
+          191.0001983642578,
+          22.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
     }
   ],
   "null-count": 0,
@@ -238,6 +302,7 @@
     4,
     5,
     6,
-    7
+    7,
+    8
   ]
 }

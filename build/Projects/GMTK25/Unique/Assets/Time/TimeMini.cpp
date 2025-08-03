@@ -1,5 +1,7 @@
 #include "TimeMini.h"
 
+#include "../Sounds/SoundManager.h"
+
 // Called before the first frame of Update()
 void TimeMini::Start(){
     walkFrames.push_back(walk1);
@@ -14,6 +16,8 @@ void TimeMini::Start(){
     }
 
     goalText->text = "";
+
+    Audio::Play(SoundManager::ticktock);
 }
 
 // Called every frame before Render()
@@ -35,6 +39,7 @@ void TimeMini::Update(float dt){
                 walkTransform->position.x = 720;
                 walkTimer = 0;
                 phase = 1;
+                Audio::Play(SoundManager::ticktockrev);
             }
 
             if(walkTransform->position.x >= 90 && textRevealed == 0){
@@ -78,7 +83,7 @@ void TimeMini::Update(float dt){
                 walkTransform->position.x = 20;
                 goalText->text = "";
                 textRevealed = 0;
-
+                Audio::Play(SoundManager::ticktock);
                 phase = 0;
             } 
             else if(Input::KeyDown[letterKeys[goalIdxs[textRevealed]]]){
@@ -104,6 +109,8 @@ void TimeMini::Update(float dt){
                 if(textRevealed == 3){
                     std::cout << "won\n";
                     won = true;
+
+                    Audio::Play(SoundManager::winding);
                 }
             }
         }

@@ -243,6 +243,10 @@
       "Transform*"
     ]
   },
+  "Sounds\\SoundManager": {
+    "names": [],
+    "types": []
+  },
   "Time\\TimeMini": {
     "names": [
       "walkSprite",
@@ -293,6 +297,7 @@
     "MainGame\\Colors\\ColorSwitch",
     "Lose\\Score",
     "Lose\\LoseControl",
-    "HowTo\\HowToControl"
+    "HowTo\\HowToControl",
+    "Sounds\\SoundManager"
   ]
 }

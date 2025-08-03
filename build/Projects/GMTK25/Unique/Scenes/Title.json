@@ -347,6 +347,27 @@
         ],
         "zindex": 3
       }
+    },
+    {
+      "children-ids": [],
+      "components": {},
+      "name": "Sounds",
+      "parent-id": -1,
+      "scripts": {
+        "Sounds\\SoundManager": []
+      },
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ],
+        "zindex": 0
+      }
     }
   ],
   "root-ids": [
@@ -356,6 +377,7 @@
     4,
     6,
     7,
-    9
+    9,
+    11
   ]
 }

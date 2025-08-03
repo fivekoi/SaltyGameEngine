@@ -3,6 +3,7 @@
 #include "PersonController.h"
 #include "./KeySymbols/Disrupt.h"
 #include "../Attention/AttentionBar.h"
+#include "../Sounds/SoundManager.h"
 
 #include <algorithm>
 #include <cstdlib>
@@ -74,6 +75,8 @@ void MainMini::Start(){
         for(auto id : disruptionParent->childrenIds){
             availableDisruptions.push_back(id);
         }
+
+        Audio::Play(SoundManager::music, true);
     }
     else{
         // Restore people to their positions from before

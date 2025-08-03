@@ -3,6 +3,7 @@
 #include "Score.h"
 #include "../MainGame/MainMini.h"
 #include "../Attention/AttentionBar.h"
+#include "../Sounds/SoundManager.h"
 
 // Called before the first frame of Update()
 void LoseControl::Start(){
@@ -14,6 +15,10 @@ void LoseControl::Start(){
     }
     scoreText->text = "Score: " + std::to_string(score->GetScript<Score>()->recentScore);
     score->GetScript<Score>()->recentScore = 0;
+
+    
+    Audio::Play(SoundManager::lose);
+    Audio::Stop(SoundManager::music);
 }
 
 // Called every frame before Render()

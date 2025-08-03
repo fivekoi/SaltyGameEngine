@@ -1,5 +1,7 @@
 #include "CoasterMini.h"
 
+#include "../Sounds/SoundManager.h"
+
 // Called before the first frame of Update()
 void CoasterMini::Start(){
     coaster->position = positions[0];
@@ -23,6 +25,7 @@ void CoasterMini::Start(){
             centerPoints.push_back({0, 0});
         }
     }
+    Audio::Play(SoundManager::coaster);
 }
 
 // Called every frame before Render()
@@ -34,6 +37,7 @@ void CoasterMini::Update(float dt){
             idx = (idx + 1) % (times.size() - 1);
             if(idx == 0){
                 timer = -2;
+                Audio::Play(SoundManager::coaster);
             }
         }
         else{
@@ -54,6 +58,9 @@ void CoasterMini::Update(float dt){
             if(674 <= coaster->position.x && coaster->position.x <= 925){
                 std::cout << "won\n";
                 won = true;
+
+                Audio::Play(SoundManager::winding);
+                Audio::Stop(SoundManager::coaster);
             }
         }
     }

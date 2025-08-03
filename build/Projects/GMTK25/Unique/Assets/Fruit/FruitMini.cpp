@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 
+#include "../Sounds/SoundManager.h"
+
 // Called before the first frame of Update()
 void FruitMini::Start(){
     srand(time(0));
@@ -29,6 +31,8 @@ void FruitMini::Start(){
         HideChildren(banana);
         HideChildren(apple);
     }
+
+    Audio::Play(SoundManager::cereal);
 }
 
 // Called every frame before Render()
@@ -42,6 +46,9 @@ void FruitMini::Update(float dt){
         if(currentLetter >= fruitsKeys[randomFruit].size()){
             std::cout << "win\n";
             won = true;
+
+            Audio::Play(SoundManager::winding);
+            Audio::Stop(SoundManager::cereal);
         }
     }
 

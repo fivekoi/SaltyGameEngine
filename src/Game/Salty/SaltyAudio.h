@@ -34,8 +34,9 @@ class Audio {
         // TODO: definitely need an Audio::ClearLoadedSounds();
         static void Load(Sound& sound);
         static void Deload(Sound& sound);
-        static void Play(Sound sound);
-        
+        static void Play(Sound sound, bool looping = false);
+        static void Stop(Sound sound);
+
         // Called by engine on scene transition
         static void DeloadAll();
 };
