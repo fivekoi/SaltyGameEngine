@@ -49,16 +49,16 @@ void PlayerMovement::Start(){
 
 // Called every frame before Render() 
 void PlayerMovement::Update(float dt){
-    if(Input::KeyHeld[SDL_SCANCODE_A]){
+    if(Input::KeyHeld[KEY_A]){
         transform->position.x -= dt * speed;
     }
-    if(Input::KeyHeld[SDL_SCANCODE_D]){
+    if(Input::KeyHeld[KEY_D]){
         transform->position.x += dt * speed;
     }
     Camera::position.x = transform->position.x;
 
     jumpTimer -= dt;
-    if(Input::KeyDown[SDL_SCANCODE_W] && jumpTimer <= 0){
+    if(Input::KeyDown[KEY_W] && jumpTimer <= 0){
         jumpTimer = 1.0f;
         rb->velocity.y = 3.0f;
         Audio::Play(jumpSound);
